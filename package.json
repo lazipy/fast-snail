@@ -2,9 +2,20 @@
   "name": "eagle",
   "version": "1.0.0",
   "description": "One ui library for desktop base on Vue.js 2.0",
-  "main": "index.js",
+  "main": "lib/eagle.common.js",
+  "files": [
+    "lib",
+    "src",
+    "examples"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "",
+    "dev:eg": "",
+    "build:es": "cross-env NODE_ENV=es rollup -c build/rollup.config.js",
+    "build:cjs": "cross-env NODE_ENV=cjs rollup -c build/rollup.config.js",
+    "build:iife": "cross-env NODE_ENV=iife rollup -c build/rollup.config.js",
+    "build:style": "",
+    "build:doc": ""
   },
   "repository": {
     "type": "git",
@@ -20,5 +31,31 @@
   "bugs": {
     "url": "https://github.com/EagleTeamer/eagle/issues"
   },
-  "homepage": "https://github.com/EagleTeamer/eagle#readme"
+  "homepage": "https://github.com/EagleTeamer/eagle#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.6.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "rollup": "^0.66.0",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "popper.js": "^1.14.4",
+    "v-click-outside-x": "^3.2.2",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  }
 }
