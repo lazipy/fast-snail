@@ -1,0 +1,24 @@
+{
+  "name": "eagle",
+  "version": "1.0.0",
+  "description": "One ui library for desktop base on Vue.js 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EagleTeamer/eagle.git"
+  },
+  "keywords": [
+    "vue",
+    "components",
+    "eagle"
+  ],
+  "author": "Eagle Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EagleTeamer/eagle/issues"
+  },
+  "homepage": "https://github.com/EagleTeamer/eagle#readme"
+}
