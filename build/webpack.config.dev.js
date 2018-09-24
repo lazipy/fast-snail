@@ -44,6 +44,22 @@ module.exports = {
         }
       },
       {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              }
+            }
+          },
+          {
+            loader: require.resolve('./markdown-loader')
+          }
+        ]
+      },
+      {
         test: /\.scss$/,
         use: [
           'vue-style-loader',
@@ -92,6 +108,7 @@ module.exports = {
     contentBase: false,
     hot: true,
     compress: true,
+    historyApiFallback: true,
     publicPath: '/',
     port: 7001,
     stats: 'minimal',
