@@ -138,26 +138,6 @@ export default {
     b {
       font-weight: 500;
     }
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-      empty-cells: show;
-      border: 1px solid #ebedf0;
-      width: 100%;
-      margin: 8px 0 16px;
-    }
-    table th {
-      white-space: nowrap;
-      color: #5c6b77;
-      font-weight: 500;
-      background: rgba(0, 0, 0, 0.02);
-      padding: 16px 24px;
-    }
-    table td {
-      border: 1px solid #ebedf0;
-      padding: 16px 24px;
-      text-align: left;
-    }
     blockquote {
       font-size: 90%;
       color: #697b8c;
@@ -206,35 +186,48 @@ export default {
     p > br {
       clear: both;
     }
-    #attributes + table {
+    table:not(.source table) {
       font-size: 14px;
       line-height: 1.5;
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-      border-width: 0;
       margin: 2em 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
+      width: 100%;
     }
-    #attributes + table th,
-    #attributes + table td {
+    table:not(.source table) th,
+    td {
       padding: 14px 16px;
       border-width: 1px 0;
       border-color: #e8e8e8;
       text-align: left;
     }
-    #attributes + table th {
+    table:not(.source table) th {
       border-width: 0 0 2px 0;
+      white-space: nowrap;
+      color: #5c6b77;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.02);
+      padding: 16px 24px;
     }
-    #attributes + table td:first-child {
+    table:not(.source table) td {
+      border-bottom: 1px solid #ebedf0;
+      padding: 16px 24px;
+      text-align: left;
+    }
+    td:not(.source table):first-child {
       font-weight: 500;
       width: 20%;
       color: #003a8c;
     }
-    #attributes + table td:nth-child(3) {
+    table:not(.source table) td:nth-child(3) {
       width: 22%;
       font-size: 13px;
       color: #c41d7f;
       word-break: break-all;
     }
-    #attributes + table td:last-child {
+    table:not(.source table) td:last-child {
       width: 13%;
       font-size: 13px;
     }

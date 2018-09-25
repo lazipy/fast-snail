@@ -35,7 +35,8 @@ const md = require('markdown-it')({
   })
   // 使用 table-of-contents 插件实现自动生成目录
   .use(toc, {
-    includeLevel: [2, 3]
+    includeLevel: [2, 3],
+    containerClass: 'api-container'
   })
   // 定义自定义的块容器
   .use(containers)
