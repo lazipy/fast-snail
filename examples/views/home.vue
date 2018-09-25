@@ -1,5 +1,7 @@
 <template>
-  <div>home</div>
+  <div class="home-page">
+
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  div {
-    color: red;
+  .home-page {
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/bg.png') no-repeat;
+    background-size: cover;
   }
 </style>

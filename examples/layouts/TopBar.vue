@@ -1,10 +1,10 @@
 <template>
-  <div>menu</div>
+  <div>top-bar</div>
 </template>
 
 <script>
 export default {
-  name: 'Menu'
+  name: 'TopBar'
 };
 </script>
 

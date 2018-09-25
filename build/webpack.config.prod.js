@@ -12,9 +12,6 @@ module.exports = merge(commonConfig, {
     chunkFilename: 'static/js/[id].[chunkhash].js'
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify('production')
-    }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '../dist/index.html'),

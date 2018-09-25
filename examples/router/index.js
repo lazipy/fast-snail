@@ -7,6 +7,12 @@ export default new Router({
   mode: 'history',
   routes: [
     { path: '/', component: () => import('../views/home') },
-    { path: '/button', component: () => import('../views/button') }
+    {
+      path: '/docs',
+      component: () => import('../views/Main'),
+      children: [
+        { path: 'button', component: () => import('../docs/test.md') }
+      ]
+    }
   ]
 });

@@ -64,7 +64,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              data: `$font-size: 14px;` // 定义常用的scss变量
+              // data: `$font-size: 14px;` // 定义常用的scss变量
             }
           },
           'postcss-loader'
@@ -80,7 +80,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: '../dist/img/[name].[hash:7].[ext]',
+          name: 'static/img/[name].[hash:7].[ext]',
         },
       },
       {
@@ -88,7 +88,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: '../dist/media/[name].[hash:7].[ext]',
+          name: 'static/media/[name].[hash:7].[ext]',
         },
       },
       {
@@ -96,7 +96,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: '../dist/fonts/[name].[hash:7].[ext]',
+          name: 'static/fonts/[name].[hash:7].[ext]',
         },
       },
     ],
