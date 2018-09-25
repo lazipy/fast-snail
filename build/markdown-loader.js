@@ -24,16 +24,14 @@ const md = require('markdown-it')({
       } catch (__) {}
     }
 
-    return '<pre v-pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
+    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
   }
 })
   // 使用 emoji 插件渲染 emoji
   .use(emoji)
   // 使用 anchor 插件为标题元素添加锚点
   .use(anchor, {
-    permalink: true,
-    permalinkBefore: true,
-    permalinkSymbol: '#'
+    permalink: true
   })
   // 使用 table-of-contents 插件实现自动生成目录
   .use(toc, {

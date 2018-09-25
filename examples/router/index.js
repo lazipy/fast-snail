@@ -12,7 +12,7 @@ export default new Router({
       component: () => import('../views/Main'),
       redirect: '/docs/button',
       children: [
-        { path: 'button', component: () => import('../docs/test.md') }
+        { path: 'button', component: () => import('../docs/button.md') }
       ]
     },
     { path: '*', redirect: '/docs' }
