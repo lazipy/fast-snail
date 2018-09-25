@@ -8,6 +8,8 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  div {
+    color: red;
+  }
 </style>
