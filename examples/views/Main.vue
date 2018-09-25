@@ -1,16 +1,40 @@
 <template>
-  <div>
-    <p>main</p>
-    <router-view></router-view>
+  <div class="main">
+    <top-bar></top-bar>
+
+    <div class="layout clearfix">
+      <menu-bar></menu-bar>
+      <div class="container">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import TopBar from '../components/TopBar';
+import MenuBar from '../components/Menu';
+
 export default {
-  name: 'Main'
+  name: 'Main',
+  components: { TopBar, MenuBar }
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .layout {
+    position: absolute;
+    top: 68px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+  }
+  .content {
+    min-height: 100vh;
+    margin-left: 258px;
+    margin-top: 30px;
+    padding: 0 30px;
+    border-left: 1px solid #ebedf0;
+  }
 </style>
