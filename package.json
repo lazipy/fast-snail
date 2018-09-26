@@ -1,7 +1,7 @@
 {
-  "name": "eagle",
+  "name": "vue-eagle",
   "version": "1.0.0",
-  "description": "One ui library for desktop base on Vue.js 2.0",
+  "description": "A ui library for desktop base on Vue.js 2.0",
   "main": "lib/eagle.common.js",
   "files": [
     "lib",
