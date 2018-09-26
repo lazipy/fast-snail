@@ -6,13 +6,13 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   routes: [
-    // { path: '/', component: () => import('../views/home'), redirect: '/docs' },
     {
       path: '/docs',
       component: () => import('../views/Main'),
-      redirect: '/docs/button',
+      redirect: '/docs/getting-started',
       children: [
-        { path: 'button', component: () => import('../docs/button.md') }
+        { path: 'getting-started', component: () => import('../views/getting-started.vue') },
+        { path: 'button', component: () => import('../views/button.vue') }
       ]
     },
     { path: '*', redirect: '/docs' }

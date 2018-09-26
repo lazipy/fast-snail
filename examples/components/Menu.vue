@@ -1,6 +1,5 @@
 <template>
   <ul class="menu">
-    <li class="menu-item"><router-link to="/docs/introduce">Eagle UI of Vue</router-link></li>
     <li class="menu-item"><router-link to="/docs/getting-started">快速上手</router-link></li>
     <!-- <li class="menu-item"><router-link to="">定制主题</router-link></li> -->
     <!-- <li class="menu-item"><router-link to="">更新日志</router-link></li> -->
@@ -35,7 +34,7 @@ export default {
   .menu {
     float: left;
     width: 260px;
-    margin-top: 30px;
+    margin-top: 45px;
 
     .menu-item {
       height: 40px;

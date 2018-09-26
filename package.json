@@ -40,7 +40,6 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "chalk": "^2.4.1",
-    "cheerio": "^1.0.0-rc.2",
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
@@ -59,13 +58,7 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
-    "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^3.2.0",
-    "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.0.2",
-    "markdown-it-container": "^2.0.0",
-    "markdown-it-emoji": "^1.4.0",
-    "markdown-it-table-of-contents": "^0.4.3",
     "node-sass": "^4.9.3",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "ora": "^3.0.0",
@@ -94,6 +87,7 @@
     "popper.js": "^1.14.4",
     "v-click-outside-x": "^3.2.2",
     "vue": "^2.5.17",
+    "vue-highlightjs": "^1.3.3",
     "vue-router": "^3.0.1"
   }
 }

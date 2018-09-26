@@ -1,40 +1,31 @@
 <template>
-  <div>
+  <div class="source">
     <div class="demo">
-      <div class="description">
-        <slot></slot>
-      </div>
-      <slot name="source"></slot>
+      <slot></slot>
     </div>
-    <div v-show="showCode">
-      <slot name="highlight"></slot>
+    <p class="hover">
+      <slot name="hover"></slot>
+      <i class="iconfont icon-daima" @click="showCode = !showCode"></i>
+    </p>
+    <div v-if="showCode" class="code">
+      <pre v-highlightjs>
+        <code class="xml">
+          <slot name="code"></slot>
+        </code>
+      </pre>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'DemoBlock',
-  data () {
-    return {
-      showCode: true
-    };
-  }
-};
+  import hljs from 'highlight.js';
+
+  export default {
+    name: 'DemoBlock',
+    data () {
+      return {
+        showCode: false
+      };
+    }
+  };
 </script>
-
-
-<style lang="scss" scoped>
-  .demo {
-    border: 1px solid #ebedf0;
-    margin-top: 12px;
-  }
-  .description {
-    line-height: 40px;
-    border-bottom: 1px solid #ebedf0;
-    padding: 0 15px;
-  }
-  .source {
-    padding: 15px;
-  }
-</style>

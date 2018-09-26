@@ -30,11 +30,11 @@ export default {
     right: 0;
     overflow-y: auto;
   }
-  .content {
+  .container {
     min-height: 100vh;
     margin-left: 258px;
-    margin-top: 30px;
-    padding: 0 30px;
+    margin-top: 45px;
+    padding: 0 45px;
     border-left: 1px solid #ebedf0;
   }
 </style>

@@ -41,22 +41,6 @@ module.exports = {
         }
       },
       {
-        test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false
-              }
-            }
-          },
-          {
-            loader: require.resolve('./markdown-loader')
-          }
-        ]
-      },
-      {
         test: /\.scss$/,
         use: [
           'vue-style-loader',

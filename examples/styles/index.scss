@@ -1,0 +1,262 @@
+body {
+  font-size: 14px;
+  color: #34495e;
+  font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+h1, h2, h3, h4, h5, h6, p, ul, li, ol {
+  margin: 0;
+  padding: 0;
+}
+ul, li, ol {
+  list-style: none;
+}
+a {
+  color: #34495e;
+  text-decoration: none;
+
+  &:hover, &.active {
+    color: #1890ff;
+  }
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.code {
+  .hljs {
+    display: block;
+  }
+  .hljs-tag {
+    color: #999;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  .hljs-name {
+    color: #f81d22;
+  }
+  .hljs-string, .hljs-title, .hljs-constant, .hljs-parent, .hljs-tag .hljs-value, .hljs-rules .hljs-value, .hljs-preprocessor, .hljs-pragma, .haml .hljs-symbol, .ruby .hljs-symbol, .ruby .hljs-symbol .hljs-string, .hljs-template_tag, .django .hljs-variable, .smalltalk .hljs-class, .hljs-addition, .hljs-flow, .hljs-stream, .bash .hljs-variable, .apache .hljs-tag, .apache .hljs-cbracket, .tex .hljs-command, .tex .hljs-special, .erlang_repl .hljs-function_or_atom, .asciidoc .hljs-header, .markdown .hljs-header, .coffeescript .hljs-attribute {
+    color: #008dff;
+  }
+  .hljs-attr {
+    color: #0b8235;
+  }
+  .hljs-keyword, .hljs-number, .hljs-built_in {
+    color: #008dff;
+  }
+  code {
+    margin: 0 1px;
+    border-radius: 3px;
+    font-size: .9em;
+    border: 1px solid #eee;
+  }
+  pre {
+    margin: 0;
+    border-radius: 2px;
+    background: #fff;
+    font-family: "Lucida Console", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    border-top: 1px dashed #ebedf0;
+    white-space: normal;
+  }
+  pre code {
+    border: none;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: #314659;
+    overflow: hidden;
+    white-space: normal;
+  }
+  pre code > span {
+    white-space: pre;
+    display: block;
+    overflow: auto;
+    margin-left: -20px;
+  }
+}
+.docs {
+  h1 {
+    color: #0d1a26;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    font-family: Avenir, "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 30px;
+    font-variant: tabular-nums;
+    line-height: 38px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h2, h3, h4, h5, h6 {
+    color: #0d1a26;
+    font-family: Avenir, "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-variant: tabular-nums;
+    margin: 1.6em 0 0.6em;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  h5 {
+    font-size: 14px;
+  }
+  h6 {
+    font-size: 12px;
+  }
+  p {
+    line-height: 28px;
+    margin: 0.2em 0;
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    background: #ebedf0;
+    margin: 56px 0;
+    clear: both;
+  }
+  ul > li {
+    list-style-type: circle;
+    margin-left: 20px;
+    padding-left: 4px;
+  }
+  ul > li:empty {
+    display: none;
+  }
+  ol > li {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 4px;
+  }
+  ol > li > p {
+    margin: 0.2em 0;
+  }
+  b {
+    font-weight: 500;
+  }
+  blockquote {
+    font-size: 90%;
+    color: #697b8c;
+    border-left: 4px solid #ebedf0;
+    padding-left: 0.8em;
+    margin: 1em 0;
+  }
+  blockquote p {
+    margin: 0;
+  }
+  .header-anchor {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    margin-left: 8px;
+  }
+  .waiting {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  a.edit-button {
+    display: inline-block;
+    margin-left: 8px;
+    text-decoration: none;
+  }
+  a.edit-button i {
+    color: #697b8c;
+  }
+  a.edit-button i:hover {
+    color: #1890ff;
+  }
+  a.edit-button .anticon {
+    display: block;
+    font-size: 16px;
+  }
+  h1:hover .header-anchor,
+  h2:hover .header-anchor,
+  h3:hover .header-anchor,
+  h4:hover .header-anchor,
+  h5:hover .header-anchor,
+  h6:hover .header-anchor {
+    opacity: 1;
+    display: inline-block;
+  }
+  br,
+  p > br {
+    clear: both;
+  }
+  table {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    margin: 2em 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    width: 100%;
+  }
+  table th,
+  td {
+    padding: 14px 16px;
+    border-width: 1px 0;
+    border-color: #e8e8e8;
+    text-align: left;
+  }
+  table th {
+    border-width: 0 0 2px 0;
+    white-space: nowrap;
+    color: #5c6b77;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 16px 24px;
+  }
+  table td {
+    border-bottom: 1px solid #ebedf0;
+    padding: 16px 24px;
+    text-align: left;
+  }
+  td:first-child {
+    font-weight: 500;
+    width: 20%;
+    color: #003a8c;
+  }
+  table td:nth-child(3) {
+    width: 22%;
+    font-size: 13px;
+    color: #c41d7f;
+    word-break: break-all;
+  }
+  table td:last-child {
+    width: 13%;
+    font-size: 13px;
+  }
+}
+.source {
+  margin: 10px 0;
+  border: 1px solid #ebedf0;
+  border-radius: 3px;
+
+  .demo {
+    padding: 30px 15px;
+  }
+  .hover {
+    position: relative;
+    padding: 20px 40px 20px 20px;
+    border-top: 1px solid #ebedf0;
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #898989;
+
+      &:hover {
+        color: #34495e;
+      }
+    }
+  }
+}

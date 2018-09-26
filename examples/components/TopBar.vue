@@ -6,8 +6,8 @@
     </router-link>
     <nav class="clearfix">
       <ul class="clearfix">
-        <li><router-link to="/">首页</router-link></li>
-        <li><router-link to="/docs/introduce">组件</router-link></li>
+        <!-- <li><router-link to="/">首页</router-link></li> -->
+        <li><router-link to="/docs">组件</router-link></li>
         <li>
           <a href="https://github.com/EagleTeamer/eagle.git" target="_blank">
             <i class="iconfont icon-github-fill"></i>
