@@ -45,13 +45,13 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader',
+          'postcss-loader',
           {
             loader: 'sass-loader',
             options: {
               // data: `$font-size: 14px;` // 定义常用的scss变量
             }
-          },
-          'postcss-loader'
+          }
         ]
       },
       {

@@ -1,0 +1,54 @@
+.container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+// Small devices (landscape phones, 576px and down)
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+.row {
+  @include make-row();
+}
+
+.col {
+  flex: 1;
+  max-width: 100%;
+}
+
+@each $col in $cols {
+  .col-#{$col} {
+    @include make-col($col);
+  }
+  .offset-#{$col} {
+    @include make-col-offset($col);
+  }
+}
+
+@each $breakpoint, $value in $grid-breakpoints {
+  @each $col in $cols {
+    @media (max-width: $value) {
+      .col-#{$breakpoint}-#{$col} {
+        @include make-col($col);
+      }
+      .offset-#{$breakpoint}-#{$col} {
+        @include make-col-offset($col);
+      }
+    }
+  }
+}
+
+@each $breakpoint, $value in $grid-breakpoints {
+  @media (max-width: $value) {
+    .hidden-#{$breakpoint} {
+      display: none;
+    }
+    .visible-#{$breakpoint} {
+      display: block;
+    }
+  }
+}

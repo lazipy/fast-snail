@@ -1,2 +1,9 @@
 @import './variable.scss';
-@import './common/normalize.scss';
+/* Mixin scss */
+@import './mixins/index.scss';
+/* Base class style */
+@import './base/index.scss';
+/* Animate Vue style */
+@import './animates/index.scss';
+/* Component style */
+@import './components/index.scss';

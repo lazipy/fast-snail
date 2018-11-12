@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import router from './router';
 import App from './App';
-import Eagle from '../src';
-import '../src/styles/index';
-import './styles/index';
-import VueHighlightJS from 'vue-highlightjs';
-import DemoBlock from './components/DemoBlock';
+import Eagle from '../lib/eagle.min';
+// import '../lib/styles/eagle.css';
 
-Vue.use(Eagle);
-Vue.use(VueHighlightJS);
-Vue.component('DemoBlock', DemoBlock);
+Vue.use(Eagle, {
+  components: {
+    'xx-alert': 'BAlert'
+  }
+});
+
 Vue.config.productionTip = false;
 
 new Vue ({
