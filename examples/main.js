@@ -2,7 +2,7 @@ import Vue from 'vue';
 import router from './router';
 import App from './App';
 import Eagle from '../lib/eagle.min';
-// import '../lib/styles/eagle.css';
+import '../lib/styles/eagle.css';
 
 Vue.use(Eagle, {
   components: {
