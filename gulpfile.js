@@ -10,5 +10,5 @@ gulp.task('style', function () {
     .pipe(cssmin())
     .pipe(autoprefix())
     .pipe(rename('eagle.css'))
-    .pipe(gulp.dest('./lib/styles'));
+    .pipe(gulp.dest('./lib/static'));
 });

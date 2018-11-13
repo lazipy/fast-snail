@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import router from './router';
 import App from './App';
-import Eagle from '../lib/eagle.min';
-import '../lib/styles/eagle.css';
+import Eagle from '../src/index.js';
+import '../src/styles/index.scss';
 
 Vue.use(Eagle, {
   components: {

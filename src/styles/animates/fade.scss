@@ -1,7 +1,79 @@
 // Fade
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .15s;
+  transition: opacity .3s;
 }
 .fade-enter, .fade-leave-to  {
   opacity: 0;
+}
+
+// Fade Rotate
+.fade-rotate-enter-active, .fade-rotate-leave-active {
+  transition: opacity .3s, transform .3s;
+  transform-origin: center top;
+}
+.fade-rotate-enter, .fade-rotate-leave-to {
+  opacity: 0;
+  transform: rotateX(90deg);
+}
+
+// Fade Up
+.fade-up-enter-active {
+  animation: fadeInUp .3s;
+}
+.fade-up-leave-active  {
+  animation: fadeOutDown .3s;
+}
+
+// Fade Down
+.fade-down-enter-active {
+  animation: fadeInDown .3s;
+}
+.fade-down-leave-active  {
+  animation: fadeOutUp .3s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
 }

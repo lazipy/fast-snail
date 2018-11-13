@@ -1,19 +1,32 @@
 <template>
   <div class="container">
-    <div class="bg-primary hidden-xs">
-      <span class="mdi mdi-home"></span>
-    </div>
+    <button @click="toggle">切换</button>
+    <b-animate ref="animate" name="shake">
+      <div class="bg-secondary"></div>
+    </b-animate>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  data () {
+    return {
+      visible: false
+    };
+  },
+  methods: {
+    toggle () {
+      this.$refs.animate.run();
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  div {
-    height: 100px;
+  .bg-secondary {
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
   }
 </style>

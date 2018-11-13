@@ -1,4 +1,4 @@
-$lines: 2, 3, 4;
+$lines: 2, 3, 4, 5;
 
 @each $color, $value in $theme-colors {
   .text-#{$color} {
