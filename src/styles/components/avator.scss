@@ -1,0 +1,24 @@
+.avator {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  // Type
+  &-circle {
+    border-radius: 50%;
+  }
+
+  &-round {
+    border-radius: $avator-border-radius;
+  }
+
+  &-square {
+    border-radius: none;
+  }
+}
