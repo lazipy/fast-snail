@@ -7,6 +7,10 @@
     <b-alert v-for="item in btns" :key="Math.random()" :type="item" :show-icon="true">This is a {{item}} alert—check it out!</b-alert>
     <hr>
     <b-alert v-for="item in btns" :key="Math.random()" :type="item" title="Well done!" :show-icon="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus officiis repellendus in illo autem neque dolor nulla, quas tempore veritatis itaque ea minima nostrum error optio, impedit ad doloribus velit!</b-alert>
+    <hr>
+    <b-alert v-for="item in btns" :key="Math.random()" :type="item" closeable :show-icon="true">This is a {{item}} alert—check it out!</b-alert>
+    <hr>
+    <b-alert v-for="item in btns" :key="Math.random()" :type="item" closeable title="Well done!" :show-icon="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus officiis repellendus in illo autem neque dolor nulla, quas tempore veritatis itaque ea minima nostrum error optio, impedit ad doloribus velit!</b-alert>
   </div>
 </template>
 

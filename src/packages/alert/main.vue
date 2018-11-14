@@ -4,17 +4,25 @@
       <h4 class="alert-heading" v-if="title">
         <i class="alert-icon" :class="iconClass" v-if="showIcon"></i>
         {{ title }}
+        <button
+          class="close"
+          v-if="closeable"
+          @click="handleClickClose"
+          data-dismiss="alert"
+          aria-label="Close">
+          <i class="icon-cancel"></i>
+        </button>
       </h4>
       <i class="alert-icon" :class="iconClass" v-if="showIcon && !title"></i>
       <slot></slot>
-      <!-- <button
+      <button
         class="close"
-        v-if="closeable"
+        v-if="closeable && !title"
         @click="handleClickClose"
         data-dismiss="alert"
         aria-label="Close">
         <i class="icon-cancel"></i>
-      </button> -->
+      </button>
     </div>
   </transition>
 </template>
