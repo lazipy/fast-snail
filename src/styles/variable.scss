@@ -48,7 +48,8 @@ $grid-breakpoints: (
   xs: 576px,
   sm: 768px,
   md: 992px,
-  lg: 1200px
+  lg: 1200px,
+  xl: 1200px
 );
 
 // Body
@@ -113,3 +114,24 @@ $zindex-modal-backdrop:    1040 !default;
 $zindex-modal:             1050 !default;
 $zindex-popover:           1060 !default;
 $zindex-tooltip:           1070 !default;
+
+// Button
+$btn-font-weight:  400 !default;
+$btn-padding-y: 10px !default;
+$btn-padding-x: 20px !default;
+$btn-line-height: 1 !default;
+$btn-border-radius: 4px !default;
+$btn-focus-box-shadow: 0 0 0 .2rem rgba(0,123,255,.25) !default;
+$btn-round: 34px !default;
+
+$btn-disabled-opacity: .5 !default;
+$btn-loading-opacity: .8 !default;
+$btn-link-disabled-color: $gray-500 !default;
+
+$btn-small-padding-y: 7px !default;
+$btn-small-padding-x: 12px !default;
+$btn-small-round: 28px !default;
+
+$btn-large-padding-y: 13px !default;
+$btn-large-padding-x: 25px !default;
+$btn-large-round: 40px !default;

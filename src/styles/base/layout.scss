@@ -32,24 +32,46 @@
 
 @each $breakpoint, $value in $grid-breakpoints {
   @each $col in $cols {
-    @media (max-width: $value) {
-      .col-#{$breakpoint}-#{$col} {
-        @include make-col($col);
+    @if ($breakpoint == "xl") {
+      @media (min-width: $value) {
+        .col-#{$breakpoint}-#{$col} {
+          @include make-col($col);
+        }
+        .offset-#{$breakpoint}-#{$col} {
+          @include make-col-offset($col);
+        }
       }
-      .offset-#{$breakpoint}-#{$col} {
-        @include make-col-offset($col);
+    } @else {
+      @media (max-width: $value) {
+        .col-#{$breakpoint}-#{$col} {
+          @include make-col($col);
+        }
+        .offset-#{$breakpoint}-#{$col} {
+          @include make-col-offset($col);
+        }
       }
     }
   }
 }
 
 @each $breakpoint, $value in $grid-breakpoints {
-  @media (max-width: $value) {
-    .hidden-#{$breakpoint} {
-      display: none;
+  @if ($breakpoint == "xl") {
+    @media (min-width: $value) {
+      .hidden-#{$breakpoint} {
+        display: none;
+      }
+      .visible-#{$breakpoint} {
+        display: block;
+      }
     }
-    .visible-#{$breakpoint} {
-      display: block;
+  } @else {
+    @media (max-width: $value) {
+      .hidden-#{$breakpoint} {
+        display: none;
+      }
+      .visible-#{$breakpoint} {
+        display: block;
+      }
     }
   }
 }

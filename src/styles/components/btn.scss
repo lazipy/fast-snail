@@ -1,0 +1,201 @@
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $font-size-sm;
+  line-height:  $btn-line-height;
+  border-radius: $btn-border-radius;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  + .btn:not(.btn-block) {
+    margin-left: 8px;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    background-color: $value;
+    border-color: darken($value, 4%);
+
+    // plain
+    &.btn-plain {
+      background-color: rgba($value, .15);
+      border-color: rgba($value, .7);
+
+      &:hover,
+      &.hover,
+      &:active,
+      &.active {
+        color: $light;
+      }
+    }
+
+    &:hover,
+    &.hover {
+      background-color: darken($value, 4%);
+    }
+
+    &:active,
+    &.active {
+      background-color: darken($value, 10%);
+      border-color: darken($value, 12%);
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 .2rem rgba($value, .5);
+    }
+
+    &.btn-disabled {
+      opacity: $btn-disabled-opacity;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+    &.is-loading {
+      opacity: $btn-loading-opacity;
+      box-shadow: none;
+    }
+  }
+  @if ($color == 'light') {
+    .btn-#{$color} {
+      color: $gray-900;
+
+      &:hover,
+      &.hover {
+        border-color: darken($value, 10%);
+      }
+      &.btn-plain {
+        &:hover,
+        &.hover,
+        &:active,
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+  } @else {
+    .btn-#{$color} {
+      color: $light;
+
+      &:hover,
+      &.hover {
+        border-color: darken($value, 6%);
+      }
+
+      &.btn-plain {
+        color: $value;
+      }
+    }
+  }
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  background-color: transparent;
+
+  &:hover,
+  &.hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  &.is-loading {
+    color: $btn-link-disabled-color;
+  }
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-small {
+  padding: $btn-small-padding-y $btn-small-padding-x;
+
+  &.btn-round {
+    border-radius: $btn-small-round;
+  }
+}
+
+.btn-large {
+  padding: $btn-large-padding-y $btn-large-padding-x;
+
+  &.btn-round {
+    border-radius: $btn-large-round;
+  }
+}
+
+// circle
+.btn-circle {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+// round
+.btn-round {
+  border-radius: $btn-round;
+}
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: 8px;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

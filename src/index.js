@@ -1,11 +1,13 @@
-import BAnimate from './packages/animate/main';
-import BAlert from './packages/alert/index.vue';
-import BBadge from './packages/badge/index.vue';
+import Animate from './packages/animate/main';
+import Button from './packages/button/main';
+import Row from './packages/row/main';
+import Col from './packages/col/main';
 
 const components = [
-  BAnimate,
-  BAlert,
-  BBadge
+  Animate,
+  Button,
+  Row,
+  Col
 ];
 
 const install = (Vue) => {
@@ -16,7 +18,8 @@ const install = (Vue) => {
 
 export default {
   install,
-  BAnimate,
-  BAlert,
-  BBadge
+  Animate,
+  Button,
+  Row,
+  Col
 };
