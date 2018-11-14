@@ -4,20 +4,13 @@
       <h4 class="alert-heading" v-if="title">
         <i class="alert-icon" :class="iconClass" v-if="showIcon"></i>
         {{ title }}
-        <button
-          class="close"
-          v-if="closeable"
-          @click="handleClickClose"
-          data-dismiss="alert"
-          aria-label="Close">
-          <i class="icon-cancel"></i>
-        </button>
       </h4>
+
       <i class="alert-icon" :class="iconClass" v-if="showIcon && !title"></i>
       <slot></slot>
       <button
         class="close"
-        v-if="closeable && !title"
+        v-if="closeable"
         @click="handleClickClose"
         data-dismiss="alert"
         aria-label="Close">
@@ -70,7 +63,10 @@
     },
     computed: {
       classes () {
-        return `alert-${this.type}`;
+        return [
+          `alert-${this.type}`,
+          this.closeable ? 'alert-dismissible' : ''
+        ];
       },
       iconClass () {
         return this.icon || `icon-${this.iconConfig[this.type]}`

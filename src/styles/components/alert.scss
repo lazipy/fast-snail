@@ -12,17 +12,9 @@
     border-color: rgba($value, .2);
     background-color: rgba($value, .16);
     color: darken($value, 18%);
-
-    .close:hover {
-      color: darken($value, 18%);
-    }
   }
   .alert-light {
     color: $body-color;
-
-    .close:hover {
-      color: $body-color;
-    }
   }
 }
 
@@ -40,4 +32,8 @@
     font-size: 24px;
     line-height: 1.2;
   }
+}
+
+.alert-dismissible {
+  padding-right: $alert-padding-right;
 }

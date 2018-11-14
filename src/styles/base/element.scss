@@ -3,16 +3,18 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0 12px;
-  height: 100%;
+  width: $close-width;
+  height: $close-height;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: $body-color;
   font-size: 12px;
+  opacity: .5;
+  color: inherit;
 
   &:hover {
-    color: lighten($primary, 20%);
+    color: #000;
+    opacity: .75;
   }
 
   &:focus {

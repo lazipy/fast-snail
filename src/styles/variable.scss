@@ -115,6 +115,10 @@ $zindex-modal:             1050 !default;
 $zindex-popover:           1060 !default;
 $zindex-tooltip:           1070 !default;
 
+// Close
+$close-width: 40px;
+$close-height: 40px;
+
 // Button
 $btn-font-weight:  400 !default;
 $btn-padding-y: 10px !default;
@@ -139,6 +143,7 @@ $btn-large-round: 40px !default;
 // Alert
 $alert-padding-y: 12px !default;
 $alert-padding-x: 18px !default;
+$alert-padding-right: 40px !default;
 
 $alert-margin-bottom: 14px !default;
 
