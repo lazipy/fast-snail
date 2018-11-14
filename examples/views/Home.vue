@@ -48,6 +48,12 @@
       <b-button :type="item" v-for="item in btns" block :key="item">{{ item }}</b-button>
     </div>
 
+    <b-button-group>
+      <b-button :type="item" v-for="(item, index) in btns"  :key="item">
+        {{index + 1}}
+      </b-button>
+    </b-button-group>
+
   </div>
 </template>
 

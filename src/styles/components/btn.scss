@@ -199,3 +199,29 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+// btn-group
+.btn-group {
+  font-size: 0;
+
+  .btn {
+    border-radius: 0;
+
+    &:not(:first-child) {
+      border-left-color: $border-color;
+    }
+
+    &:first-child {
+      margin-right: -1px;
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+
+    &:last-child {
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    + .btn:not(.btn-block) {
+      margin-left: 0;
+    }
+  }
+}
