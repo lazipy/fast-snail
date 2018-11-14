@@ -1,0 +1,31 @@
+.alert {
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+  font-size: $font-size-sm;
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    border-color: rgba($value, .2);
+    background-color: rgba($value, .16);
+    color: darken($value, 18%);
+  }
+  .alert-light {
+    color: $body-color;
+  }
+}
+
+.alert-icon {
+  font-size: 16px;
+  line-height: 1.32;
+}
+
+.alert-heading {
+  .alert-icon {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}

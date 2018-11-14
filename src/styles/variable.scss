@@ -128,10 +128,18 @@ $btn-disabled-opacity: .5 !default;
 $btn-loading-opacity: .8 !default;
 $btn-link-disabled-color: $gray-500 !default;
 
-$btn-small-padding-y: 7px !default;
+$btn-small-padding-y: 6px !default;
 $btn-small-padding-x: 12px !default;
 $btn-small-round: 28px !default;
 
 $btn-large-padding-y: 13px !default;
 $btn-large-padding-x: 25px !default;
 $btn-large-round: 40px !default;
+
+// Alert
+$alert-padding-y: 12px !default;
+$alert-padding-x: 18px !default;
+
+$alert-margin-bottom: 14px !default;
+
+$alert-border-radius: 4px !default;

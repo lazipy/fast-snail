@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { OneOf } from '../../utils'
+  import { themes, OneOf } from '../../utils';
 
   export default {
     name: 'BButton',
@@ -14,7 +14,7 @@
       type: {
         type: String,
         default: 'primary',
-        validator: OneOf(['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'])
+        validator: OneOf(themes.push('link'))
       },
       block: {
         type: Boolean,
@@ -58,7 +58,7 @@
       classes () {
         return [
           `btn-${this.type}`,
-          this.block ? `btn-block` : '',
+          this.block ? 'btn-block' : '',
           this.plain ? 'btn-plain' : '',
           this.disabled ? 'btn-disabled' : '',
           this.loading ? 'is-loading' : '',
