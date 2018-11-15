@@ -6,6 +6,7 @@ import Button from './packages/button/main';
 import ButtonGroup from './packages/button/group';
 import Row from './packages/row/main';
 import Col from './packages/col/main';
+import Icon from './packages/icon/main';
 
 const components = [
   Animate,
@@ -15,7 +16,8 @@ const components = [
   Button,
   ButtonGroup,
   Row,
-  Col
+  Col,
+  Icon
 ];
 
 const install = (Vue) => {
@@ -33,5 +35,6 @@ export default {
   Button,
   ButtonGroup,
   Row,
-  Col
+  Col,
+  Icon
 };
