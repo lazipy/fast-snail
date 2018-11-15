@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-
+    <b-breadcrumb>
+      <b-breadcrumb-item to="/">首页</b-breadcrumb-item>
+      <b-breadcrumb-item to="/home">集成化管理</b-breadcrumb-item>
+      <b-breadcrumb-item>优质房源</b-breadcrumb-item>
+    </b-breadcrumb>
   </div>
 </template>
 

@@ -3,6 +3,8 @@ import Alert from './packages/alert/main';
 import Avator from './packages/avator/main';
 import Backtop from './packages/backtop/main';
 import Badge from './packages/badge/main';
+import Breadcrumb from './packages/breadcrumb/main';
+import BreadcrumbItem from './packages/breadcrumb/item';
 import Button from './packages/button/main';
 import ButtonGroup from './packages/button/group';
 import Row from './packages/row/main';
@@ -15,6 +17,8 @@ const components = [
   Avator,
   Backtop,
   Badge,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   ButtonGroup,
   Row,
@@ -35,6 +39,8 @@ export default {
   Avator,
   Backtop,
   Badge,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   ButtonGroup,
   Row,

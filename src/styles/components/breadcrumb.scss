@@ -1,0 +1,32 @@
+.breadcrumb {
+  display: block;
+  padding: $breadcrumb-padding-x $breadcrumb-padding-y;
+  line-height: 1;
+  border-radius: $breadcrumb-border-radius;
+
+  // Item
+  &-item {
+    color: $secondary;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+  &-item.active {
+    color: $dark;
+    font-weight: 500;
+    cursor: auto;
+  }
+
+  // separator
+  &-separator {
+    color: $secondary;
+    margin: 0 10px;
+    font-weight: normal;
+  }
+  // first separator hidden
+  &-item:first-child &-separator {
+    display: none;
+  }
+}
