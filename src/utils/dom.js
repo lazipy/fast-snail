@@ -2,11 +2,8 @@
 // 该文件的函数为操作dom的方法，尽量少用
 //
 import { array_remove } from './data'
-/**
- * 给dom元素添加className
- * @param {dom元素} ele
- * @param {className} name
- */
+
+// 给dom元素添加class
 export const addClass = (ele, name) => {
   if (ele.className) {
     if (!hasClass(ele, name)) {
@@ -17,30 +14,20 @@ export const addClass = (ele, name) => {
   }
 }
 
-/**
- * 给dom元素移除className
- * @param {dom元素} ele
- * @param {className} name
- */
+// 给dom元素移除class
 export const removeClass = (ele, name) => {
   if (hasClass(ele, name)) {
     ele.className = array_remove(ele.className.split(' '), name)
   }
 }
 
-/**
- * 验证dom元素是否拥有该class
- * @param {dom} ele
- * @param {className} name
- */
+// 验证dom元素是否拥有该class
 const hasClass = (ele, name) => {
   if (ele.className.split(' ').includes(name)) return true;
   return false;
 }
 
-/**
- * 获取动画帧
- */
+// 获取动画帧
 export const requestAnimationFrame = (
   window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
@@ -49,14 +36,7 @@ export const requestAnimationFrame = (
   function (callback) { window.setTimeout(callback, 1000/60); }
 );
 
-/**
- * Scroll Animate
- * @param el
- * @param from
- * @param to
- * @param duration
- * @param callback
- */
+// Scroll Animate
 export const scrollTop = (el, from, to, duration = 500, callback) => {
   duration -= 500; // 初始效果
   const difference = Math.abs(from - to); // 总距离
@@ -98,9 +78,8 @@ const passive = () => {
   }
   return passiveIfSupported;
 }
-/**
- * 给元素绑定事件
- */
+
+// 给元素绑定事件
 export const on = (el, event, handler) => {
   if (document.addEventListener) {
     el.addEventListener(event, handler, passive );
@@ -109,9 +88,7 @@ export const on = (el, event, handler) => {
   }
 }
 
- /**
-  * 给元素解绑事件
-  */
+// 给元素解绑事件
  export const off = (el, event, handler) => {
   if (document.addEventListener) {
     el.removeEventListener(event, handler, passive );
