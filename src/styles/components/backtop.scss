@@ -1,0 +1,17 @@
+.backtop {
+  position: fixed;
+  cursor: pointer;
+
+  &-inner {
+    background-color: rgba($backtop-bg-color, .6);
+    box-shadow: 0 1px 3px rgba($backtop-bg-color, .2);
+    border-radius: $backtop-border-radius;
+    color: $backtop-color;
+    text-align: center;
+    transition: all .2s;
+
+    &:hover {
+      background-color: rgba($backtop-bg-color, .8);
+    }
+  }
+}

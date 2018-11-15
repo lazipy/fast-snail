@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-
+    <b-backtop></b-backtop>
   </div>
 </template>
 
@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .container {
+    height: 3000px;
+  }
   .bg-secondary, .bg-primary {
     height: 200px;
   }
