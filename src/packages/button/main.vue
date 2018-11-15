@@ -14,7 +14,7 @@
       type: {
         type: String,
         default: 'primary',
-        validator: OneOf(themes.push('link'))
+        validator: OneOf([...themes, 'link'])
       },
       block: {
         type: Boolean,

@@ -1,0 +1,73 @@
+.badge {
+  position: relative;
+  display: inline-block;
+
+  &-value {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    font-size: 75%;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+}
+// theme
+@each $color, $value in $theme-colors {
+  @if ($color == 'light') {
+    .badge-#{$color} {
+      color: $gray-900;
+    }
+  } @else {
+    .badge-#{$color} {
+      color: $light;
+    }
+  }
+  @if ($color == 'warning') {
+    .badge-#{$color} {
+      background-color: darken($value, 8%);
+    }
+  } @else {
+    .badge-#{$color} {
+      background-color: $value;
+    }
+  }
+}
+
+.badge-basic {
+  padding: .25em .4em;
+  border-radius: 4px;
+}
+
+.badge-pill {
+  height: 18px;
+  line-height: 18px;
+  border-radius: 18px;
+  padding: 0 5px;
+}
+
+.badge-dot {
+  padding: .3em;
+  border-radius: 50%;
+}
+
+.is-fixed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid $white;
+}
+.is-fixed.badge-basic {
+  padding: 0 3px;
+  right: 10px;
+  transform: translate(100%, -50%);
+}
+.is-fixed.badge-pill {
+  line-height: 16px;
+  right: 10px;
+  transform: translate(100%, -50%);
+}
+.is-fixed.badge-dot {
+  padding: 4px;
+  transform: translate(50%, -50%);
+}

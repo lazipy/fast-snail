@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
   </div>
 </template>
 
@@ -21,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
   .container {
+    padding-top: 120px;
     height: 3000px;
   }
   .bg-secondary, .bg-primary {

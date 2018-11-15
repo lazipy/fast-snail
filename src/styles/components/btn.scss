@@ -39,7 +39,6 @@ fieldset:disabled a.btn {
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     background-color: $value;
-    border-color: darken($value, 4%);
 
     // plain
     &.btn-plain {
@@ -85,11 +84,8 @@ fieldset:disabled a.btn {
   @if ($color == 'light') {
     .btn-#{$color} {
       color: $gray-900;
+      border-color: $border-color;
 
-      &:hover,
-      &.hover {
-        border-color: darken($value, 10%);
-      }
       &.btn-plain {
         &:hover,
         &.hover,
@@ -102,6 +98,7 @@ fieldset:disabled a.btn {
   } @else {
     .btn-#{$color} {
       color: $light;
+      border-color: darken($value, 4%);
 
       &:hover,
       &.hover {

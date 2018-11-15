@@ -2,6 +2,7 @@ import Animate from './packages/animate/main';
 import Alert from './packages/alert/main';
 import Avator from './packages/avator/main';
 import Backtop from './packages/backtop/main';
+import Badge from './packages/badge/main';
 import Button from './packages/button/main';
 import ButtonGroup from './packages/button/group';
 import Row from './packages/row/main';
@@ -13,6 +14,7 @@ const components = [
   Alert,
   Avator,
   Backtop,
+  Badge,
   Button,
   ButtonGroup,
   Row,
@@ -32,6 +34,7 @@ export default {
   Alert,
   Avator,
   Backtop,
+  Badge,
   Button,
   ButtonGroup,
   Row,
