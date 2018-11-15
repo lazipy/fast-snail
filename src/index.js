@@ -7,6 +7,7 @@ import Breadcrumb from './packages/breadcrumb/main';
 import BreadcrumbItem from './packages/breadcrumb/item';
 import Button from './packages/button/main';
 import ButtonGroup from './packages/button/group';
+import Card from './packages/card/main';
 import Row from './packages/row/main';
 import Col from './packages/col/main';
 import Icon from './packages/icon/main';
@@ -21,6 +22,7 @@ const components = [
   BreadcrumbItem,
   Button,
   ButtonGroup,
+  Card,
   Row,
   Col,
   Icon
@@ -43,6 +45,7 @@ export default {
   BreadcrumbItem,
   Button,
   ButtonGroup,
+  Card,
   Row,
   Col,
   Icon
