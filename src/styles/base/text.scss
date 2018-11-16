@@ -11,7 +11,7 @@ $lines: 2, 3, 4, 5;
 .text-justify  { text-align: justify !important; }
 .text-nowrap   { white-space: nowrap !important; }
 .text-ellipsis { @include text-truncate; }
-@each $line in lines {
+@each $line in $lines {
   .text-ellipsis-#{$line} {
     @include ellipsis($line);
   }

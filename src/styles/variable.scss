@@ -57,7 +57,7 @@ $grid-breakpoints: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-700 !default;
+$body-color:                $gray-800 !default;
 
 $border-color:                $gray-300 !default;
 
@@ -162,3 +162,8 @@ $backtop-border-radius: 2px !default;
 $breadcrumb-padding-x: 12px !default;
 $breadcrumb-padding-y: 20px !default;
 $breadcrumb-border-radius: 4px !default;
+
+// card
+$card-border-radius: 4px !default;
+$card-padding-x: 20px !default;
+$card-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
