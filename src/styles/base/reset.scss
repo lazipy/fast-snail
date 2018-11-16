@@ -188,6 +188,11 @@ sup {
 /* Embedded content
    ========================================================================== */
 
+blockquote {
+  margin: 0;
+  color: $gray-500;
+}
+
 /**
  * Remove the border on images inside links in IE 10.
  */

@@ -1,10 +1,11 @@
 <template>
   <div class="container">
-    <b-card :width="300" :src="src" title="Card Title" subtitle="Card subtitle" :text="text">
+    <b-bar :height="150" :src="src" title="Bar Title" :text="text" blockquote="Someone famous in Source Title">
       <span slot="actions">
-        <b-button>Go somewhere</b-button>
+        <b-button>Sort</b-button>
+        <b-button type="danger">Delete</b-button>
       </span>
-    </b-card>
+    </b-bar>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      src: 'http://weiwuu-unity.oss-cn-beijing.aliyuncs.com/resource/46074862314501/images/57983200457235.jpg',
+      src: 'http://oss-cn-beijing.aliyuncs.com/weiwuu-unity/resource/7974715323201/images/21676614105045.jpg?x-oss-process=image/resize,m_fixed,h_300,w_300',
       text: 'Some quick example text to build on the card title and make up the bulk of the card',
       theme: ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark']
     };

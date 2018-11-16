@@ -1,0 +1,49 @@
+.bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  min-height: 0;
+  height: 150px;
+  word-wrap: break-word;
+  background-color: $white;
+  border-radius: 4px;
+  padding: $bar-padding;
+  overflow: hidden;
+
+  &-img {
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &-body {
+    flex: 1;
+    margin-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
+  &-title {
+    margin-bottom: 12px;
+  }
+  &-text {
+    margin-bottom: 16px;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  &-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.bar-shadow {
+  box-shadow: $bar-box-shadow;
+}
+.bar-border {
+  border: 1px solid $border-color;
+}

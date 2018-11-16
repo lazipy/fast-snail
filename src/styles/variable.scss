@@ -105,7 +105,7 @@ $headings-margin-bottom:      8px !default;
 $headings-font-family:        inherit !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              inherit !default;
+$headings-color:              $gray-900 !default;
 
 $zindex-dropdown:          1000 !default;
 $zindex-sticky:            1020 !default;
@@ -167,3 +167,7 @@ $breadcrumb-border-radius: 4px !default;
 $card-border-radius: 4px !default;
 $card-padding-x: 20px !default;
 $card-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
+
+// bar
+$bar-padding: 15px !default;
+$bar-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;

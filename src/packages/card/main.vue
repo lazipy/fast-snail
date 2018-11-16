@@ -9,7 +9,7 @@
       <!-- 主体 -->
       <div class="card-body">
         <!-- 图片 -->
-        <div class="card-img" v-if="position === 'before' && src">
+        <div class="card-img" v-if="position === 'top' && src">
           <img :src="src" alt="">
         </div>
         <div class="card-inner">
@@ -23,7 +23,7 @@
           <slot name="actions"></slot>
         </div>
         <!-- 图片 -->
-        <div class="card-img" v-if="position === 'after' && src">
+        <div class="card-img" v-if="position === 'bottom' && src">
           <img :src="src" alt="">
         </div>
       </div>
@@ -48,7 +48,6 @@
         validator: OneOf(['shadow', 'border'])
       },
       width: Number,
-      height: Number,
       header: String,
       footer: String,
       title: String,
@@ -57,8 +56,8 @@
       src: String,
       position: {
         type: String,
-        default: 'before',
-        validator: OneOf(['before', 'after'])
+        default: 'top',
+        validator: OneOf(['top', 'bottom'])
       }
     },
     computed: {
@@ -69,8 +68,7 @@
       },
       currentStyle () {
         return {
-          width: this.width + 'px',
-          height: this.height + 'px'
+          width: this.width + 'px'
         };
       }
     }
