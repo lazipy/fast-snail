@@ -1,0 +1,45 @@
+.collapse {
+  border: 1px solid $border-color;
+  border-radius: $collapse-border-radius;
+
+  // Collapse Item
+  &-item {
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  // Title
+  &-title {
+    position: relative;
+    padding: $collapse-title-padding;
+    cursor: pointer;
+    background-color: $collapse-title-bg-color;
+    color: $collapse-title-color;
+    // arrow
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      display: inline-block;
+      font-size: 16px;
+      transform: translateY(-50%);
+      transition: all .3s;
+
+      &.active {
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: $collapse-disabled;
+    }
+  }
+  // content
+  &-content {
+    padding: $collapse-content-padding;
+    border-top: 1px solid $border-color;
+  }
+}

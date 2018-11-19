@@ -174,3 +174,11 @@ $bar-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
 
 // carousel
 $carousel-control-bg: rgba($light, .8) !default;
+
+// collapse
+$collapse-border-radius: 4px !default;
+$collapse-title-padding: 12px 20px !default;
+$collapse-title-bg-color: $gray-100 !default;
+$collapse-title-color: $gray-900 !default;
+$collapse-content-padding: 10px 20px !default;
+$collapse-disabled: $gray-400 !default;

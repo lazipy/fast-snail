@@ -85,6 +85,11 @@
         items: []
       };
     },
+    watch: {
+      activeIndex (val, old) {
+        this.$emit('change', val, old);
+      }
+    },
     computed: {
       currentStyle () {
         return {

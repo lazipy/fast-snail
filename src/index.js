@@ -11,6 +11,8 @@ import ButtonGroup from './packages/button/group';
 import Card from './packages/card/main';
 import Carousel from './packages/carousel/main';
 import CarouselItem from './packages/carousel/item';
+import Collapse from './packages/collapse/main';
+import CollapseItem from './packages/collapse/item';
 import Col from './packages/col/main';
 import Icon from './packages/icon/main';
 import Row from './packages/row/main';
@@ -29,6 +31,8 @@ const components = [
   Card,
   Carousel,
   CarouselItem,
+  Collapse,
+  CollapseItem,
   Row,
   Col,
   Icon
@@ -55,6 +59,8 @@ export default {
   Card,
   Carousel,
   CarouselItem,
+  Collapse,
+  CollapseItem,
   Row,
   Col,
   Icon
