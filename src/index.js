@@ -9,9 +9,11 @@ import BreadcrumbItem from './packages/breadcrumb/item';
 import Button from './packages/button/main';
 import ButtonGroup from './packages/button/group';
 import Card from './packages/card/main';
-import Row from './packages/row/main';
+import Carousel from './packages/carousel/main';
+import CarouselItem from './packages/carousel/item';
 import Col from './packages/col/main';
 import Icon from './packages/icon/main';
+import Row from './packages/row/main';
 
 const components = [
   Animate,
@@ -25,6 +27,8 @@ const components = [
   Button,
   ButtonGroup,
   Card,
+  Carousel,
+  CarouselItem,
   Row,
   Col,
   Icon
@@ -49,6 +53,8 @@ export default {
   Button,
   ButtonGroup,
   Card,
+  Carousel,
+  CarouselItem,
   Row,
   Col,
   Icon

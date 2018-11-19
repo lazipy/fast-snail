@@ -76,8 +76,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "lodash.debounce": "^4.0.8",
-    "lodash.throttle": "^4.1.1",
+    "debounce-throttle": "^1.0.4",
     "popper.js": "^1.14.4",
     "v-click-outside-x": "^3.2.2",
     "vue": "^2.5.17",

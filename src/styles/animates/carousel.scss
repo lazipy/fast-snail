@@ -1,0 +1,31 @@
+// Carousel left
+.carousel-left-enter-active, .carousel-left-leave-active {
+  transition: all .6s ease;
+}
+.carousel-left-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carousel-left-enter {
+  transform: translate(100%, 0);
+}
+.carousel-left-leave-to  {
+  transform: translate(-100%, 0);
+}
+
+// Carousel right
+.carousel-right-enter-active, .carousel-right-leave-active {
+  transition: all .6s ease;
+}
+.carousel-right-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carousel-right-enter {
+  transform: translate(-100%, 0);
+}
+.carousel-right-leave-to  {
+  transform: translate(100%, 0);
+}
