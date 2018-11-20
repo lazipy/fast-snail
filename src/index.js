@@ -18,6 +18,7 @@ import Col from './packages/col/main';
 import Icon from './packages/icon/main';
 import Row from './packages/row/main';
 import Tooltip from './packages/tooltip/main';
+import Popover from './packages/popover/main';
 
 const components = [
   Animate,
@@ -39,7 +40,8 @@ const components = [
   Row,
   Col,
   Icon,
-  Tooltip
+  Tooltip,
+  Popover
 ];
 
 const install = (Vue) => {
@@ -69,5 +71,6 @@ export default {
   Row,
   Col,
   Icon,
-  Tooltip
+  Tooltip,
+  Popover
 };

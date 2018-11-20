@@ -16,7 +16,7 @@
         @mouseenter="handleTooltipEnter"
         @mouseleave="handleTooptipLeave">
         <div class="tooltip-content" :style="{maxWidth: maxWidth}">{{ content }}</div>
-        <div x-arrow class="tooltip-arrow"></div>
+        <div x-arrow class="tooltip-arrow" v-if="arrow"></div>
       </div>
     </transition>
   </div>
@@ -59,6 +59,10 @@
       enterable: {
         type: Boolean,
         default: true
+      },
+      arrow: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
@@ -70,6 +74,7 @@
     computed: {
       config () {
         return {
+          placement: this.placement,
           modifiers: {
             computeStyle: {
               gpuAcceleration: false

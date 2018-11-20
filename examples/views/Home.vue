@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <b-tooltip content="这是一个按钮">
+    <b-tooltip content="这是一个按钮" placement="top-start">
       <b-button>按钮</b-button>
     </b-tooltip>
   </div>
