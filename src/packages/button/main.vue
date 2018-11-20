@@ -1,5 +1,12 @@
 <template>
-  <button :autofocus="autofocus" @click="handleClick" :type="nativeType" class="btn" :class="classes" :disabled="disabled">
+  <button
+    class="btn"
+    :class="classes"
+    ref="button"
+    :autofocus="autofocus"
+    @click="handleClick"
+    :type="nativeType"
+    :disabled="disabled">
     <i v-if="loading" class="icon-spin4 spinner"></i>
     <slot></slot>
   </button>
@@ -75,6 +82,9 @@
           return;
         }
         this.$emit('click');
+      },
+      focus () {
+        this.$refs.button.focus();
       }
     }
   };
