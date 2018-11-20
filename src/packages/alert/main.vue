@@ -31,6 +31,11 @@
         default: 'primary',
         validator: OneOf(themes)
       },
+      level: {
+        type: String,
+        default: 'middle',
+        validator: OneOf(['low', 'middle', 'highest'])
+      },
       title: String,
       showIcon: {
         type: Boolean,
@@ -65,6 +70,7 @@
       classes () {
         return [
           `alert-${this.type}`,
+          `alert-${this.level}`,
           this.closeable ? 'alert-dismissible' : ''
         ];
       },

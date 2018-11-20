@@ -8,13 +8,24 @@
 }
 
 @each $color, $value in $theme-colors {
-  .alert-#{$color} {
+  .alert-#{$color}.alert-highest {
+    border-color: $value;
+    background-color: $value;
+    color: $white;
+  }
+  .alert-#{$color}.alert-middle {
+    border: none;
+    border-left: 4px solid $value;
+    background-color: rgba($value, .12);
+    color: darken($value, 12%);
+  }
+  .alert-#{$color}.alert-low {
     border-color: rgba($value, .2);
-    background-color: rgba($value, .16);
+    background-color: rgba($value, .12);
     color: darken($value, 18%);
   }
   .alert-light {
-    color: $body-color;
+    color: $body-color !important;
   }
 }
 
@@ -27,6 +38,7 @@
   position: relative;
   margin-right: -$alert-padding-x;
   padding-right: $alert-padding-x;
+  color: inherit;
 
   .alert-icon {
     font-size: 24px;

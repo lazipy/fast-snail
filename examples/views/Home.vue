@@ -1,10 +1,6 @@
 <template>
   <div class="container">
-    <b-collapse v-model="state" accordion>
-      <b-collapse-item title="测试1" name="1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolor earum quos delectus aperiam, error assumenda sed quod ducimus omnis necessitatibus dolores atque officiis hic dolorem mollitia similique exercitationem nam.</b-collapse-item>
-      <b-collapse-item title="测试2" name="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolor earum quos delectus aperiam, error assumenda sed quod ducimus omnis necessitatibus dolores atque officiis hic dolorem mollitia similique exercitationem nam.</b-collapse-item>
-      <b-collapse-item title="测试3" name="3" disabled>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolor earum quos delectus aperiam, error assumenda sed quod ducimus omnis necessitatibus dolores atque officiis hic dolorem mollitia similique exercitationem nam.</b-collapse-item>
-    </b-collapse>
+    <b-alert title="标题" level="low">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque eaque dolore. Vero aperiam, nam debitis illo molestias modi, iusto, molestiae nesciunt quam architecto ipsam beatae est. Dolorem, inventore accusantium.</b-alert>
   </div>
 </template>
 
