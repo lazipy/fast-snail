@@ -14,7 +14,7 @@
 
 <script>
   import { array_remove } from '../../utils/data';
-  import CollapseAnimate from '../animate/collapse';
+  import CollapseAnimate from './animate';
 
   export default {
     name: 'BCollapseItem',

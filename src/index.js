@@ -13,6 +13,7 @@ import Carousel from './packages/carousel/main';
 import CarouselItem from './packages/carousel/item';
 import Collapse from './packages/collapse/main';
 import CollapseItem from './packages/collapse/item';
+import CollapseAnimate from './packages/collapse/animate';
 import Col from './packages/col/main';
 import Icon from './packages/icon/main';
 import Row from './packages/row/main';
@@ -33,6 +34,7 @@ const components = [
   CarouselItem,
   Collapse,
   CollapseItem,
+  CollapseAnimate,
   Row,
   Col,
   Icon
@@ -61,6 +63,7 @@ export default {
   CarouselItem,
   Collapse,
   CollapseItem,
+  CollapseAnimate,
   Row,
   Col,
   Icon
