@@ -29,9 +29,15 @@
   import Popper from 'popper.js';
   import { debounce } from 'debounce-throttle'
   import { OneOf } from '../../utils';
+  import ChildEvent from '../../directives/child-event';
+  import Transfer from '../../directives/transfer';
 
   export default {
     name: 'BTooltip',
+    directives: {
+      ChildEvent,
+      Transfer
+    },
     props: {
       trigger: {
         type: String,
