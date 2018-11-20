@@ -22,7 +22,7 @@ export const removeClass = (ele, name) => {
 }
 
 // 验证dom元素是否拥有该class
-const hasClass = (ele, name) => {
+export const hasClass = (ele, name) => {
   if (ele.className.split(' ').includes(name)) return true;
   return false;
 }

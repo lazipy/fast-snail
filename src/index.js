@@ -1,3 +1,4 @@
+// Components
 import Animate from './packages/animate/main';
 import Alert from './packages/alert/main';
 import Avator from './packages/avator/main';
@@ -19,6 +20,10 @@ import Icon from './packages/icon/main';
 import Row from './packages/row/main';
 import Tooltip from './packages/tooltip/main';
 import Popover from './packages/popover/main';
+
+// Directives
+import Transfer from './directives/transfer';
+import ChildEvent from './directives/child-event';
 
 const components = [
   Animate,
@@ -48,6 +53,9 @@ const install = (Vue) => {
   components.map(component => {
     Vue.component(component.name, component);
   });
+
+  Vue.directive('transfer', Transfer);
+  Vue.directive('child-event', ChildEvent);
 };
 
 export default {

@@ -4,6 +4,7 @@
       ref="reference"
       class="tooltip-reference"
       @click="handleRefereceClick"
+      v-child-event="{ events: ['focus', 'blur'], handlers: [handleRefereceFocus, handleRefereceBlur] }"
       @mouseenter="handleRefereceEnter"
       @mouseleave="handleRefereceLeave">
       <slot></slot>
@@ -13,6 +14,7 @@
       <div
         ref="popper"
         class="tooltip"
+        v-transfer
         v-show="visible"
         @mouseenter="handleTooltipEnter"
         @mouseleave="handleTooptipLeave">
@@ -105,10 +107,20 @@
     },
     destroyed () {
       this.popper = null;
-      clearTimeout(this.timer);
+      this.timer = null;
     },
     methods: {
       // Referece
+      // Trigger focus
+      handleRefereceFocus () {
+        if (this.trigger !== 'focus') return;
+        this.delayShow();
+      },
+      handleRefereceBlur () {
+        if (this.trigger !== 'focus') return;
+        this.delayHide();
+      },
+      // Trigger click
       handleRefereceClick () {
         if (this.trigger !== 'click') return;
         if (this.visible) {
@@ -117,24 +129,34 @@
           this.debounceShow();
         }
       },
+      // Trigger hover
       handleRefereceEnter () {
         if (this.trigger !== 'hover') return;
-        this.debounceHide();
+        this.delayShow();
       },
       handleRefereceLeave () {
         if (this.trigger !== 'hover') return;
-        this.debounceHide();
+        this.delayHide();
       },
       // Tooltip
       handleTooltipEnter () {
         if (this.trigger !== 'hover') return;
-        if (this.enterable) {
+        if (this.enterable && this.timer) {
           clearTimeout(this.timer);
         }
       },
       handleTooptipLeave () {
         if (this.trigger !== 'hover') return;
-        this.debounceHide();
+        this.delayHide();
+      },
+      // delay show
+      delayShow () {
+        this.timer && clearTimeout(this.timer);
+        this.timer = setTimeout(this.show, this.showDelay);
+      },
+      delayHide () {
+        this.timer && clearTimeout(this.timer);
+        this.timer = setTimeout(this.hide, this.hideDelay);
       },
       // Show
       show () {
