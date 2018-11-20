@@ -3,6 +3,7 @@
     <div
       ref="reference"
       class="tooltip-reference"
+      @click="handleRefereceClick"
       @mouseenter="handleRefereceEnter"
       @mouseleave="handleRefereceLeave">
       <slot></slot>
@@ -24,11 +25,17 @@
 
 <script>
   import Popper from 'popper.js';
+  import { debounce } from 'debounce-throttle'
   import { OneOf } from '../../utils';
 
   export default {
     name: 'BTooltip',
     props: {
+      trigger: {
+        type: String,
+        default: 'hover',
+        validator: OneOf(['hover', 'click', 'focus'])
+      },
       placement: {
         type: String,
         default: 'bottom',
@@ -89,6 +96,10 @@
         };
       }
     },
+    created () {
+      this.debounceShow = debounce(this.show, this.showDelay);
+      this.debounceHide = debounce(this.hide, this.hideDelay);
+    },
     mounted () {
       this.popper = new Popper(this.$refs.reference, this.$refs.popper, this.config);
     },
@@ -98,37 +109,41 @@
     },
     methods: {
       // Referece
+      handleRefereceClick () {
+        if (this.trigger !== 'click') return;
+        if (this.visible) {
+          this.debounceHide();
+        } else {
+          this.debounceShow();
+        }
+      },
       handleRefereceEnter () {
-        this.show();
+        if (this.trigger !== 'hover') return;
+        this.debounceHide();
       },
       handleRefereceLeave () {
-        this.hide();
+        if (this.trigger !== 'hover') return;
+        this.debounceHide();
       },
       // Tooltip
       handleTooltipEnter () {
+        if (this.trigger !== 'hover') return;
         if (this.enterable) {
           clearTimeout(this.timer);
         }
       },
       handleTooptipLeave () {
-        this.hide();
+        if (this.trigger !== 'hover') return;
+        this.debounceHide();
       },
       // Show
       show () {
-        clearTimeout(this.timer);
-
-        this.timer = setTimeout(() => {
-          this.visible = true;
-          this.popper.update();
-        }, this.showDelay);
+        this.visible = true;
+        this.popper.update();
       },
       // Hide
       hide () {
-        clearTimeout(this.timer);
-
-        this.timer = setTimeout(() => {
-          this.visible = false;
-        }, this.hideDelay);
+        this.visible = false;
       }
     }
   };
