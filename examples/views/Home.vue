@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <b-alert title="标题" level="low">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque eaque dolore. Vero aperiam, nam debitis illo molestias modi, iusto, molestiae nesciunt quam architecto ipsam beatae est. Dolorem, inventore accusantium.</b-alert>
+    <b-tooltip content="这是一个按钮">
+      <b-button>按钮</b-button>
+    </b-tooltip>
   </div>
 </template>
 

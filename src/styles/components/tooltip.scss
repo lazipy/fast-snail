@@ -1,0 +1,63 @@
+.tooltip-wrap {
+  position: relative;
+}
+
+// Referece
+.tooltip-reference {
+  display: inline-block;
+}
+
+// Tooltip
+.tooltip {
+  position: absolute;
+  z-index: 2000;
+
+  &[x-placement="top"], &[x-placement="top-start"], &[x-placement="top-end"] {
+    padding-bottom: 12px;
+    .tooltip-arrow {
+      bottom: 0;
+      border-top-color: $tooltip-bg-color;
+    }
+  }
+  &[x-placement="bottom"], &[x-placement="bottom-start"], &[x-placement="bottom-end"] {
+    padding-top: 12px;
+    .tooltip-arrow {
+      top: 0;
+      border-bottom-color: $tooltip-bg-color;
+    }
+  }
+  &[x-placement="left"], &[x-placement="left-start"], &[x-placement="left-end"] {
+    padding-right: 12px;
+    .tooltip-arrow {
+      right: 0;
+      border-left-color: $tooltip-bg-color;
+    }
+  }
+  &[x-placement="right"], &[x-placement="right-start"], &[x-placement="right-end"] {
+    padding-left: 12px;
+    .tooltip-arrow {
+      left: 0;
+      border-right-color: $tooltip-bg-color;
+    }
+  }
+}
+
+// content
+.tooltip-content {
+  background: $tooltip-bg-color;
+  border-radius: 4px;
+  padding: $tooltip-padding;
+  color: $white;
+  font-size: 12px;
+  line-height: 1;
+  min-width: 10px;
+}
+
+// Arrow
+.tooltip-arrow {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}

@@ -17,6 +17,7 @@ import CollapseAnimate from './packages/collapse/animate';
 import Col from './packages/col/main';
 import Icon from './packages/icon/main';
 import Row from './packages/row/main';
+import Tooltip from './packages/tooltip/main';
 
 const components = [
   Animate,
@@ -37,7 +38,8 @@ const components = [
   CollapseAnimate,
   Row,
   Col,
-  Icon
+  Icon,
+  Tooltip
 ];
 
 const install = (Vue) => {
@@ -66,5 +68,6 @@ export default {
   CollapseAnimate,
   Row,
   Col,
-  Icon
+  Icon,
+  Tooltip
 };
