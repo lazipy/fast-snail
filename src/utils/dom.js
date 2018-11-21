@@ -17,7 +17,7 @@ export const addClass = (ele, name) => {
 // 给dom元素移除class
 export const removeClass = (ele, name) => {
   if (hasClass(ele, name)) {
-    ele.className = array_remove(ele.className.split(' '), name)
+    ele.className = array_remove(ele.className.split(' '), name).join(' ');
   }
 }
 
