@@ -8,6 +8,7 @@
       <router-link to="/backtop">backtop</router-link>
       <router-link to="/badge">badge</router-link>
       <router-link to="/bar">bar</router-link>
+      <router-link to="/breadcrumb">breadcrumb</router-link>
       <router-link to="/layout">layout</router-link>
     </div>
     <div>
