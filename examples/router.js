@@ -10,6 +10,7 @@ export default new Router({
     { path: '/alert', component: () => import('./views/alert.vue') },
     { path: '/animate', component: () => import('./views/animate.vue') },
     { path: '/avator', component: () => import('./views/avator.vue') },
+    { path: '/backtop', component: () => import('./views/backtop.vue') },
     { path: '/layout', component: () => import('./views/layout.vue') }
   ],
 });
