@@ -3,6 +3,7 @@
     <div class="linksWrap">
       <router-link to="/affix">affix</router-link>
       <router-link to="/alert">alert</router-link>
+      <router-link to="/animate">animate</router-link>
       <router-link to="/layout">layout</router-link>
     </div>
     <div>
