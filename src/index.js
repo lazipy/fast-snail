@@ -2,6 +2,7 @@
 import Animate from './packages/animate/main';
 import Alert from './packages/alert/main';
 import Avator from './packages/avator/main';
+import Affix from './packages/affix/main';
 import Backtop from './packages/backtop/main';
 import Badge from './packages/badge/main';
 import Bar from './packages/bar/main';
@@ -29,6 +30,7 @@ const components = [
   Animate,
   Alert,
   Avator,
+  Affix,
   Backtop,
   Badge,
   Bar,

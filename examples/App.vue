@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div class="linksWrap">
+      <router-link to="/affix">affix</router-link>
+      <router-link to="/layout">layout</router-link>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -9,3 +15,13 @@ export default {
   name: 'App'
 };
 </script>
+<style lang="scss" scoped>
+.linksWrap{
+  background: #ccc;
+  padding: 10px;
+  a{
+    padding: 10px;
+  }
+}
+</style>
+

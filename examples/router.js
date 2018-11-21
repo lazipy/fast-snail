@@ -4,9 +4,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
-    { path: '/', component: () => import('./views/Home.vue') },
-    { path: '/styles/layout', component: () => import('./views/classes/layout.vue') }
+    { path: '/affix', component: () => import('./views/affix.vue') },
+    { path: '/layout', component: () => import('./views/layout.vue') }
   ],
-  mode: 'history'
 });
