@@ -37,13 +37,23 @@
         };
       }
     },
+    watch: {
+      gutter () {
+        this.updateItems();
+      }
+    },
     mounted () {
-      this.$slots.default.forEach(item => {
-        if (item.tag) {
-          item.elm.style.paddingLeft = this.gutter / 2 + 'px';
-          item.elm.style.paddingRight = this.gutter / 2 + 'px';
-        }
-      });
+      this.updateItems();
+    },
+    methods: {
+      updateItems () {
+        this.$children.forEach(item => {
+          if (item.$el && item.$options._componentTag === 'b-col') {
+            item.$el.style.paddingLeft = this.gutter / 2 + 'px';
+            item.$el.style.paddingRight = this.gutter / 2 + 'px';
+          }
+        });
+      }
     }
   };
 </script>
