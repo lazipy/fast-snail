@@ -12,6 +12,7 @@ export default new Router({
     { path: '/avator', component: () => import('./views/avator.vue') },
     { path: '/backtop', component: () => import('./views/backtop.vue') },
     { path: '/badge', component: () => import('./views/badge.vue') },
+    { path: '/bar', component: () => import('./views/bar.vue') },
     { path: '/layout', component: () => import('./views/layout.vue') }
   ],
 });
