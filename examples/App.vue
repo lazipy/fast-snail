@@ -6,6 +6,7 @@
       <router-link to="/animate">animate</router-link>
       <router-link to="/avator">avator</router-link>
       <router-link to="/backtop">backtop</router-link>
+      <router-link to="/badge">badge</router-link>
       <router-link to="/layout">layout</router-link>
     </div>
     <div>
