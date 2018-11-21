@@ -14,6 +14,7 @@ export default new Router({
     { path: '/badge', component: () => import('./views/badge.vue') },
     { path: '/bar', component: () => import('./views/bar.vue') },
     { path: '/breadcrumb', component: () => import('./views/breadcrumb.vue') },
+    { path: '/button', component: () => import('./views/button.vue') },
     { path: '/layout', component: () => import('./views/layout.vue') }
   ],
 });
