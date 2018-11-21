@@ -28,9 +28,10 @@ const offChildren = (el, events, handlers) => {
   events.forEach((event, index) => {
     for (let child of children) {
       // 判断元素是否拥有该事件
-      if (!child.dataset
-        || !child.dataset[event]
-        || child.dataset[event] !== handlers
+      if (
+        !child.dataset ||
+        !child.dataset[event] ||
+        child.dataset[event] !== handlers
       ) return;
 
       off(child, event, handlers[index]);
