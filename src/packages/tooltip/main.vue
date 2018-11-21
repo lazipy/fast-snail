@@ -1,8 +1,8 @@
 <template>
   <div class="tooltip-wrap">
     <div
-      ref="reference"
       class="tooltip-reference"
+      ref="reference"
       @click="handleRefereceClick"
       v-child-event="{ events: ['focus', 'blur'], handlers: [handleRefereceFocus, handleRefereceBlur] }"
       @mouseenter="handleRefereceEnter"
@@ -12,8 +12,8 @@
 
     <transition name="fade">
       <div
-        ref="popper"
         class="tooltip"
+        ref="popper"
         v-transfer
         v-show="visible"
         @mouseenter="handleTooltipEnter"
@@ -58,7 +58,8 @@
         default: () => {}
       },
       content: {
-        type: String
+        type: String,
+        required: true
       },
       showDelay: {
         type: Number,
@@ -68,9 +69,7 @@
         type: Number,
         default: 200
       },
-      maxWidth: {
-        type: String
-      },
+      maxWidth: String,
       enterable: {
         type: Boolean,
         default: true
