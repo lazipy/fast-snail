@@ -15,6 +15,10 @@ export default new Router({
     { path: '/bar', component: () => import('./views/bar.vue') },
     { path: '/breadcrumb', component: () => import('./views/breadcrumb.vue') },
     { path: '/button', component: () => import('./views/button.vue') },
+    { path: '/card', component: () => import('./views/card.vue') },
+    { path: '/carousel', component: () => import('./views/carousel.vue') },
+    { path: '/collapse', component: () => import('./views/collapse.vue') },
+    { path: '/tooltip', component: () => import('./views/tooltip.vue') },
     { path: '/layout', component: () => import('./views/layout.vue') }
   ],
 });
