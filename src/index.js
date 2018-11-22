@@ -17,6 +17,9 @@ import Collapse from './packages/collapse/main';
 import CollapseItem from './packages/collapse/item';
 import CollapseAnimate from './packages/collapse/animate';
 import Col from './packages/col/main';
+import Dropdown from './packages/dropdown/main';
+import DropdownMenu from './packages/dropdown/menu';
+import DropdownItem from './packages/dropdown/item';
 import Icon from './packages/icon/main';
 import Row from './packages/row/main';
 import Tooltip from './packages/tooltip/main';
@@ -47,6 +50,9 @@ const components = [
   CollapseAnimate,
   Row,
   Col,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
   Icon,
   Tooltip,
   Popover
@@ -82,6 +88,9 @@ export default {
   CollapseAnimate,
   Row,
   Col,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
   Icon,
   Tooltip,
   Popover
