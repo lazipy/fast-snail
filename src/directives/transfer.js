@@ -8,5 +8,8 @@ export default {
   },
   componentUpdated (el) {
     el.style.zIndex = ++zIndex;
+  },
+  unbind (el) {
+    document.body.removeChild(el);
   }
 };

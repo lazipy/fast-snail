@@ -95,9 +95,6 @@
             computeStyle: {
               gpuAcceleration: false
             },
-            preventOverflow: {
-              boundariesElement: 'body'
-            },
             offset: {
               offset: this.offset
             }
@@ -112,9 +109,7 @@
             this.isMounted = true;
           }
           this.$nextTick(() => {
-            if (this.popper) {
-              this.updatePopper();
-            } else {
+            if (!this.popper) {
               this.createPopper();
             }
           });
@@ -141,9 +136,6 @@
         ) return;
 
         this.popper = new Popper(this.$refs.reference, this.$refs.popper, this.config);
-      },
-      updatePopper () {
-        this.popper.update();
       },
       // Reference
       // Trigger focus
