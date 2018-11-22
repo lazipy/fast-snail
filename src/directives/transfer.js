@@ -1,11 +1,14 @@
 import { getStyle } from '../utils/dom';
 
-let zIndex = 2000;
+let zIndex = 0;
 
 export default {
   inserted (el, { value = true }) {
     if (!el) return;
+
+    zIndex = getStyle(el, 'zIndex');
     el.style.zIndex = ++zIndex;
+
     value && document.body.appendChild(el);
   },
   update (el) {
