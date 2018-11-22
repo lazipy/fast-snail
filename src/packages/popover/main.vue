@@ -1,5 +1,5 @@
 <template>
-  <div class="popover-wrap">
+  <div class="popover-wrap" v-out-click="handleOutClick">
     <div
       class="popover-reference"
       ref="reference"
@@ -17,6 +17,7 @@
         v-transfer
         v-if="isMounted"
         v-show="visible"
+        @click.stop="() => { return false; }"
         @mouseenter="handleTooltipEnter"
         @mouseleave="handleTooptipLeave"
         role="tooltip">
@@ -34,7 +35,6 @@
 
 <script>
   import popper from '../../mixins/popper';
-  import { OneOf } from '../../utils';
 
   export default {
     name: 'BPopover',
@@ -42,14 +42,10 @@
     props: {
       title: String,
       trigger: {
-        type: String,
-        default: 'click',
-        validator: OneOf(['hover', 'click', 'focus'])
+        default: 'click'
       },
       placement: {
-        type: String,
-        default: 'top',
-        validator: OneOf(['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'])
+        default: 'top'
       }
     }
   };

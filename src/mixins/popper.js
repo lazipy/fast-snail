@@ -4,21 +4,21 @@ import { OneOf } from '../utils';
 import { on, off } from '../utils/dom';
 import ChildEvent from '../directives/child-event';
 import Transfer from '../directives/transfer';
+import OutClick from '../directives/out-click';
 
 export default {
   directives: {
     ChildEvent,
-    Transfer
+    Transfer,
+    OutClick
   },
   props: {
     trigger: {
       type: String,
-      default: 'click',
       validator: OneOf(['hover', 'click', 'focus'])
     },
     placement: {
       type: String,
-      default: 'top',
       validator: OneOf(['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'])
     },
     offset: {
@@ -131,11 +131,11 @@ export default {
     // Trigger click
     handleReferenceClick () {
       if (this.trigger !== 'click') return;
-      if (this.visible) {
-        this.debounceHide();
-      } else {
-        this.debounceShow();
-      }
+      this.debounceShow();
+    },
+    handleOutClick () {
+      if (this.trigger !== 'click') return;
+      this.debounceHide();
     },
     // Trigger hover
     handleReferenceEnter () {
@@ -149,9 +149,11 @@ export default {
     // Tooltip
     handleTooltipEnter () {
       if (
-        this.trigger !== 'hover' ||
+        this.trigger !== 'hover' &&
         this.trigger !== 'focus'
       ) return;
+
+      console.log(1111);
 
       if (this.enterable && this.timer) {
         clearTimeout(this.timer);

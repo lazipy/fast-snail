@@ -25,6 +25,7 @@ import Popover from './packages/popover/main';
 // Directives
 import Transfer from './directives/transfer';
 import ChildEvent from './directives/child-event';
+import OutClick from './directives/out-click';
 
 const components = [
   Animate,
@@ -58,6 +59,7 @@ const install = (Vue) => {
 
   Vue.directive('transfer', Transfer);
   Vue.directive('child-event', ChildEvent);
+  Vue.directive('out-click', OutClick);
 };
 
 export default {

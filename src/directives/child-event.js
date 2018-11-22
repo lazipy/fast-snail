@@ -10,11 +10,11 @@ const onChildren = (el, events, handlers) => {
       if (
         child.dataset &&
         child.dataset[event] &&
-        child.dataset[event] === handlers[index]
+        child.dataset[event] === handlers[index].name
       ) return;
 
       if (!child.dataset) child.dataset = {};
-      child.dataset[event] = handlers[index];
+      child.dataset[event] = handlers[index].name;
 
       on(child, event, handlers[index]);
     }
@@ -31,7 +31,7 @@ const offChildren = (el, events, handlers) => {
       if (
         !child.dataset ||
         !child.dataset[event] ||
-        child.dataset[event] !== handlers[index]
+        child.dataset[event] !== handlers[index].name
       ) return;
 
       off(child, event, handlers[index]);
