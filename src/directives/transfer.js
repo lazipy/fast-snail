@@ -1,19 +1,20 @@
 import { getStyle } from '../utils/dom';
 
-let zIndex = 0;
+let index = 0;
 
 export default {
   inserted (el, { value = true }) {
     if (!el) return;
 
-    zIndex = getStyle(el, 'zIndex');
-    el.style.zIndex = ++zIndex;
+    const selfIndex = getStyle(el, 'zIndex');
+    index = Math.max(index, selfIndex);
+    el.style.zIndex = ++index;
 
     value && document.body.appendChild(el);
   },
   update (el) {
     if (getStyle(el, 'display') === 'none') {
-      el.style.zIndex = ++zIndex;
+      el.style.zIndex = ++index;
     }
   },
   unbind (el) {
