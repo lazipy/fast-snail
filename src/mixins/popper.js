@@ -153,8 +153,6 @@ export default {
         this.trigger !== 'focus'
       ) return;
 
-      console.log(1111);
-
       if (this.enterable && this.timer) {
         clearTimeout(this.timer);
       }

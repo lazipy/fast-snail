@@ -8,13 +8,11 @@ const onChildren = (el, events, handlers) => {
     for (let child of children) {
       // 判断元素是否添加过该事件
       if (
-        child.dataset &&
-        child.dataset[event] &&
-        child.dataset[event] === handlers[index].name
+        child[event] &&
+        child[event] === handlers[index]
       ) return;
 
-      if (!child.dataset) child.dataset = {};
-      child.dataset[event] = handlers[index].name;
+      child[event] = handlers[index];
 
       on(child, event, handlers[index]);
     }
@@ -29,9 +27,8 @@ const offChildren = (el, events, handlers) => {
     for (let child of children) {
       // 判断元素是否拥有该事件
       if (
-        !child.dataset ||
-        !child.dataset[event] ||
-        child.dataset[event] !== handlers[index].name
+        !child[event] ||
+        !child[event] !== handlers[index]
       ) return;
 
       off(child, event, handlers[index]);

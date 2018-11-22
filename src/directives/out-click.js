@@ -7,6 +7,7 @@ export default {
       binding.value();
     };
 
+    if (el.outclick && el.outclick === handler) return;
     el.outclick = handler;
 
     on(document, 'click', handler);
