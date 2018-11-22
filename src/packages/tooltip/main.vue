@@ -3,10 +3,10 @@
     <div
       class="tooltip-reference"
       ref="reference"
-      @click="handleRefereceClick"
-      v-child-event="{ events: ['focus', 'blur'], handlers: [handleRefereceFocus, handleRefereceBlur] }"
-      @mouseenter="handleRefereceEnter"
-      @mouseleave="handleRefereceLeave">
+      @click="handleReferenceClick"
+      v-child-event="{ events: ['focus', 'blur'], handlers: [handleReferenceFocus, handleReferenceBlur] }"
+      @mouseenter="handleReferenceEnter"
+      @mouseleave="handleReferenceLeave">
       <slot></slot>
     </div>
 
@@ -15,6 +15,7 @@
         class="tooltip"
         ref="popper"
         v-transfer
+        v-if="isMounted"
         v-show="visible"
         @mouseenter="handleTooltipEnter"
         @mouseleave="handleTooptipLeave">
@@ -82,6 +83,7 @@
     data () {
       return {
         popper: null,
+        isMounted: false,
         visible: false
       };
     },
@@ -103,30 +105,58 @@
         };
       }
     },
+    watch: {
+      visible (val) {
+        if (val) {
+          if (!this.isMounted) {
+            this.isMounted = true;
+          }
+          this.$nextTick(() => {
+            if (this.popper) {
+              this.updatePopper();
+            } else {
+              this.createPopper();
+            }
+          });
+        }
+      }
+    },
     created () {
       this.debounceShow = debounce(this.show, this.showDelay);
       this.debounceHide = debounce(this.hide, this.hideDelay);
     },
     mounted () {
-      this.popper = new Popper(this.$refs.reference, this.$refs.popper, this.config);
+      this.createPopper();
     },
     destroyed () {
       this.popper = null;
       this.timer = null;
     },
     methods: {
-      // Referece
+      createPopper () {
+        if (
+          !this.$refs.reference ||
+          !this.$refs.popper ||
+          this.popper
+        ) return;
+
+        this.popper = new Popper(this.$refs.reference, this.$refs.popper, this.config);
+      },
+      updatePopper () {
+        this.popper.update();
+      },
+      // Reference
       // Trigger focus
-      handleRefereceFocus () {
+      handleReferenceFocus () {
         if (this.trigger !== 'focus') return;
         this.delayShow();
       },
-      handleRefereceBlur () {
+      handleReferenceBlur () {
         if (this.trigger !== 'focus') return;
         this.delayHide();
       },
       // Trigger click
-      handleRefereceClick () {
+      handleReferenceClick () {
         if (this.trigger !== 'click') return;
         if (this.visible) {
           this.debounceHide();
@@ -135,17 +165,21 @@
         }
       },
       // Trigger hover
-      handleRefereceEnter () {
+      handleReferenceEnter () {
         if (this.trigger !== 'hover') return;
         this.delayShow();
       },
-      handleRefereceLeave () {
+      handleReferenceLeave () {
         if (this.trigger !== 'hover') return;
         this.delayHide();
       },
       // Tooltip
       handleTooltipEnter () {
-        if (this.trigger !== 'hover') return;
+        if (
+          this.trigger !== 'hover' ||
+          this.trigger !== 'focus'
+        ) return;
+
         if (this.enterable && this.timer) {
           clearTimeout(this.timer);
         }
@@ -166,7 +200,6 @@
       // Show
       show () {
         this.visible = true;
-        this.popper.update();
       },
       // Hide
       hide () {

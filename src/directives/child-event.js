@@ -31,7 +31,7 @@ const offChildren = (el, events, handlers) => {
       if (
         !child.dataset ||
         !child.dataset[event] ||
-        child.dataset[event] !== handlers
+        child.dataset[event] !== handlers[index]
       ) return;
 
       off(child, event, handlers[index]);
