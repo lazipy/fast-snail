@@ -1,7 +1,7 @@
 <template>
-  <span class="badge" v-if="!hidden">
+  <span class="badge">
     <slot></slot>
-    <span class="badge-value" :class="classes" :style="customStyle">
+    <span class="badge-value" :class="classes" :style="customStyle" v-if="!hidden">
       <span v-if="mold !== 'dot'">{{ currentValue }}</span>
     </span>
   </span>
