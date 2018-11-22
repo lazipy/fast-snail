@@ -1,3 +1,5 @@
+import { getStyle } from '../../utils/dom';
+
 const transition = '0.3s height ease-in-out, 0.3s padding-top ease-in-out, 0.3s padding-bottom ease-in-out';
 const Transition = {
   'before-enter' (el) {
@@ -5,8 +7,8 @@ const Transition = {
     el.style.transition = transition;
     if (!el.dataset) el.dataset = {};
 
-    el.dataset.oldPaddingTop = getComputedStyle(el).paddingTop;
-    el.dataset.oldPaddingBottom = getComputedStyle(el).paddingBottom;
+    el.dataset.oldPaddingTop = getStyle(el, 'paddingTop');
+    el.dataset.oldPaddingBottom = getStyle(el, 'paddingBottom');
 
     el.style.height = 0;
     el.style.paddingTop = 0;
@@ -42,9 +44,9 @@ const Transition = {
 
   'before-leave' (el) {
     if (!el.dataset) el.dataset = {};
-    el.dataset.oldPaddingTop = getComputedStyle(el).paddingTop;
-    el.dataset.oldPaddingBottom = getComputedStyle(el).paddingBottom;
-    el.dataset.oldOverflow = getComputedStyle(el).overflow;
+    el.dataset.oldPaddingTop = getStyle(el, 'paddingTop');
+    el.dataset.oldPaddingBottom = getStyle(el, 'paddingBottom');
+    el.dataset.oldOverflow = getStyle(el, 'overflow');
 
     el.style.height = el.scrollHeight + 'px';
     el.style.overflow = 'hidden';

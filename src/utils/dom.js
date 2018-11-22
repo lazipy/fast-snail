@@ -96,3 +96,8 @@ export const on = (el, event, handler) => {
     el.detachEvent('on' + event, handler);
   }
 }
+
+// 获取计算后的样式
+export const getStyle = (el, attr) => {
+  return window.getComputedStyle ? window.getComputedStyle(el)[attr] : el.currentStyle[attr];
+}

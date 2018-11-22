@@ -18,7 +18,8 @@
         v-if="isMounted"
         v-show="visible"
         @mouseenter="handleTooltipEnter"
-        @mouseleave="handleTooptipLeave">
+        @mouseleave="handleTooptipLeave"
+        role="tooltip">
         <div class="tooltip-content" :style="{maxWidth: maxWidth}">{{ content }}</div>
         <div x-arrow class="tooltip-arrow" v-if="arrow"></div>
       </div>
@@ -28,8 +29,9 @@
 
 <script>
   import Popper from 'popper.js';
-  import { debounce } from 'debounce-throttle'
+  import { debounce, throttle } from 'debounce-throttle'
   import { OneOf } from '../../utils';
+  import { on, off } from '../../utils/dom';
   import ChildEvent from '../../directives/child-event';
   import Transfer from '../../directives/transfer';
 
@@ -111,6 +113,8 @@
           this.$nextTick(() => {
             if (!this.popper) {
               this.createPopper();
+            } else {
+              this.updatePopper();
             }
           });
         }
@@ -119,13 +123,17 @@
     created () {
       this.debounceShow = debounce(this.show, this.showDelay);
       this.debounceHide = debounce(this.hide, this.hideDelay);
+      this.throttleUpdate = throttle(this.updatePopper, 300);
     },
     mounted () {
-      this.createPopper();
+      on(window, 'resize', this.throttleUpdate);
+      on(window, 'scroll', this.throttleUpdate);
     },
     destroyed () {
       this.popper = null;
       this.timer = null;
+      off(window, 'resize', this.throttleUpdate);
+      off(window, 'scroll', this.throttleUpdate);
     },
     methods: {
       createPopper () {
@@ -136,6 +144,10 @@
         ) return;
 
         this.popper = new Popper(this.$refs.reference, this.$refs.popper, this.config);
+      },
+      updatePopper () {
+        if (!this.popper) return;
+        this.popper.scheduleUpdate();
       },
       // Reference
       // Trigger focus

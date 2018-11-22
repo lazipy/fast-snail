@@ -1,16 +1,25 @@
 <template>
-  <div class="popover">
+  <div class="popover-wrap">
     <div
-      class="referece"
-      ref="referece">
+      class="popover-reference"
+      ref="reference"
+      @click="handleReferenceClick"
+      v-child-event="{ events: ['focus', 'blur'], handlers: [handleReferenceFocus, handleReferenceBlur] }"
+      @mouseenter="handleReferenceEnter"
+      @mouseleave="handleReferenceLeave">
       <slot></slot>
     </div>
 
-    <transtion name="fade">
+    <transition name="fade">
       <div
         class="popover"
-        ref="popover"
-        v-transfer>
+        ref="popper"
+        v-transfer
+        v-if="isMounted"
+        v-show="visible"
+        @mouseenter="handleTooltipEnter"
+        @mouseleave="handleTooptipLeave"
+        role="tooltip">
         <div class="popover-body" :style="{maxWidth: maxWidth}">
           <slot name="content">
             <h5 class="popover-title" v-if="title">{{ title }}</h5>
@@ -19,14 +28,15 @@
         </div>
         <div x-arrow class="popover-arrow" v-if="arrow"></div>
       </div>
-    </transtion>
+    </transition>
   </div>
 </template>
 
 <script>
   import Popper from 'popper.js';
-  import { debounce } from 'debounce-throttle'
+  import { debounce, throttle } from 'debounce-throttle'
   import { OneOf } from '../../utils';
+  import { on, off } from '../../utils/dom';
   import ChildEvent from '../../directives/child-event';
   import Transfer from '../../directives/transfer';
 
@@ -39,7 +49,7 @@
     props: {
       trigger: {
         type: String,
-        default: 'hover',
+        default: 'click',
         validator: OneOf(['hover', 'click', 'focus'])
       },
       placement: {
@@ -76,6 +86,134 @@
       arrow: {
         type: Boolean,
         default: true
+      }
+    },
+    data () {
+      return {
+        popper: null,
+        isMounted: false,
+        visible: false
+      };
+    },
+    computed: {
+      config () {
+        return {
+          placement: this.placement,
+          modifiers: {
+            computeStyle: {
+              gpuAcceleration: false
+            },
+            offset: {
+              offset: this.offset
+            }
+          }
+        };
+      }
+    },
+    watch: {
+      visible (val) {
+        if (val) {
+          if (!this.isMounted) {
+            this.isMounted = true;
+          }
+          this.$nextTick(() => {
+            if (!this.popper) {
+              this.createPopper();
+            } else {
+              this.updatePopper();
+            }
+          });
+        }
+      }
+    },
+    created () {
+      this.debounceShow = debounce(this.show, this.showDelay);
+      this.debounceHide = debounce(this.hide, this.hideDelay);
+      this.throttleUpdate = throttle(this.updatePopper, 300);
+    },
+    mounted () {
+      on(window, 'resize', this.throttleUpdate);
+      on(window, 'scroll', this.throttleUpdate);
+    },
+    destroyed () {
+      this.popper = null;
+      this.timer = null;
+      off(window, 'resize', this.throttleUpdate);
+      off(window, 'scroll', this.throttleUpdate);
+    },
+    methods: {
+      createPopper () {
+        if (
+          !this.$refs.reference ||
+          !this.$refs.popper ||
+          this.popper
+        ) return;
+
+        this.popper = new Popper(this.$refs.reference, this.$refs.popper, this.config);
+      },
+      updatePopper () {
+        if (!this.popper) return;
+        this.popper.scheduleUpdate();
+      },
+      // Reference
+      // Trigger focus
+      handleReferenceFocus () {
+        if (this.trigger !== 'focus') return;
+        this.delayShow();
+      },
+      handleReferenceBlur () {
+        if (this.trigger !== 'focus') return;
+        this.delayHide();
+      },
+      // Trigger click
+      handleReferenceClick () {
+        if (this.trigger !== 'click') return;
+        if (this.visible) {
+          this.debounceHide();
+        } else {
+          this.debounceShow();
+        }
+      },
+      // Trigger hover
+      handleReferenceEnter () {
+        if (this.trigger !== 'hover') return;
+        this.delayShow();
+      },
+      handleReferenceLeave () {
+        if (this.trigger !== 'hover') return;
+        this.delayHide();
+      },
+      // Tooltip
+      handleTooltipEnter () {
+        if (
+          this.trigger !== 'hover' ||
+          this.trigger !== 'focus'
+        ) return;
+
+        if (this.enterable && this.timer) {
+          clearTimeout(this.timer);
+        }
+      },
+      handleTooptipLeave () {
+        if (this.trigger !== 'hover') return;
+        this.delayHide();
+      },
+      // delay show
+      delayShow () {
+        this.timer && clearTimeout(this.timer);
+        this.timer = setTimeout(this.show, this.showDelay);
+      },
+      delayHide () {
+        this.timer && clearTimeout(this.timer);
+        this.timer = setTimeout(this.hide, this.hideDelay);
+      },
+      // Show
+      show () {
+        this.visible = true;
+      },
+      // Hide
+      hide () {
+        this.visible = false;
       }
     }
   };

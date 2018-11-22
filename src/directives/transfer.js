@@ -1,3 +1,5 @@
+import { getStyle } from '../utils/dom';
+
 let zIndex = 2000;
 
 export default {
@@ -6,8 +8,10 @@ export default {
     el.style.zIndex = ++zIndex;
     value && document.body.appendChild(el);
   },
-  componentUpdated (el) {
-    el.style.zIndex = ++zIndex;
+  update (el) {
+    if (getStyle(el, 'display') === 'none') {
+      el.style.zIndex = ++zIndex;
+    }
   },
   unbind (el) {
     document.body.removeChild(el);
