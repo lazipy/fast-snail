@@ -144,16 +144,20 @@ fieldset:disabled a.btn {
   }
 }
 
-
 //
 // Button Sizes
 //
 
 .btn-small {
   padding: $btn-small-padding-y $btn-small-padding-x;
+  font-size: 12px;
 
   &.btn-round {
     border-radius: $btn-small-round;
+  }
+
+  + .btn:not(.btn-block) {
+    margin-left: 3px;
   }
 }
 

@@ -14,73 +14,84 @@
   z-index: 2000;
 
   &[x-placement="top"], &[x-placement="top-start"], &[x-placement="top-end"] {
-    padding-bottom: 6px;
+    padding-bottom: 8px;
 
     .popover-arrow {
       bottom: -4px;
-      border-top-color: $border-color;
+      border-top-color: $popover-border-color;
 
       &::before {
-        top: -6px;
-        left: -5px;
+        top: -7px;
+        left: -6px;
         border-top-color: $popover-bg-color;
       }
     }
   }
   &[x-placement="bottom"], &[x-placement="bottom-start"], &[x-placement="bottom-end"] {
-    padding-top: 6px;
+    padding-top: 8px;
 
     .popover-arrow {
       top: -4px;
-      border-bottom-color: $border-color;
+      border-bottom-color: $popover-border-color;
 
       &::before {
-        top: -4px;
-        left: -5px;
+        top: -5px;
+        left: -6px;
         border-bottom-color: $popover-bg-color;
       }
     }
   }
   &[x-placement="left"], &[x-placement="left-start"], &[x-placement="left-end"] {
-    padding-right: 6px;
+    padding-right: 8px;
 
     .popover-arrow {
       right: -4px;
-      border-left-color: $border-color;
+      border-left-color: $popover-border-color;
 
       &::before {
-        top: -5px;
-        left: -6px;
+        top: -6px;
+        left: -7px;
         border-left-color: $popover-bg-color;
       }
     }
   }
   &[x-placement="right"], &[x-placement="right-start"], &[x-placement="right-end"] {
-    padding-left: 6px;
+    padding-left: 8px;
 
     .popover-arrow {
       left: -4px;
-      border-right-color: $border-color;
+      border-right-color: $popover-border-color;
 
       &::before {
-        top: -5px;
-        left: -4px;
+        top: -6px;
+        left: -5px;
         border-right-color: $popover-bg-color;
       }
     }
   }
 }
 
-// content
+// Body
 .popover-body {
   background: $popover-bg-color;
   border-radius: 4px;
-  padding: $tooltip-padding;
-  color: initial;
-  font-size: 12px;
   line-height: 1;
   min-width: 10px;
-  border: 1px solid $border-color;
+  box-shadow: $popover-box-shadow;
+}
+
+// Title
+.popover-title {
+  padding: $popover-padding;
+  font-size: 16px;
+  margin: 0;
+  border-bottom: 1px solid $popover-border-color;
+  color: inherit;
+}
+
+// content
+.popover-content {
+  padding: 12px;
 }
 
 // Arrow
@@ -89,14 +100,14 @@
   display: block;
   width: 0;
   height: 0;
-  border: 5px solid transparent;
+  border: 6px solid transparent;
 
   &::before {
     position: absolute;
     display: block;
     width: 0;
     height: 0;
-    border: 5px solid transparent;
+    border: 6px solid transparent;
     content: ' ';
   }
 }
