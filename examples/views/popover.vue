@@ -3,10 +3,10 @@
     <b-popover title="This is title" content="Are you sure delete it?">
       <b-button type="danger">Delete</b-button>
     </b-popover>
-    <b-popover title="This is title" content="Are you sure delete it?" placement="top">
+    <b-popover title="This is title" content="Are you sure delete it?" placement="bottom">
       <b-button type="danger">Delete</b-button>
     </b-popover>
-    <b-popover title="This is title" content="Are you sure delete it?" placement="top">
+    <b-popover title="This is title" content="Are you sure delete it?" placement="bottom">
       <b-button type="danger">Delete</b-button>
     </b-popover>
     <b-popover content="Are you sure delete it?" placement="right">
