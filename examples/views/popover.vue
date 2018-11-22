@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-20">
+  <div class="container p-200">
     <b-popover title="This is title" content="Are you sure delete it?">
       <b-button type="danger">Delete</b-button>
     </b-popover>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-  .p-20 {
-    padding: 20px;
+  .p-200 {
+    padding: 200px;
   }
 </style>
