@@ -15,6 +15,7 @@
       <router-link to="/collapse">collapse</router-link>
       <router-link to="/popover">popover</router-link>
       <router-link to="/tooltip">tooltip</router-link>
+      <router-link to="/icon">icon</router-link>
       <router-link to="/layout">layout</router-link>
     </div>
     <div>
