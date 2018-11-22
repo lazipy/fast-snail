@@ -40,6 +40,10 @@
       },
       placement: {
         default: 'bottom'
+      },
+      content: {
+        type: String,
+        required: true
       }
     }
   };

@@ -13,6 +13,7 @@
       <router-link to="/card">card</router-link>
       <router-link to="/carousel">carousel</router-link>
       <router-link to="/collapse">collapse</router-link>
+      <router-link to="/dropdown">dropdown</router-link>
       <router-link to="/popover">popover</router-link>
       <router-link to="/tooltip">tooltip</router-link>
       <router-link to="/icon">icon</router-link>

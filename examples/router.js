@@ -18,6 +18,7 @@ export default new Router({
     { path: '/card', component: () => import('./views/card.vue') },
     { path: '/carousel', component: () => import('./views/carousel.vue') },
     { path: '/collapse', component: () => import('./views/collapse.vue') },
+    { path: '/dropdown', component: () => import('./views/dropdown.vue') },
     { path: '/popover', component: () => import('./views/popover.vue') },
     { path: '/tooltip', component: () => import('./views/tooltip.vue') },
     { path: '/icon', component: () => import('./views/icon.vue') },

@@ -46,6 +46,10 @@
       },
       placement: {
         default: 'top'
+      },
+      content: {
+        type: String,
+        required: true
       }
     }
   };

@@ -82,7 +82,7 @@ const passive = () => {
 // 给元素绑定事件
 export const on = (el, event, handler) => {
   if (document.addEventListener) {
-    el.addEventListener(event, handler, passive );
+    el.addEventListener(event, handler, passive);
   } else {
     el.attachEvent('on' + event, handler);
   }
@@ -91,7 +91,7 @@ export const on = (el, event, handler) => {
 // 给元素解绑事件
  export const off = (el, event, handler) => {
   if (document.addEventListener) {
-    el.removeEventListener(event, handler, passive );
+    el.removeEventListener(event, handler, passive);
   } else {
     el.detachEvent('on' + event, handler);
   }

@@ -190,5 +190,12 @@ $tooltip-padding: 10px !default;
 // Popover
 $popover-bg-color: $white !default;
 $popover-padding: 8px 12px !default;
+$popover-content-padding: 12px !default;
 $popover-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
 $popover-border-color: $gray-200 !default;
+
+// Dropdown
+$dropdown-bg-color: $white !default;
+$dropdown-padding: 8px 0 !default;
+$dropdown-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
+$dropdown-border-color: $gray-200 !default;

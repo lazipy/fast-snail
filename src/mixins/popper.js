@@ -29,10 +29,6 @@ export default {
       type: Object,
       default: () => {}
     },
-    content: {
-      type: String,
-      required: true
-    },
     showDelay: {
       type: Number,
       default: 0
@@ -131,7 +127,11 @@ export default {
     // Trigger click
     handleReferenceClick () {
       if (this.trigger !== 'click') return;
-      this.debounceShow();
+      if (!this.visible) {
+        this.debounceShow();
+      } else {
+        this.debounceHide();
+      }
     },
     handleOutClick () {
       if (this.trigger !== 'click') return;
