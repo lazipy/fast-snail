@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import router from './router';
 import App from './App';
-import Eagle from '../src/index.js';
+import Snail from '../src/index.js';
 import '../src/styles/index.scss';
 
-Vue.use(Eagle, {
+Vue.use(Snail, {
   components: {
     'xx-alert': 'BAlert'
   }

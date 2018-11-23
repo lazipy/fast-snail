@@ -1,2 +1,2 @@
-# eagle
-One ui library for desktop base on Vue.js 2.0 
+# fast-snail
+A framework for quickly building PC-web application

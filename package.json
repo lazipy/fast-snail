@@ -1,8 +1,8 @@
 {
-  "name": "vue-eagle",
+  "name": "fast-snail",
   "version": "1.0.0",
-  "description": "A ui library for desktop base on Vue.js 2.0",
-  "main": "lib/eagle.common.js",
+  "description": "A framework for quickly building PC-web application",
+  "main": "lib/snail.min.js",
   "files": [
     "lib",
     "src",
@@ -16,19 +16,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EagleTeamer/eagle.git"
+    "url": "git@github.com:lazipy/fast-snail.git"
   },
   "keywords": [
     "vue",
     "components",
-    "eagle"
+    "ajax",
+    "style",
+    "directives",
+    "snail"
   ],
-  "author": "Eagle Team",
+  "author": "lazipy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EagleTeamer/eagle/issues"
+    "url": "https://github.com/lazipy/fast-snail/issues"
   },
-  "homepage": "https://github.com/EagleTeamer/eagle#readme",
+  "homepage": "https://github.com/lazipy/fast-snail/blob/master/README.md",
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",

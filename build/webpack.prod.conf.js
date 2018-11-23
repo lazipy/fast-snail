@@ -11,9 +11,9 @@ module.exports = merge(commonConfig, {
   },
   output: {
     path: path.resolve(__dirname, '../lib'),
-    library: "eagle",
+    library: "snail",
     libraryTarget: "umd",
-    filename: "eagle.min.js",
+    filename: "snail.min.js",
     umdNamedDefine: true
   },
   plugins: [

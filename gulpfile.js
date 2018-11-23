@@ -9,6 +9,6 @@ gulp.task('style', function () {
     .pipe(sass())
     .pipe(cssmin())
     .pipe(autoprefix())
-    .pipe(rename('eagle.css'))
+    .pipe(rename('snail.css'))
     .pipe(gulp.dest('./lib/static'));
 });
