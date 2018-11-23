@@ -38,7 +38,7 @@
     mixins: [popper],
     props: {
       trigger: {
-        default: 'click'
+        default: 'hover'
       },
       placement: {
         default: 'bottom-start'
