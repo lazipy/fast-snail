@@ -14,7 +14,12 @@ module.exports = merge(commonConfig, {
     publicPath: '/',
     port: 7001,
     stats: 'minimal',
+    noInfo: true,
+    quiet: true,
     clientLogLevel: 'warning',
+    overlay: {
+      errors: true
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
