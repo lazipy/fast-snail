@@ -55,7 +55,7 @@ export default {
     };
   },
   computed: {
-    config () {
+    default () {
       return {
         placement: this.placement,
         modifiers: {
@@ -67,6 +67,9 @@ export default {
           }
         }
       };
+    },
+    config () {
+      return Object.assign(this.default, this.options);
     }
   },
   watch: {
@@ -83,6 +86,7 @@ export default {
           }
         });
       }
+      this.$emit('change', val);
     }
   },
   created () {

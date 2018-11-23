@@ -6,21 +6,12 @@
   opacity: 0;
 }
 
-// Fade Rotate Down
-.fade-rotate-down-enter-active, .fade-rotate-down-leave-active {
+// Fade Rotate
+.fade-rotate-enter-active, .fade-rotate-leave-active {
   transition: opacity .3s, transform .3s;
   transform-origin: center top;
 }
-.fade-rotate-down-enter, .fade-rotate-down-leave-to {
-  opacity: 0;
-  transform: rotateX(90deg);
-}
-// Fade Rotate Up
-.fade-rotate-up-enter-active, .fade-rotate-up-leave-active {
-  transition: opacity .3s, transform .3s;
-  transform-origin: center bottom;
-}
-.fade-rotate-up-enter, .fade-rotate-up-leave-to {
+.fade-rotate-enter, .fade-rotate-leave-to {
   opacity: 0;
   transform: rotateX(90deg);
 }

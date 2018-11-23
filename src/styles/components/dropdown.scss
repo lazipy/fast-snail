@@ -11,7 +11,7 @@
 // dropdown
 .dropdown {
   position: absolute;
-  z-index: 2000;
+  z-index: $zindex-dropdown;
 
   &[x-placement="top"], &[x-placement="top-start"], &[x-placement="top-end"] {
     padding-bottom: 12px;
@@ -107,9 +107,10 @@
 
 // Item
 .dropdown-item {
+  position: relative;
   list-style: none;
-  padding: 0 15px;
-  line-height: 30px;
+  padding: $dropdown-item-padding;
+  line-height: 36px;
   cursor: pointer;
 
   &:hover {
@@ -117,7 +118,22 @@
     background-color: rgba($primary, .12);
   }
 
-  &:not(:first-child) {
-    margin-top: 2px;
+  &.disabled {
+    color: $gray-400;
+    background-color: $dropdown-bg-color;
+    cursor: not-allowed;
+  }
+
+  &.divided {
+    margin-top: 6px;
+    border-top: 1px solid $border-color;
+
+    &:before {
+      content: ' ';
+      height: 6px;
+      display: block;
+      margin: $dropdown-divided-margin;
+      background-color: $dropdown-bg-color;
+    }
   }
 }

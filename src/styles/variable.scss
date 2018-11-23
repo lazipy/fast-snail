@@ -107,13 +107,13 @@ $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              $gray-900 !default;
 
-$zindex-dropdown:          1000 !default;
+$zindex-dropdown:          2000 !default;
 $zindex-sticky:            1020 !default;
 $zindex-fixed:             1030 !default;
-$zindex-modal-backdrop:    1040 !default;
-$zindex-modal:             1050 !default;
-$zindex-popover:           1060 !default;
-$zindex-tooltip:           1070 !default;
+$zindex-modal-backdrop:    3040 !default;
+$zindex-modal:             3050 !default;
+$zindex-popover:           1070 !default;
+$zindex-tooltip:           1060 !default;
 
 // Close
 $close-width: 40px;
@@ -130,7 +130,7 @@ $btn-round: 34px !default;
 
 $btn-disabled-opacity: .5 !default;
 $btn-loading-opacity: .8 !default;
-$btn-link-disabled-color: $gray-500 !default;
+$btn-link-disabled-color: $gray-400 !default;
 
 $btn-small-padding-y: 6px !default;
 $btn-small-padding-x: 12px !default;
@@ -196,6 +196,10 @@ $popover-border-color: $gray-200 !default;
 
 // Dropdown
 $dropdown-bg-color: $white !default;
-$dropdown-padding: 8px 0 !default;
+$dropdown-padding: 6px 0 !default;
 $dropdown-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
 $dropdown-border-color: $gray-200 !default;
+$dropdown-item-padding: 0 15px !default;
+$dropdown-divided-margin: 0 -15px !default;
+
+// Divided

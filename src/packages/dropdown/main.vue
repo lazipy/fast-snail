@@ -10,7 +10,7 @@
       <slot></slot>
     </div>
 
-    <transition name="fade-rotate-down">
+    <transition name="fade-rotate">
       <div
         class="dropdown"
         ref="popper"
@@ -42,6 +42,37 @@
       },
       placement: {
         default: 'bottom-start'
+      },
+      itemClickHidden: {
+        type: Boolean,
+        default: true
+      }
+    },
+    computed: {
+      config () {
+        const _self = this;
+        return Object.assign(this.default, {
+          onCreate (data) {
+            _self.updateOrigin(data);
+          },
+          onUpdate (data) {
+            _self.updateOrigin(data);
+          }
+        }, this.options);
+      }
+    },
+    provide () {
+      return {
+        clickHidden: this.itemClickHidden
+      };
+    },
+    methods: {
+      updateOrigin (data) {
+        if (data.placement.match('bottom')) {
+          this.$refs.popper.style.transformOrigin = 'center top';
+        } else {
+          this.$refs.popper.style.transformOrigin = 'center bottom';
+        }
       }
     }
   };

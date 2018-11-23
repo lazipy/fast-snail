@@ -11,7 +11,7 @@
 // Tooltip
 .tooltip {
   position: absolute;
-  z-index: 2000;
+  z-index: $zindex-tooltip;
 
   &[x-placement="top"], &[x-placement="top-start"], &[x-placement="top-end"] {
     padding-bottom: 6px;

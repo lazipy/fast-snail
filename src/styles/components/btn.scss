@@ -141,6 +141,8 @@ fieldset:disabled a.btn {
   &.disabled,
   &.is-loading {
     color: $btn-link-disabled-color;
+    cursor: not-allowed;
+    text-decoration: none;
   }
 }
 
