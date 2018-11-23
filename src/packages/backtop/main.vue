@@ -18,7 +18,7 @@
   import { scrollTop, on, off } from '../../utils/dom';
 
   export default {
-    name: 'BBacktop',
+    name: 'SBacktop',
     props: {
       offset: {
         type: Number,

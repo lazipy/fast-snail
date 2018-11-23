@@ -1,17 +1,17 @@
 <template>
   <div class="container p-200">
-    <b-popover title="This is title" content="Are you sure delete it?">
-      <b-button type="danger">Delete</b-button>
-    </b-popover>
-    <b-popover title="This is title" content="Are you sure delete it?" placement="bottom">
-      <b-button type="danger">Delete</b-button>
-    </b-popover>
-    <b-popover title="This is title" content="Are you sure delete it?" placement="bottom">
-      <b-button type="danger">Delete</b-button>
-    </b-popover>
-    <b-popover content="Are you sure delete it?" placement="right">
-      <b-button type="danger">Delete</b-button>
-    </b-popover>
+    <s-popover title="This is title" content="Are you sure delete it?">
+      <s-button type="danger">Delete</s-button>
+    </s-popover>
+    <s-popover title="This is title" content="Are you sure delete it?" placement="bottom">
+      <s-button type="danger">Delete</s-button>
+    </s-popover>
+    <s-popover title="This is title" content="Are you sure delete it?" placement="bottom">
+      <s-button type="danger">Delete</s-button>
+    </s-popover>
+    <s-popover content="Are you sure delete it?" placement="right">
+      <s-button type="danger">Delete</s-button>
+    </s-popover>
   </div>
 </template>
 

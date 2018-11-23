@@ -1,6 +1,6 @@
 <template>
   <div class="container h3000">
-    <b-backtop></b-backtop>
+    <s-backtop></s-backtop>
   </div>
 </template>
 

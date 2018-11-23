@@ -32,7 +32,7 @@
   import popper from '../../mixins/popper';
 
   export default {
-    name: 'BTooltip',
+    name: 'STooltip',
     mixins: [popper],
     props: {
       trigger: {

@@ -18,41 +18,41 @@
       </div>
     </div>
 
-    <b-row :gutter="8">
-      <b-col v-for="i in 12" :key="i">
+    <s-row :gutter="8">
+      <s-col v-for="i in 12" :key="i">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-    </b-row>
+      </s-col>
+    </s-row>
 
-    <b-row :gutter="8">
-      <b-col :span="3">
+    <s-row :gutter="8">
+      <s-col :span="3">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-      <b-col :span="6">
+      </s-col>
+      <s-col :span="6">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-      <b-col :span="3">
+      </s-col>
+      <s-col :span="3">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-    </b-row>
+      </s-col>
+    </s-row>
 
-    <b-row :gutter="8">
-      <b-col :span="3">
+    <s-row :gutter="8">
+      <s-col :span="3">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-      <b-col :span="3" :offset="6">
+      </s-col>
+      <s-col :span="3" :offset="6">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-    </b-row>
+      </s-col>
+    </s-row>
 
-    <b-row :gutter="8">
-      <b-col :span="3">
+    <s-row :gutter="8">
+      <s-col :span="3">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-      <b-col :span="3" :offset="6" :md="{ span: 2, offset: 7 }">
+      </s-col>
+      <s-col :span="3" :offset="6" :md="{ span: 2, offset: 7 }">
         <div class="test-block bg-secondary"></div>
-      </b-col>
-    </b-row>
+      </s-col>
+    </s-row>
   </div>
 </template>
 

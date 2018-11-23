@@ -17,7 +17,7 @@
   import CollapseAnimate from './animate';
 
   export default {
-    name: 'BCollapseItem',
+    name: 'SCollapseItem',
     components: { CollapseAnimate },
     props: {
       title: {

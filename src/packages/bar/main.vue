@@ -22,7 +22,7 @@
   import { OneOf } from '../../utils';
 
   export default {
-    name: 'BBar',
+    name: 'SBar',
     props: {
       status: {
         type: String,

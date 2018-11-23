@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'BCollapse',
+    name: 'SCollapse',
     props: {
       accordion: {
         type: Boolean,

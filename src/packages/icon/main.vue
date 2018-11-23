@@ -7,7 +7,7 @@
   import types from '../../utils/icon';
 
   export default {
-    name: 'BIcon',
+    name: 'SIcon',
     props: {
       type: {
         type: String,

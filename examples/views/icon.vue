@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <b-icon class="ml-10" size="22" color="#666" :type="type" v-for="type in types" :key="type"></b-icon>
+    <s-icon class="ml-10" size="22" color="#666" :type="type" v-for="type in types" :key="type"></s-icon>
   </div>
 </template>
 

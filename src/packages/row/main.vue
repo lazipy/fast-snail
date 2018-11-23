@@ -8,7 +8,7 @@
   import { OneOf } from '../../utils';
 
   export default {
-    name: 'BRow',
+    name: 'SRow',
     props: {
       gutter: {
         type: Number,

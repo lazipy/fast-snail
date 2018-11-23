@@ -1,24 +1,24 @@
 <template>
   <div class="container pt20">
-    <b-badge value="5">
-      <b-button>测试按钮</b-button>
-    </b-badge>
+    <s-badge value="5">
+      <s-button>测试按钮</s-button>
+    </s-badge>
     <hr>
-    <b-badge type="warning" value="1000">
-      <b-button>测试按钮</b-button>
-    </b-badge>
+    <s-badge type="warning" value="1000">
+      <s-button>测试按钮</s-button>
+    </s-badge>
     <hr>
-    <b-badge :max="999" value="1000">
-      <b-button>测试按钮</b-button>
-    </b-badge>
+    <s-badge :max="999" value="1000">
+      <s-button>测试按钮</s-button>
+    </s-badge>
     <hr>
-    <b-badge mold="basic" :max="999" value="1000">
-      <b-button>测试按钮</b-button>
-    </b-badge>
+    <s-badge mold="basic" :max="999" value="1000">
+      <s-button>测试按钮</s-button>
+    </s-badge>
     <hr>
-    <b-badge mold="dot" :max="999" value="1000">
-      <b-button>测试按钮</b-button>
-    </b-badge>
+    <s-badge mold="dot" :max="999" value="1000">
+      <s-button>测试按钮</s-button>
+    </s-badge>
   </div>
 </template>
 

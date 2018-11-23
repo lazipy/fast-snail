@@ -37,7 +37,7 @@
   import popper from '../../mixins/popper';
 
   export default {
-    name: 'BPopover',
+    name: 'SPopover',
     mixins: [popper],
     props: {
       title: String,

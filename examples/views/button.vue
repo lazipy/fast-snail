@@ -1,28 +1,28 @@
 <template>
   <div class="container pt-20">
-    <b-button>默认按钮</b-button>
+    <s-button>默认按钮</s-button>
     <hr>
-    <b-button autofocus>自动聚焦</b-button>
+    <s-button autofocus>自动聚焦</s-button>
     <hr>
-    <b-button :type="theme" v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
 
     <hr>
-    <b-button :type="theme" round v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" round v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
 
     <hr>
-    <b-button :type="theme" circle v-for="theme in themes" :key="Math.random()"></b-button>
+    <s-button :type="theme" circle v-for="theme in themes" :key="Math.random()"></s-button>
     <hr>
-    <b-button :type="theme" v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
     <hr>
-    <b-button :type="theme" plain v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" plain v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
     <hr>
-    <b-button :type="theme" loading v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" loading v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
     <hr>
-    <b-button :type="theme" disabled v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" disabled v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
     <hr>
-    <b-button :type="theme" navigator="/" v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" navigator="/" v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
     <hr>
-    <b-button :type="theme" block v-for="theme in themes" :key="Math.random()">{{theme}}</b-button>
+    <s-button :type="theme" block v-for="theme in themes" :key="Math.random()">{{theme}}</s-button>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <b-tooltip content="这是一个按钮" trigger="focus" placement="top-start">
-      <b-button ref="button">按钮</b-button>
-    </b-tooltip>
+    <s-tooltip content="这是一个按钮" trigger="focus" placement="top-start">
+      <s-button ref="button">按钮</s-button>
+    </s-tooltip>
   </div>
 </template>
 

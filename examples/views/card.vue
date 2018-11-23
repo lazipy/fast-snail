@@ -1,27 +1,27 @@
 <template>
   <div class="container pt-20">
-    <b-card
+    <s-card
       :width="300"
       title="Card Title"
       subtitle="subtitle"
       :text="text">
       <span slot="actions">
-        <b-button>Visited</b-button>
+        <s-button>Visited</s-button>
       </span>
-    </b-card>
+    </s-card>
     <hr>
-    <b-card
+    <s-card
       :width="300"
       src="http://weiwuu-unity.oss-cn-beijing.aliyuncs.com/resource/46074862314501/images/57983200457235.jpg"
       title="Card Title"
       subtitle="subtitle"
       :text="text">
       <span slot="actions">
-        <b-button>Visited</b-button>
+        <s-button>Visited</s-button>
       </span>
-    </b-card>
+    </s-card>
     <hr>
-    <b-card
+    <s-card
       :width="300"
       src="http://weiwuu-unity.oss-cn-beijing.aliyuncs.com/resource/46074862314501/images/57983200457235.jpg"
       position="bottom"
@@ -29,11 +29,11 @@
       subtitle="subtitle"
       :text="text">
       <span slot="actions">
-        <b-button>Visited</b-button>
+        <s-button>Visited</s-button>
       </span>
-    </b-card>
+    </s-card>
     <hr>
-    <b-card
+    <s-card
       :width="300"
       header="Header"
       src="http://weiwuu-unity.oss-cn-beijing.aliyuncs.com/resource/46074862314501/images/57983200457235.jpg"
@@ -41,11 +41,11 @@
       subtitle="subtitle"
       :text="text">
       <span slot="actions">
-        <b-button>Visited</b-button>
+        <s-button>Visited</s-button>
       </span>
-    </b-card>
+    </s-card>
     <hr>
-    <b-card
+    <s-card
       :width="300"
       footer="Footer"
       src="http://weiwuu-unity.oss-cn-beijing.aliyuncs.com/resource/46074862314501/images/57983200457235.jpg"
@@ -53,9 +53,9 @@
       subtitle="subtitle"
       :text="text">
       <span slot="actions">
-        <b-button>Visited</b-button>
+        <s-button>Visited</s-button>
       </span>
-    </b-card>
+    </s-card>
   </div>
 </template>
 

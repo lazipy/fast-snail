@@ -1,15 +1,15 @@
 <template>
   <div class="container pt-20">
-    <b-bar
+    <s-bar
       title="Bar Title"
       :text="text"
       blockquote="This is blockquote"
       src="http://oss-cn-beijing.aliyuncs.com/weiwuu-unity/krpano/50934599222812/720/panos/image/thumb.jpg">
       <span slot="actions">
-        <b-button @click="update">Update</b-button>
-        <b-button type="danger" @click="hanldedelete">Delete</b-button>
+        <s-button @click="update">Update</s-button>
+        <s-button type="danger" @click="hanldedelete">Delete</s-button>
       </span>
-    </b-bar>
+    </s-bar>
   </div>
 </template>
 

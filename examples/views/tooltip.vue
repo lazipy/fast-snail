@@ -1,20 +1,20 @@
 <template>
   <div class="container pt-20">
-    <b-tooltip content="This is button">
-      <b-button>Button</b-button>
-    </b-tooltip>
+    <s-tooltip content="This is button">
+      <s-button>Button</s-button>
+    </s-tooltip>
     <hr>
-    <b-tooltip content="This is button" placement="top">
-      <b-button>Button</b-button>
-    </b-tooltip>
+    <s-tooltip content="This is button" placement="top">
+      <s-button>Button</s-button>
+    </s-tooltip>
     <hr>
-    <b-tooltip content="This is button" trigger="focus">
-      <b-button>Button</b-button>
-    </b-tooltip>
+    <s-tooltip content="This is button" trigger="focus">
+      <s-button>Button</s-button>
+    </s-tooltip>
     <hr>
-    <b-tooltip content="This is button" trigger="click">
-      <b-button>Button</b-button>
-    </b-tooltip>
+    <s-tooltip content="This is button" trigger="click">
+      <s-button>Button</s-button>
+    </s-tooltip>
   </div>
 </template>
 

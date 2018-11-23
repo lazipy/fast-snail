@@ -50,7 +50,7 @@
   import { throttle } from 'debounce-throttle';
 
   export default {
-    name: 'BCarousel',
+    name: 'SCarousel',
     props: {
       initial: {
         type: Number,

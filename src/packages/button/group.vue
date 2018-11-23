@@ -6,6 +6,6 @@
 
 <script>
   export default {
-    name: 'BButtonGroup'
+    name: 'SButtonGroup'
   };
 </script>

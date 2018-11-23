@@ -14,6 +14,7 @@
       <button
         class="btn"
         :class="classes"
+        @mouseenter="handleButtonEnter"
         @click.stop="handleClick"
         :type="nativeType">
         <slot></slot>
@@ -32,7 +33,7 @@
   import { themes, OneOf } from '../../utils';
 
   export default {
-    name: 'BDropdownButton',
+    name: 'SDropdownButton',
     props: {
       type: {
         type: String,
@@ -63,6 +64,11 @@
     methods: {
       handleClick () {
         this.$emit('click');
+      },
+      handleButtonEnter () {
+        setTimeout(() =>{
+          this.$parent.visible = false;
+        }, this.$parent.showDelay);
       }
     }
   };

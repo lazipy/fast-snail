@@ -16,7 +16,7 @@
   import { themes, OneOf } from '../../utils';
 
   export default {
-    name: 'BButton',
+    name: 'SButton',
     props: {
       type: {
         type: String,

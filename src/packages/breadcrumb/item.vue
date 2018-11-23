@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'BBreadcrumbItem',
+    name: 'SBreadcrumbItem',
     inject: ['separator'],
     props: {
       to: String

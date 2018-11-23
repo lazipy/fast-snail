@@ -1,94 +1,94 @@
 <template>
   <div class="container p-20">
-    <b-dropdown @change="onChange" @click="onClick">
+    <s-dropdown @change="onChange" @click="onClick">
       <a href="#">
         dropdown
-        <b-icon type="angle-down"></b-icon>
+        <s-icon type="angle-down"></s-icon>
       </a>
 
-      <b-dropdown-menu slot="dropdown">
-        <b-dropdown-item v-for="i in 4" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-      </b-dropdown-menu>
-    </b-dropdown>
+      <s-dropdown-menu slot="dropdown">
+        <s-dropdown-item v-for="i in 4" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+      </s-dropdown-menu>
+    </s-dropdown>
 
     <div class="pt-100">
-      <b-dropdown @change="onChange" @click="onClick">
+      <s-dropdown @change="onChange" @click="onClick">
         <a href="#">
           dropdown
-          <b-icon type="angle-down"></b-icon>
+          <s-icon type="angle-down"></s-icon>
         </a>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
 
-      <b-dropdown @change="onChange" @click="onClick">
+      <s-dropdown @change="onChange" @click="onClick">
         <a href="#">
           dropdown
-          <b-icon type="angle-down"></b-icon>
+          <s-icon type="angle-down"></s-icon>
         </a>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :navigator="i === 1 ? '/' : ''" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :navigator="i === 1 ? '/' : ''" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
 
-      <b-dropdown @change="onChange" @click="onClick">
+      <s-dropdown @change="onChange" @click="onClick">
         <a href="#">
           dropdown
-          <b-icon type="angle-down"></b-icon>
+          <s-icon type="angle-down"></s-icon>
         </a>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
 
-      <b-dropdown @change="onChange" @click="onClick">
+      <s-dropdown @change="onChange" @click="onClick">
         <a href="#">
           dropdown
-          <b-icon type="angle-down"></b-icon>
+          <s-icon type="angle-down"></s-icon>
         </a>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
     </div>
 
     <div class="pt-200">
-      <b-dropdown @change="onChange" @click="onClick">
-        <b-dropdown-button>Dropdown</b-dropdown-button>
+      <s-dropdown @change="onChange" @click="onClick">
+        <s-dropdown-button>Dropdown</s-dropdown-button>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
 
-      <b-dropdown @change="onChange" @click="onClick">
-        <b-dropdown-button size="small">Dropdown</b-dropdown-button>
+      <s-dropdown @change="onChange" @click="onClick">
+        <s-dropdown-button size="small">Dropdown</s-dropdown-button>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
 
-      <b-dropdown @change="onChange" @click="onClick">
-        <b-dropdown-button type="link">Dropdown</b-dropdown-button>
+      <s-dropdown @change="onChange" @click="onClick">
+        <s-dropdown-button type="link">Dropdown</s-dropdown-button>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
 
-      <b-dropdown @change="onChange" @click="onClick">
-        <b-dropdown-button split>Dropdown</b-dropdown-button>
+      <s-dropdown @change="onChange" @click="onClick">
+        <s-dropdown-button split>Dropdown</s-dropdown-button>
 
-        <b-dropdown-menu slot="dropdown">
-          <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
-        </b-dropdown-menu>
-      </b-dropdown>
+        <s-dropdown-menu slot="dropdown">
+          <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
+        </s-dropdown-menu>
+      </s-dropdown>
     </div>
   </div>
 </template>

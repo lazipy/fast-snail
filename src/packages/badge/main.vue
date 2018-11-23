@@ -11,7 +11,7 @@
   import { themes, OneOf } from '../../utils';
 
   export default {
-    name: 'BBadge',
+    name: 'SBadge',
     props: {
       type: {
         type: String,

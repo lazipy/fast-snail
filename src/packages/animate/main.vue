@@ -9,7 +9,7 @@
   import { addClass, removeClass } from '../../utils/dom';
 
   export default {
-    name: 'BAnimate',
+    name: 'SAnimate',
     props: {
       name: {
         type: String,

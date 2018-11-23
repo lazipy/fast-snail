@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: 'BCarouselItem',
+    name: 'SCarouselItem',
     data () {
       return {
         animate: ''

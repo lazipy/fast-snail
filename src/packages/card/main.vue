@@ -40,7 +40,7 @@
   import { OneOf } from '../../utils';
 
   export default {
-    name: 'BCard',
+    name: 'SCard',
     props: {
       status: {
         type: String,

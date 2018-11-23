@@ -6,6 +6,6 @@
 
 <script>
   export default {
-    name: 'BDropdownMenu'
+    name: 'SDropdownMenu'
   };
 </script>

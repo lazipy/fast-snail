@@ -12,7 +12,7 @@
   import { OneOf } from '../../utils';
 
   export default {
-    name: 'BDivider',
+    name: 'SDivider',
     props: {
       type: {
         type: String,

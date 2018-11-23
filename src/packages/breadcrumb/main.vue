@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'BBreadcrumb',
+    name: 'SBreadcrumb',
     props: {
       separator: {
         type: [String, Element],

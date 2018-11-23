@@ -8,7 +8,7 @@
   import { OneOf } from '../../utils';
 
   export default {
-    name: 'BAvator',
+    name: 'SAvator',
     props: {
       type: {
         type: String,

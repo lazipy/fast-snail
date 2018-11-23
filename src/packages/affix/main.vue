@@ -9,7 +9,7 @@
 <script>
 import { on, off } from '../../utils/dom.js'
 export default {
-  name: 'BAffix',
+  name: 'SAffix',
   data() {
     return {
       style: {}

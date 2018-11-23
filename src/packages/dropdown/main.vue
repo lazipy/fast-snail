@@ -32,16 +32,19 @@
 
 <script>
   import popper from '../../mixins/popper';
+  import { OneOf } from '../../utils';
 
   export default {
-    name: 'BDropdown',
+    name: 'SDropdown',
     mixins: [popper],
     props: {
       trigger: {
-        default: 'hover'
+        default: 'hover',
+        validator: OneOf(['hover', 'click'])
       },
       placement: {
-        default: 'bottom-start'
+        default: 'bottom-start',
+        validator: OneOf(['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'])
       },
       itemClickHidden: {
         type: Boolean,

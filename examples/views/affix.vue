@@ -1,17 +1,17 @@
 <template>
   <div>
     <div v-for="i in 20">eagle eagle eagle</div>
-    <b-affix>
-      <b-button>默认</b-button>
-    </b-affix>
+    <s-affix>
+      <s-button>默认</s-button>
+    </s-affix>
     <div v-for="i in 20">eagle eagle eagle</div>
-    <b-affix :offset-top="40">
-      <b-button>距离顶部40px</b-button>
-    </b-affix>
+    <s-affix :offset-top="40">
+      <s-button>距离顶部40px</s-button>
+    </s-affix>
     <div v-for="i in 20">eagle eagle eagle</div>
-    <b-affix :offset-bottom="40">
-      <b-button>距离底部40px</b-button>
-    </b-affix>
+    <s-affix :offset-bottom="40">
+      <s-button>距离底部40px</s-button>
+    </s-affix>
     <div v-for="i in 80">eagle eagle eagle</div>
   </div>
 </template>

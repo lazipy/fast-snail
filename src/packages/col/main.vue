@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'BCol',
+    name: 'SCol',
     props: {
       span: {
         type: Number

@@ -24,7 +24,7 @@
   import { themes, OneOf } from '../../utils';
 
   export default {
-    name: 'BAlert',
+    name: 'SAlert',
     props: {
       type: {
         type: String,
