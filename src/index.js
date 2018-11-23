@@ -18,6 +18,7 @@ import Collapse from './packages/collapse/main';
 import CollapseItem from './packages/collapse/item';
 import CollapseAnimate from './packages/collapse/animate';
 import Col from './packages/col/main';
+import Divider from './packages/divider/main';
 import Dropdown from './packages/dropdown/main';
 import DropdownMenu from './packages/dropdown/menu';
 import DropdownItem from './packages/dropdown/item';
@@ -52,6 +53,7 @@ const components = [
   CollapseAnimate,
   Row,
   Col,
+  Divider,
   Dropdown,
   DropdownMenu,
   DropdownItem,
@@ -91,6 +93,7 @@ export default {
   CollapseAnimate,
   Row,
   Col,
+  Divider,
   Dropdown,
   DropdownMenu,
   DropdownItem,
