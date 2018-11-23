@@ -58,37 +58,33 @@
     </div>
 
     <div class="pt-200">
-      <s-dropdown @change="onChange" @click="onClick">
-        <s-dropdown-button>Dropdown</s-dropdown-button>
-
+      <s-dropdown-button @change="onChange" @select="onClick">
+        Dropdown
         <s-dropdown-menu slot="dropdown">
           <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
         </s-dropdown-menu>
-      </s-dropdown>
+      </s-dropdown-button>
 
-      <s-dropdown @change="onChange" @click="onClick">
-        <s-dropdown-button size="small">Dropdown</s-dropdown-button>
-
+      <s-dropdown-button size="small" @change="onChange" @select="onClick">
+        Dropdown
         <s-dropdown-menu slot="dropdown">
           <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
         </s-dropdown-menu>
-      </s-dropdown>
+      </s-dropdown-button>
 
-      <s-dropdown @change="onChange" @click="onClick">
-        <s-dropdown-button type="link">Dropdown</s-dropdown-button>
-
+      <s-dropdown-button size="small" type="link" @change="onChange" @select="onClick">
+        Dropdown
         <s-dropdown-menu slot="dropdown">
           <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
         </s-dropdown-menu>
-      </s-dropdown>
+      </s-dropdown-button>
 
-      <s-dropdown @change="onChange" @click="onClick">
-        <s-dropdown-button split>Dropdown</s-dropdown-button>
-
+      <s-dropdown-button split @change="onChange" @click="click" @select="onClick">
+        Dropdown
         <s-dropdown-menu slot="dropdown">
           <s-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</s-dropdown-item>
         </s-dropdown-menu>
-      </s-dropdown>
+      </s-dropdown-button>
     </div>
   </div>
 </template>
@@ -97,10 +93,13 @@
 export default {
   methods: {
     onChange (val) {
-      // console.log(val);
+      console.log(val);
     },
     onClick (val) {
       console.log(val);
+    },
+    click () {
+      console.log('点击了左侧的按钮');
     }
   }
 }

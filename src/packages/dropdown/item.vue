@@ -32,7 +32,7 @@
       handleItemClick () {
         if (this.disabled) return;
         this.clickHidden && this.$parent.$parent.delayHide();
-        this.name && this.$parent.$parent.$emit('click', this.name);
+        this.name && this.$parent.$parent.$emit('select', this.name);
         this.navigator && this.$router.push(this.navigator);
       }
     }
