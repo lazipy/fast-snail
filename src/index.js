@@ -10,6 +10,7 @@ import Breadcrumb from './packages/breadcrumb/main';
 import BreadcrumbItem from './packages/breadcrumb/item';
 import Button from './packages/button/main';
 import ButtonGroup from './packages/button/group';
+import DropdownButton from './packages/button/dropdown';
 import Card from './packages/card/main';
 import Carousel from './packages/carousel/main';
 import CarouselItem from './packages/carousel/item';
@@ -42,6 +43,7 @@ const components = [
   BreadcrumbItem,
   Button,
   ButtonGroup,
+  DropdownButton,
   Card,
   Carousel,
   CarouselItem,
@@ -80,6 +82,7 @@ export default {
   BreadcrumbItem,
   Button,
   ButtonGroup,
+  DropdownButton,
   Card,
   Carousel,
   CarouselItem,

@@ -56,6 +56,38 @@
         </b-dropdown-menu>
       </b-dropdown>
     </div>
+
+    <b-dropdown @change="onChange" @click="onClick">
+      <b-dropdown-button>Dropdown</b-dropdown-button>
+
+      <b-dropdown-menu slot="dropdown">
+        <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
+      </b-dropdown-menu>
+    </b-dropdown>
+
+    <b-dropdown @change="onChange" @click="onClick">
+      <b-dropdown-button size="small">Dropdown</b-dropdown-button>
+
+      <b-dropdown-menu slot="dropdown">
+        <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
+      </b-dropdown-menu>
+    </b-dropdown>
+
+    <b-dropdown @change="onChange" @click="onClick">
+      <b-dropdown-button type="link">Dropdown</b-dropdown-button>
+
+      <b-dropdown-menu slot="dropdown">
+        <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
+      </b-dropdown-menu>
+    </b-dropdown>
+
+    <b-dropdown @change="onChange" @click="onClick">
+      <b-dropdown-button split>Dropdown</b-dropdown-button>
+
+      <b-dropdown-menu slot="dropdown">
+        <b-dropdown-item v-for="i in 4" :divided="i === 4" :disabled="i === 3" :key="i" :name="i">Dropdown Item {{ i }}</b-dropdown-item>
+      </b-dropdown-menu>
+    </b-dropdown>
   </div>
 </template>
 

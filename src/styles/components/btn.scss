@@ -230,3 +230,22 @@ input[type="button"] {
     }
   }
 }
+
+// Dropdown Button
+.btn-dropdown {
+  display: inline-block;
+
+  .btn-arrow {
+    display: inline-block;
+    transition: transform .2s ease-in-out;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  .btn-split {
+    padding-left: $btn-dropdown-split-padding;
+    padding-right: $btn-dropdown-split-padding;
+  }
+}
