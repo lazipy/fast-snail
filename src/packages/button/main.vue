@@ -7,16 +7,18 @@
     @click="handleClick"
     :type="nativeType"
     :disabled="disabled">
-    <i v-if="loading" class="icon-spin4 spinner"></i>
+    <s-spinner v-if="loading"></s-spinner>
     <slot></slot>
   </button>
 </template>
 
 <script>
   import { themes, OneOf } from '../../utils';
+  import SSpinner from '../spinner/main';
 
   export default {
     name: 'SButton',
+    components: { SSpinner },
     props: {
       type: {
         type: String,

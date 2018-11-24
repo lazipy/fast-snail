@@ -23,9 +23,13 @@ import Dropdown from './packages/dropdown/main';
 import DropdownMenu from './packages/dropdown/menu';
 import DropdownItem from './packages/dropdown/item';
 import Icon from './packages/icon/main';
+import List from './packages/list/main';
+import ListItem from './packages/list/item';
+import Loading from './packages/loading/main';
 import Row from './packages/row/main';
 import Tooltip from './packages/tooltip/main';
 import Popover from './packages/popover/main';
+import Spinner from './packages/spinner/main';
 
 // Directives
 import Transfer from './directives/transfer';
@@ -57,9 +61,13 @@ const components = [
   Dropdown,
   DropdownMenu,
   DropdownItem,
+  List,
+  ListItem,
+  Loading,
   Icon,
   Tooltip,
-  Popover
+  Popover,
+  Spinner
 ];
 
 const install = (Vue) => {
@@ -97,7 +105,11 @@ export default {
   Dropdown,
   DropdownMenu,
   DropdownItem,
+  List,
+  ListItem,
+  Loading,
   Icon,
   Tooltip,
-  Popover
+  Popover,
+  Spinner
 };
