@@ -9,7 +9,7 @@ const loadingEl = loadingCom.vm.$el;
 
 export default {
   bind (el, { value }) {
-    if (value) {
+    if (value && !el.contains(loadingEl)) {
       el.appendChild(loadingEl);
     }
   },
@@ -21,6 +21,6 @@ export default {
     }
   },
   unbind (el) {
-    el.removeChild(loadingEl);
+    el.contains(loadingEl) && el.removeChild(loadingEl);
   }
 };
