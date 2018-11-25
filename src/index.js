@@ -35,6 +35,7 @@ import Spinner from './packages/spinner/main';
 import Transfer from './directives/transfer';
 import ChildEvent from './directives/child-event';
 import OutClick from './directives/out-click';
+import VLoading from './directives/loading';
 
 const components = [
   Animate,
@@ -78,6 +79,7 @@ const install = (Vue) => {
   Vue.directive('transfer', Transfer);
   Vue.directive('child-event', ChildEvent);
   Vue.directive('out-click', OutClick);
+  Vue.directive('loading', VLoading);
 };
 
 export default {
