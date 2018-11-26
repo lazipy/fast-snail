@@ -221,17 +221,6 @@ $list-item-padding: 12px 20px !default;
 $scroller-tool-color: $gray-600 !default;
 
 // tag
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-
 $tag-colors: () !default;
 $tag-colors: map-merge((
   "blue": $blue,
@@ -245,3 +234,6 @@ $tag-colors: map-merge((
   "teal": $teal,
   "cyan": $cyan
 ), $tag-colors);
+
+$tag-padding: 1px 9px !default;
+$tag-border-radius: 4px !default;
