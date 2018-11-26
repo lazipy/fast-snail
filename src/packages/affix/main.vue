@@ -30,6 +30,11 @@ export default {
   },
   mounted() {
     on(window, 'scroll', this.handleScroll)
+    on(window, 'resize', this.handleScroll)
+  },
+  destroyed() {
+    off(window, 'scroll', this.handleScroll)
+    off(window, 'resize', this.handleScroll)
   },
   methods: {
     handleScroll() {
