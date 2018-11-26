@@ -29,6 +29,40 @@
       <s-tab-pane name="2" label="公共交通">公共交通</s-tab-pane>
       <s-tab-pane name="3" label="周边商业">周边商业</s-tab-pane>
     </s-tabs>
+    <p>带有actions</p>
+    <s-tabs v-model="state6" @change="onChange">
+      <s-tab-pane name="1" label="周边学校">周边学校</s-tab-pane>
+      <s-tab-pane name="2" label="公共交通">公共交通</s-tab-pane>
+      <s-tab-pane name="3" label="周边商业">周边商业</s-tab-pane>
+      <span slot="actions">
+        <s-button>操作按钮</s-button>
+      </span>
+    </s-tabs>
+    <p>不同定位</p>
+    <s-tabs v-model="state7" position="left" @change="onChange">
+      <s-tab-pane name="1" label="周边学校">周边学校</s-tab-pane>
+      <s-tab-pane name="2" label="公共交通">公共交通</s-tab-pane>
+      <s-tab-pane name="3" label="周边商业">周边商业</s-tab-pane>
+    </s-tabs>
+
+    <s-tabs v-model="state8" position="right" @change="onChange">
+      <s-tab-pane name="1" label="周边学校">周边学校</s-tab-pane>
+      <s-tab-pane name="2" label="公共交通">公共交通</s-tab-pane>
+      <s-tab-pane name="3" label="周边商业">周边商业</s-tab-pane>
+    </s-tabs>
+
+    <p>带icon</p>
+    <s-tabs v-model="state10" @change="onChange">
+      <s-tab-pane name="1" label="周边学校">
+        周边学校
+        <span slot="label">
+          <i class="icon-cancel"></i>
+          周边学校
+        </span>
+      </s-tab-pane>
+      <s-tab-pane name="2" label="公共交通">公共交通</s-tab-pane>
+      <s-tab-pane name="3" label="周边商业">周边商业</s-tab-pane>
+    </s-tabs>
   </div>
 </template>
 
@@ -40,13 +74,17 @@ export default {
       state1: '1',
       state2: '1',
       state4: '1',
-      state5: '1'
+      state5: '1',
+      state6: '1',
+      state7: '1',
+      state8: '1',
+      state10: '1',
     }
   },
   methods: {
     onChange (val, old) {
       console.log(val, old)
-    }
+    },
   }
 }
 </script>

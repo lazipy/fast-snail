@@ -6,6 +6,17 @@
   opacity: 0;
 }
 
+// Fade-delay
+.fade-delay-enter-active, .fade-delay-leave-active {
+  transition: opacity .3s;
+}
+.fade-delay-leave-active {
+  position: absolute;
+}
+.fade-delay-enter, .fade-delay-leave-to  {
+  opacity: 0;
+}
+
 // Fade Rotate
 .fade-rotate-enter-active, .fade-rotate-leave-active {
   transition: opacity .3s, transform .3s;

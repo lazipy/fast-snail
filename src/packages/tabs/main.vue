@@ -1,18 +1,26 @@
 <template>
-  <div class="tabs">
+  <div class="tabs" :class="classList">
     <div class="tab-list" :class="classes">
-      <div
-        class="tab-list-item"
-        :class="{ 'active': model === item.name, 'disabled': item.disabled }"
-        :style="currentStyle"
-        ref="tab"
-        v-for="(item, index) in items"
-        :key="item.name"
-        @mouseenter="handleTabEnter(item, index)"
-        @click="handleTabClick(item, index)">
-        {{item.label}}
+      <div>
+        <div
+          class="tab-list-item"
+          :class="{ 'active': model === item.name, 'disabled': item.disabled }"
+          :style="currentStyle"
+          ref="tab"
+          v-for="(item, index) in items"
+          :key="item.name"
+          v-html="item.title"
+          @mouseenter="handleTabEnter(item, index)"
+          @click="handleTabClick(item, index)">
+        </div>
       </div>
-      <div class="animated-line" v-if="type === 'line'" :style="{ transform: `translateX(${x}px)`, width: `${width}px` }"></div>
+
+      <!-- actions -->
+      <div class="tabs-actions">
+        <slot name="actions"></slot>
+      </div>
+
+      <div class="animated-line" v-if="type === 'line'" :style="animateStyle"></div>
     </div>
 
     <div class="tab-pane__container">
@@ -40,14 +48,21 @@
         type: Boolean,
         default: true
       },
-      gutter: Number
+      gutter: Number,
+      position: {
+        type: String,
+        default: 'top',
+        validator: OneOf(['top', 'bottom', 'left', 'right'])
+      }
     },
     data () {
       return {
         items: [],
         activeIndex: 0,
         x: 0,
-        width: 0
+        width: 0,
+        y: 0,
+        height: 0
       };
     },
     computed: {
@@ -64,6 +79,11 @@
           this.$emit('change', val, this.value);
         }
       },
+      classList () {
+        return [
+          `tabs-${this.position}`
+        ];
+      },
       classes () {
         return [
           `tabs-${this.type}`
@@ -73,15 +93,29 @@
         return {
           marginRight: this.gutter + 'px'
         };
+      },
+      animateStyle () {
+        if (this.position === 'top' || this.position === 'bottom') {
+          return { transform: `translateX(${this.x}px)`, width: `${this.width}px` };
+        } else {
+          return { transform: `translateY(${this.y}px)`, height: `${this.height}px` };
+        }
       }
     },
     mounted () {
-      this.items = this.$children;
+      this.items = this.$children.filter(child => child.$options._componentTag === 's-tab-pane');
     },
     methods: {
       handleTabEnter (item, index) {
-        if (this.activeIndex === index || !this.animated || item.disabled) return;
-        this.updateAnimate(this.activeIndex > index ? 'carousel-right' : 'carousel-left');
+        if (this.activeIndex === index || !this.animated || item.disabled) {
+          this.updateAnimate('fade-delay');
+          return;
+        };
+        if (this.position === 'top' || this.position === 'bottom') {
+          this.updateAnimate(this.activeIndex > index ? 'carousel-right' : 'carousel-left');
+        } else {
+          this.updateAnimate(this.activeIndex > index ? 'carousel-bottom' : 'carousel-top');
+        }
       },
       handleTabClick (item, index) {
         if (this.activeIndex === index || item.disabled) return;
@@ -92,8 +126,13 @@
         this.activeIndex = this.items.findIndex(item => item.name === this.model);
       },
       setAnimate () {
-        this.x = this.$refs.tab[this.activeIndex].offsetLeft;
-        this.width = this.$refs.tab[this.activeIndex].offsetWidth;
+        if (this.position === 'top' || this.position === 'bottom') {
+          this.x = this.$refs.tab[this.activeIndex].offsetLeft;
+          this.width = this.$refs.tab[this.activeIndex].offsetWidth;
+        } else {
+          this.y = this.$refs.tab[this.activeIndex].offsetTop;
+          this.height = this.$refs.tab[this.activeIndex].offsetHeight;
+        }
       },
       // update children animate
       updateAnimate (animate) {

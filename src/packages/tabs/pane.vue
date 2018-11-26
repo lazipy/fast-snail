@@ -1,20 +1,13 @@
 <template>
-  <div>
-    <template v-if="$parent.animated">
-      <transition :name="animate">
-        <div class="tab-pane" v-if="name === $parent.model">
-          <slot></slot>
-          <!-- <slot name="label"></slot> -->
-        </div>
-      </transition>
-    </template>
-    <template v-else>
-      <div class="tab-pane" v-if="name === $parent.model">
-        <slot></slot>
-        <!-- <slot name="label"></slot> -->
+  <transition :name="animate">
+    <div class="tab-pane" v-if="name === $parent.model">
+      <slot></slot>
+
+      <div class="tag-label" v-if="visible">
+        <slot name="label"></slot>
       </div>
-    </template>
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -25,7 +18,7 @@
         type: [String, Number],
         required: true
       },
-      label: String,
+      label: [String, Element],
       disabled: {
         type: Boolean,
         default: false
@@ -33,8 +26,16 @@
     },
     data () {
       return {
-        animate: ''
+        animate: '',
+        title: this.label,
+        visible: true
       };
+    },
+    mounted () {
+      if (this.$slots.label) {
+        this.title = this.$slots.label[0].elm.innerHTML;
+      }
+      this.visible = false;
     }
   };
 </script>

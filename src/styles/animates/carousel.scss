@@ -31,3 +31,37 @@
 .carousel-right-leave-to  {
   transform: translate(100%, 0);
 }
+
+// Carousel top
+.carousel-top-enter-active, .carousel-top-leave-active {
+  transition: all .3s ease;
+}
+.carousel-top-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.carousel-top-enter {
+  transform: translate(0, 100%);
+}
+.carousel-top-leave-to  {
+  transform: translate(0, -100%);
+}
+
+// Carousel bottom
+.carousel-bottom-enter-active, .carousel-bottom-leave-active {
+  transition: all .3s ease;
+}
+.carousel-bottom-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.carousel-bottom-enter {
+  transform: translate(0, -100%);
+}
+.carousel-bottom-leave-to  {
+  transform: translate(0, 100%);
+}

@@ -1,11 +1,14 @@
 .tabs {
   position: relative;
+  display: flex;
 }
 
 // Nav
 .tab-list {
   position: relative;
-  border-bottom: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 // card
 .tab-list.tabs-card {
@@ -26,7 +29,6 @@
 // item
 .tab-list-item {
   position: relative;
-  display: inline-block;
   padding: $tabs-list-padding;
   background-color: $white;
   cursor: pointer;
@@ -43,9 +45,6 @@
 }
 .animated-line {
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  height: 3px;
   background-color: $primary;
   z-index: 1;
   transition: transform .3s cubic-bezier(.645, .045, .355, 1);
@@ -54,9 +53,76 @@
 // pane
 .tab-pane__container {
   position: relative;
+  flex: 1;
   overflow: hidden;
   background-color: $white;
 }
 .tab-pane {
   padding: $tab-pane-padding;
+  height: 100%;
+}
+
+// position
+.tabs.tabs-top {
+  flex-direction: column;
+
+  .tab-list {
+    border-bottom: 1px solid $border-color;
+  }
+
+  .tab-list-item {
+    display: inline-block;
+  }
+
+  .animated-line {
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+  }
+}
+.tabs.tabs-bottom {
+  flex-direction: column-reverse;
+
+  .tab-list {
+    border-top: 1px solid $border-color;
+  }
+
+  .tab-list-item {
+    display: inline-block;
+  }
+
+  .animated-line {
+    left: 0;
+    top: -2px;
+    height: 3px;
+  }
+}
+
+.tabs.tabs-left {
+  flex-direction: row;
+
+  .tab-list {
+    flex-direction: column;
+    border-right: 1px solid $border-color;
+  }
+
+  .animated-line {
+    top: 0px;
+    right: -2px;
+    width: 3px;
+  }
+}
+.tabs.tabs-right {
+  flex-direction: row-reverse;
+
+  .tab-list {
+    flex-direction: column;
+    border-left: 1px solid $border-color;
+  }
+
+  .animated-line {
+    top: 0px;
+    left: -2px;
+    width: 3px;
+  }
 }
