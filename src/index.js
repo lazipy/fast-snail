@@ -27,10 +27,11 @@ import List from './packages/list/main';
 import ListItem from './packages/list/item';
 import Loading from './packages/loading/main';
 import Row from './packages/row/main';
-import Tooltip from './packages/tooltip/main';
-import Popover from './packages/popover/main';
 import Scroller from './packages/scroller/main';
 import Spinner from './packages/spinner/main';
+import Tooltip from './packages/tooltip/main';
+import Tag from './packages/tag/main';
+import Popover from './packages/popover/main';
 
 // Directives
 import Transfer from './directives/transfer';
@@ -69,6 +70,7 @@ const components = [
   Loading,
   Icon,
   Tooltip,
+  Tag,
   Popover,
   Scroller,
   Spinner
@@ -116,6 +118,7 @@ export default {
   Loading,
   Icon,
   Tooltip,
+  Tag,
   Popover,
   Scroller,
   Spinner

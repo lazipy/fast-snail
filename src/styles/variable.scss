@@ -57,7 +57,7 @@ $grid-breakpoints: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-800 !default;
+$body-color:                $gray-700 !default;
 
 $border-color:                $gray-300 !default;
 
@@ -219,3 +219,29 @@ $list-item-padding: 12px 20px !default;
 
 // Scroller
 $scroller-tool-color: $gray-600 !default;
+
+// tag
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$tag-colors: () !default;
+$tag-colors: map-merge((
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan
+), $tag-colors);

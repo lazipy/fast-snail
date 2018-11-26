@@ -1,0 +1,25 @@
+.tag {
+  position: relative;
+  display: inline-block;
+  border: 1px solid $border-color;
+  padding: 1px 9px;
+  background-color: $light;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  color: $body-color;
+  transition: all .15s ease-in-out;
+
+  & + .tag {
+    margin-left: 5px;
+  }
+}
+
+// theme
+@each $color, $value in $tag-colors {
+  .tag-#{$color} {
+    background-color: rgba($value, .15);
+    border-color: rgba($value, .7);
+    color: $value;
+  }
+}

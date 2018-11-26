@@ -25,6 +25,7 @@ export default new Router({
     { path: '/popover', component: () => import('./views/popover.vue') },
     { path: '/scroller', component: () => import('./views/scroller.vue') },
     { path: '/spinner', component: () => import('./views/spinner.vue') },
+    { path: '/tag', component: () => import('./views/tag.vue') },
     { path: '/tooltip', component: () => import('./views/tooltip.vue') },
     { path: '/icon', component: () => import('./views/icon.vue') },
     { path: '/layout', component: () => import('./views/layout.vue') }

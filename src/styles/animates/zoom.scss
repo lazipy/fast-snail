@@ -31,3 +31,12 @@
     opacity: 0;
   }
 }
+
+// zoom center
+.zoom-center-enter-active, .zoom-center-leave-active {
+  transition: all .2s;
+}
+.zoom-center-enter, .zoom-center-leave-to {
+  opacity: 0;
+  transform: scale(0, 1);
+}
