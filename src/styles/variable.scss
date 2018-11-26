@@ -237,3 +237,11 @@ $tag-colors: map-merge((
 
 $tag-padding: 1px 9px !default;
 $tag-border-radius: 4px !default;
+
+// tabs
+$tabs-list-padding: 12px 16px !default;
+$tab-pane-padding: 10px 16px !default;
+$tabs-disabled-color: $gray-400 !default;
+
+$tab-border-radius: 4px !default;
+$tab-card-color: $gray-100 !default;

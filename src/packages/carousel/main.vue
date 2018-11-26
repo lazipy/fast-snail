@@ -99,7 +99,7 @@
       }
     },
     created () {
-      this.throttleSetActive = throttle(this.setActiveIndex, 600);
+      this.throttleSetActive = throttle(this.setActiveIndex, 300);
     },
     mounted () {
       this.items = this.$children;

@@ -30,6 +30,8 @@ import Row from './packages/row/main';
 import Scroller from './packages/scroller/main';
 import Spinner from './packages/spinner/main';
 import Tooltip from './packages/tooltip/main';
+import Tabs from './packages/tabs/main';
+import TabPane from './packages/tabs/pane';
 import Tag from './packages/tag/main';
 import Popover from './packages/popover/main';
 
@@ -70,6 +72,8 @@ const components = [
   Loading,
   Icon,
   Tooltip,
+  Tabs,
+  TabPane,
   Tag,
   Popover,
   Scroller,
@@ -118,6 +122,8 @@ export default {
   Loading,
   Icon,
   Tooltip,
+  Tabs,
+  TabPane,
   Tag,
   Popover,
   Scroller,

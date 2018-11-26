@@ -1,11 +1,12 @@
 // Carousel left
 .carousel-left-enter-active, .carousel-left-leave-active {
-  transition: all .6s ease;
+  transition: all .3s ease;
 }
 .carousel-left-leave-active {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 .carousel-left-enter {
   transform: translate(100%, 0);
@@ -16,12 +17,13 @@
 
 // Carousel right
 .carousel-right-enter-active, .carousel-right-leave-active {
-  transition: all .6s ease;
+  transition: all .3s ease;
 }
 .carousel-right-leave-active {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 .carousel-right-enter {
   transform: translate(-100%, 0);
