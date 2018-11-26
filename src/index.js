@@ -29,6 +29,7 @@ import Loading from './packages/loading/main';
 import Row from './packages/row/main';
 import Tooltip from './packages/tooltip/main';
 import Popover from './packages/popover/main';
+import Scroller from './packages/scroller/main';
 import Spinner from './packages/spinner/main';
 
 // Directives
@@ -68,6 +69,7 @@ const components = [
   Icon,
   Tooltip,
   Popover,
+  Scroller,
   Spinner
 ];
 
@@ -113,5 +115,6 @@ export default {
   Icon,
   Tooltip,
   Popover,
+  Scroller,
   Spinner
 };

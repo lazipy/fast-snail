@@ -23,6 +23,7 @@ export default new Router({
     { path: '/list', component: () => import('./views/list.vue') },
     { path: '/loading', component: () => import('./views/loading.vue') },
     { path: '/popover', component: () => import('./views/popover.vue') },
+    { path: '/scroller', component: () => import('./views/scroller.vue') },
     { path: '/spinner', component: () => import('./views/spinner.vue') },
     { path: '/tooltip', component: () => import('./views/tooltip.vue') },
     { path: '/icon', component: () => import('./views/icon.vue') },

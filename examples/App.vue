@@ -18,6 +18,7 @@
       <router-link to="/list">list</router-link>
       <router-link to="/loading">loading</router-link>
       <router-link to="/popover">popover</router-link>
+      <router-link to="/scroller">scroller</router-link>
       <router-link to="/spinner">spinner</router-link>
       <router-link to="/tooltip">tooltip</router-link>
       <router-link to="/icon">icon</router-link>
