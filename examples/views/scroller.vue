@@ -84,6 +84,33 @@
         </div>
       </s-scroller>
     </div>
+
+    <div class="wrap mt-20 border" v-scroller>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+    </div>
   </div>
 </template>
 

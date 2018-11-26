@@ -37,6 +37,7 @@ import Transfer from './directives/transfer';
 import ChildEvent from './directives/child-event';
 import OutClick from './directives/out-click';
 import VLoading from './directives/loading';
+import VScroller from './directives/scroller';
 
 const components = [
   Animate,
@@ -82,6 +83,7 @@ const install = (Vue) => {
   Vue.directive('child-event', ChildEvent);
   Vue.directive('out-click', OutClick);
   Vue.directive('loading', VLoading);
+  Vue.directive('scroller', VScroller);
 };
 
 export default {
