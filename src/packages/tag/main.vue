@@ -3,7 +3,7 @@
     <span class="tag" :class="classes" :style="currentStyle" @click="handleClick" v-if="visible">
       <slot></slot>
       <span class="tag-close" @click="close" v-if="closable">
-        <i class="icon-cancel"></i>
+        &times;
       </span>
     </span>
   </transition>
