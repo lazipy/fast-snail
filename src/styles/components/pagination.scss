@@ -1,0 +1,68 @@
+.cm-pagination {
+  display: flex;
+  padding: 10px 0;
+
+  &__inner {
+    line-height: 28px;
+  }
+  .total {
+    font-size: 13px;
+    margin-right: 10px;
+  }
+  .cm-pager {
+    display: inline-block;
+
+    > li.active {
+      background-color: $primary;
+      color: #fff;
+    }
+  }
+  button, .cm-pager > li {
+    display: inline-block;
+    margin: 0 4px;
+    background-color: #f4f4f5;
+    padding: 0 4px;
+    font-size: 13px;
+    min-width: 30px;
+    border-radius: 2px;
+    vertical-align: top;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: 500;
+    border: none;
+    outline: none;
+  }
+  .cm-pager > li:not(.active):hover, button:hover {
+    color: $primary;
+    cursor: pointer;
+  }
+  button > .iconfont {
+    font-size: 13px;
+  }
+  button:disabled {
+    color: #c0c4cc;
+    cursor: not-allowed;
+  }
+  &__jumper {
+    font-size: 13px;
+    margin-left: 10px;
+
+    .cm-input__inner {
+      width: auto;
+      height: 28px;
+      line-height: 18px;
+      padding: 0 3px;
+      width: 50px;
+      margin: 0 3px;
+      text-align: center;
+
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+}

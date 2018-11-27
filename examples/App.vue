@@ -20,6 +20,7 @@
       <router-link to="/popover">popover</router-link>
       <router-link to="/scroller">scroller</router-link>
       <router-link to="/spinner">spinner</router-link>
+      <router-link to="/steps">steps</router-link>
       <router-link to="/tabs">tabs</router-link>
       <router-link to="/tag">tag</router-link>
       <router-link to="/tooltip">tooltip</router-link>

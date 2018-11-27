@@ -26,9 +26,12 @@ import Icon from './packages/icon/main';
 import List from './packages/list/main';
 import ListItem from './packages/list/item';
 import Loading from './packages/loading/main';
+import Pagination from './packages/pagination/main';
 import Row from './packages/row/main';
 import Scroller from './packages/scroller/main';
 import Spinner from './packages/spinner/main';
+import Steps from './packages/steps/main';
+import Step from './packages/steps/item';
 import Tooltip from './packages/tooltip/main';
 import Tabs from './packages/tabs/main';
 import TabPane from './packages/tabs/pane';
@@ -70,7 +73,10 @@ const components = [
   List,
   ListItem,
   Loading,
+  Pagination,
   Icon,
+  Steps,
+  Step,
   Tooltip,
   Tabs,
   TabPane,
@@ -120,7 +126,10 @@ export default {
   List,
   ListItem,
   Loading,
+  Pagination,
   Icon,
+  Steps,
+  Step,
   Tooltip,
   Tabs,
   TabPane,
