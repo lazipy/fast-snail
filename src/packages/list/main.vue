@@ -1,6 +1,6 @@
 <template>
-  <div class="list-container">
-    <ul class="list" :class="classes" :style="currentStyle">
+  <div class="list-container" :class="classes" :style="currentStyle">
+    <ul class="list">
       <li class="list-header list-item" v-if="$slots.header">
         <slot name="header"></slot>
       </li>

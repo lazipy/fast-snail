@@ -9,8 +9,11 @@ const El = component.vm.$el;
 let childs = null;
 
 const insertScroll = (el, childs) => {
+  El.children[0].innerHTML = '';
   for (let child of childs) {
-    El.children[0].appendChild(child);
+    if (!El.children[0].contains(child)) {
+      El.children[0].appendChild(child);
+    }
   }
   el.innerHTML = '';
   el.appendChild(El);
@@ -24,13 +27,8 @@ export default {
     childs = el.children;
     insertScroll(el, childs);
   },
-  componentUpdated (el) {
-    childs = el.children;
-    childs = [...childs];
-    childs.shift();
-    insertScroll(el, childs);
-  },
   unbind (el) {
+    childs = el.children[0].children[0].children;
     el.innerHTML = '';
     for (let child of childs) {
       el.appendChild(child);

@@ -14,9 +14,9 @@ export default {
     }
   },
   componentUpdated (el, { value }) {
-    if (value) {
+    if (value && !el.contains(loadingEl)) {
       el.appendChild(loadingEl);
-    } else {
+    } else if (!value && el.contains(loadingEl)) {
       el.removeChild(loadingEl);
     }
   },

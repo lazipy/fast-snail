@@ -27,7 +27,7 @@
     </div>
 
     <div class="pt-20">
-      <s-list :height="300">
+      <s-list :height="300" v-scroller>
         <s-list-item>Cras justo odio</s-list-item>
         <s-list-item>Cras justo odio</s-list-item>
         <s-list-item>Cras justo odio</s-list-item>

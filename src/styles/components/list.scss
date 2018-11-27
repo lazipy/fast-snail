@@ -1,12 +1,12 @@
 .list-container {
   position: relative;
+  overflow: auto;
 }
 .list {
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
-  overflow: auto;
 }
 
 .fixed-height:not(.list-flush) {
