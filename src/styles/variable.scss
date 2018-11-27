@@ -247,3 +247,16 @@ $tabs-disabled-color: $gray-400 !default;
 
 $tab-border-radius: 4px !default;
 $tab-card-color: $gray-100 !default;
+
+// steps
+$process: $gray-800 !default;
+$wait: $gray-500 !default;
+
+$step-colors: () !default;
+$step-colors: map-merge((
+  "success": $success,
+  "finish": $primary,
+  "error": $danger,
+  "process": $process,
+  "wait": $wait
+), $step-colors);

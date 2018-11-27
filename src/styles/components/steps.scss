@@ -1,0 +1,273 @@
+.steps {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+// item
+.step {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 16px;
+  flex: 1;
+
+  &::after {
+    position: absolute;
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+  }
+
+  &:last-child {
+    flex: none;
+    margin-right: 0;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+// icon
+.step-icon {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid transparent;
+  background-color: $white;
+  border-radius: 50%;
+  vertical-align: top;
+  margin-right: 8px;
+
+  > span {
+    position: relative;
+    top: -1px;
+  }
+}
+
+// content
+.steps-right {
+  .step {
+    display: flex;
+
+    &::after {
+      content: none;
+    }
+    &:last-child .step-title::after{
+      content: none;
+    }
+  }
+  .step-content {
+    flex: 1;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .step-title {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      left: 100%;
+      content: ' ';
+      display: inline-block;
+      width: 9999px;
+      height: 1px;
+      background-color: transparent;
+    }
+  }
+}
+
+// title
+.step-title {
+  display: inline-block;
+}
+.step-description {
+  font-size: 12px;
+}
+
+// size
+.steps-normal {
+
+  .step::after {
+    top: 16px;
+    left: 48px;
+  }
+
+  .step-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  .step-title {
+    font-size: 16px;
+    line-height: 32px;
+    padding-right: 16px;
+
+    &::after {
+      top: 16px;
+    }
+  }
+}
+
+.steps-small {
+
+  .step::after {
+    top: 12px;
+    left: 36px;
+  }
+
+  .step-icon {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+
+  .step-title {
+    font-size: 14px;
+    line-height: 24px;
+    padding-right: 12px;
+
+    &::after {
+      top: 12px;
+    }
+  }
+}
+
+//
+.steps-vertical {
+  flex-direction: column;
+
+  .step {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .step-title::after {
+    left: -24px;
+    top: 40px;
+    width: 1px;
+    height: 9999px;
+  }
+
+  &.steps-small {
+    .step-title::after {
+      left: -20px;
+      top: 32px;
+    }
+  }
+}
+
+.steps-dot {
+  .step-icon {
+    border: none !important;
+    background-color: transparent !important;
+  }
+  .step-dot {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+// theme
+@each $color, $value in $step-colors {
+  @if $color == "process" {
+    .step-#{$color} {
+      color: $value;
+
+      .step-icon {
+        color: $white;
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      .step-title::after {
+        background-color: $wait;
+      }
+
+      &::after {
+        background-color: $wait;
+      }
+
+      .step-dot {
+        width: 8px;
+        height: 8px;
+        background-color: $primary;
+      }
+    }
+  } @else {
+    .step-#{$color} {
+      color: $value;
+
+      .step-icon {
+        border-color: $value;
+      }
+
+      .step-title::after {
+        background-color: $value;
+      }
+
+      &::after {
+        background-color: $value;
+      }
+
+      .step-dot {
+        width: 6px;
+        height: 6px;
+        background-color: $value;
+      }
+    }
+  }
+}
+
+.steps-center {
+  .step {
+    text-align: center;
+    margin-right: 0;
+    overflow: visible;
+
+    &::after {
+      left: 0;
+    }
+
+    &:last-child {
+      flex: 1;
+
+      &::after {
+        content: ' ';
+      }
+    }
+
+    .step-content {
+      padding: 0 20px;
+    }
+
+    .step-icon {
+      position: relative;
+      z-index: 1;
+
+      &::before, &::after {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 2px;
+        background-color: $white;
+      }
+
+      &::after {
+        right: calc(-50% - 1px);
+      }
+      &::before {
+        left: calc(-50% - 1px);
+      }
+    }
+  }
+}
