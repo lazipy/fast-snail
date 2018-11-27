@@ -14,7 +14,7 @@
         @click="handleClickClose"
         data-dismiss="alert"
         aria-label="Close">
-        <i class="icon-cancel"></i>
+        <span>&times;</span>
       </button>
     </div>
   </transition>
