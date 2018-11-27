@@ -8,7 +8,7 @@ loadingCom.vm = loadingCom.$mount();
 const loadingEl = loadingCom.vm.$el;
 
 export default {
-  bind (el, { value }) {
+  inserted (el, { value }) {
     if (value && !el.contains(loadingEl)) {
       el.appendChild(loadingEl);
     }
