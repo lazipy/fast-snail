@@ -235,7 +235,9 @@ $tag-colors: map-merge((
   "cyan": $cyan
 ), $tag-colors);
 
-$tag-padding: 1px 9px !default;
+$tag-small-padding: 1px 7px !default;
+$tag-medium-padding: 2px 9px !default;
+$tag-large-padding: 5px 12px !default;
 $tag-border-radius: 4px !default;
 
 // tabs

@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   border: 1px solid $border-color;
-  padding: $tag-padding;
+  padding: $tag-medium-padding;;
   background-color: $light;
   border-radius: $tag-border-radius;
   font-size: 12px;
@@ -28,4 +28,13 @@
 .tag-close {
   display: inline-block;
   height: 100%;
+}
+
+// Size
+.tag-large {
+  padding: $tag-large-padding;
+  font-size: 13px;
+}
+.tag-small {
+  padding: $tag-small-padding;
 }

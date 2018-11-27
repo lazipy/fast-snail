@@ -20,6 +20,11 @@
         type: Boolean,
         default: false
       },
+      size: {
+        type: String,
+        default: 'medium',
+        validator: OneOf(['large', 'medium', 'small'])
+      },
       navigator: String
     },
     data () {
@@ -31,7 +36,8 @@
     computed: {
       classes () {
         return [
-          this.colors.includes(this.color) ? `tag-${this.color}` : ''
+          this.colors.includes(this.color) ? `tag-${this.color}` : '',
+          `tag-${this.size}`
         ];
       },
       currentStyle () {

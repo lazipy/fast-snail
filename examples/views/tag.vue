@@ -7,6 +7,10 @@
     <p>Closable</p>
     <s-tag closable>default</s-tag>
     <s-tag :color="color" closable v-for="color in colors" :key="Math.random()">{{color}}</s-tag>
+    <p>Large</p>
+    <s-tag :color="color" size="large" closable v-for="color in colors" :key="Math.random()">{{color}}</s-tag>
+    <p>small</p>
+    <s-tag :color="color" size="small" closable v-for="color in colors" :key="Math.random()">{{color}}</s-tag>
   </div>
 </template>
 
