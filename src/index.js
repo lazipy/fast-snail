@@ -26,7 +26,6 @@ import Icon from './packages/icon/main';
 import List from './packages/list/main';
 import ListItem from './packages/list/item';
 import Loading from './packages/loading/main';
-import Pagination from './packages/pagination/main';
 import Row from './packages/row/main';
 import Scroller from './packages/scroller/main';
 import Spinner from './packages/spinner/main';
@@ -73,7 +72,6 @@ const components = [
   List,
   ListItem,
   Loading,
-  Pagination,
   Icon,
   Steps,
   Step,
@@ -126,7 +124,6 @@ export default {
   List,
   ListItem,
   Loading,
-  Pagination,
   Icon,
   Steps,
   Step,
