@@ -36,6 +36,8 @@ import Tabs from './packages/tabs/main';
 import TabPane from './packages/tabs/pane';
 import Tag from './packages/tag/main';
 import Popover from './packages/popover/main';
+import Timeline from './packages/timeline/main';
+import TimelineItem from './packages/timeline/item';
 
 // Directives
 import Transfer from './directives/transfer';
@@ -81,7 +83,9 @@ const components = [
   Tag,
   Popover,
   Scroller,
-  Spinner
+  Spinner,
+  Timeline,
+  TimelineItem
 ];
 
 const install = (Vue) => {
@@ -133,5 +137,7 @@ export default {
   Tag,
   Popover,
   Scroller,
-  Spinner
+  Spinner,
+  Timeline,
+  TimelineItem
 };

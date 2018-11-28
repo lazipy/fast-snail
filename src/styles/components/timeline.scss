@@ -1,0 +1,58 @@
+
+// item
+.timeline-item {
+  position: relative;
+  padding-left: 15px;
+  padding-bottom: 20px;
+
+  // Line
+  &::after {
+    content: ' ';
+    position: absolute;
+    top: .15em;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-left: 2px solid $border-color;
+    transform: translateX(-1px);
+  }
+  // last-child
+  &:last-child::after {
+    height: 50%;
+  }
+}
+
+// dot
+.timeline-icon {
+  position: absolute;
+  top: .15em;
+  left: 0;
+  z-index: 1;
+  transform: translateX(-50%);
+  height: 18px;
+  line-height: 18px;
+  background-color: $white;
+  font-size: 14px;
+}
+
+// dot
+.timeline-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+// color
+@each $color, $value in $timeline-colors {
+  .timeline-#{$color} {
+    .timeline-icon {
+      color: $value;
+    }
+
+    .timeline-dot {
+      border-color: $value;
+    }
+  }
+}

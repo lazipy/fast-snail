@@ -23,6 +23,7 @@
       <router-link to="/steps">steps</router-link>
       <router-link to="/tabs">tabs</router-link>
       <router-link to="/tag">tag</router-link>
+      <router-link to="/timeline">timeline</router-link>
       <router-link to="/tooltip">tooltip</router-link>
       <router-link to="/icon">icon</router-link>
       <router-link to="/layout">layout</router-link>

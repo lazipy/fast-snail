@@ -28,6 +28,7 @@ export default new Router({
     { path: '/steps', component: () => import('./views/steps.vue') },
     { path: '/tabs', component: () => import('./views/tabs.vue') },
     { path: '/tag', component: () => import('./views/tag.vue') },
+    { path: '/timeline', component: () => import('./views/timeline.vue') },
     { path: '/tooltip', component: () => import('./views/tooltip.vue') },
     { path: '/icon', component: () => import('./views/icon.vue') },
     { path: '/layout', component: () => import('./views/layout.vue') }

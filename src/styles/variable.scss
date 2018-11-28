@@ -260,3 +260,18 @@ $step-colors: map-merge((
   "process": $process,
   "wait": $wait
 ), $step-colors);
+
+// timeline
+$timeline-colors: () !default;
+$timeline-colors: map-merge((
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan
+), $timeline-colors);

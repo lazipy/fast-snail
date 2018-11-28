@@ -68,7 +68,7 @@
 
 
     <div style="height: 300px;">
-      <s-steps :active="1" placement="bottom" center size="small" dot>
+      <s-steps :active="1" placement="bottom" center dot>
         <s-step title="步骤1" status="success" description="这是步骤1这是步骤1这是步骤1这是步骤1这是步骤1这是步骤1"></s-step>
         <s-step title="步骤2" description="这是步骤2这是步骤2这是步骤2这是步骤2这是步骤2这是步骤2"></s-step>
         <s-step title="步骤3" description="这是步骤3"></s-step>
