@@ -25,6 +25,10 @@
     flex: none;
     margin-right: 0;
 
+    .step-title {
+      padding: 0;
+    }
+
     &::after {
       content: none;
     }
@@ -58,11 +62,15 @@
     &:last-child .step-title::after{
       content: none;
     }
+    .step-icon {
+      margin-right: 0;
+    }
   }
   .step-content {
     flex: 1;
     display: inline-block;
     vertical-align: top;
+    margin-left: 8px;
   }
   .step-title {
     position: relative;
@@ -164,12 +172,15 @@
 
 .steps-dot {
   .step-icon {
-    border: none !important;
-    background-color: transparent !important;
+    position: relative;
+    border-color: $white !important;
+    background-color: $white !important;
   }
   .step-dot {
-    position: relative;
-    top: -1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: inline-block;
     border-radius: 50%;
   }
@@ -196,8 +207,8 @@
       }
 
       .step-dot {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
         background-color: $primary;
       }
     }
@@ -218,8 +229,8 @@
       }
 
       .step-dot {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         background-color: $value;
       }
     }
