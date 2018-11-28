@@ -8,6 +8,7 @@ export default new Router({
   routes: [
     { path: '/affix', component: () => import('./views/affix.vue') },
     { path: '/alert', component: () => import('./views/alert.vue') },
+    { path: '/anchor', component: () => import('./views/anchor.vue') },
     { path: '/animate', component: () => import('./views/animate.vue') },
     { path: '/avator', component: () => import('./views/avator.vue') },
     { path: '/backtop', component: () => import('./views/backtop.vue') },

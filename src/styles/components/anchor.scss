@@ -1,0 +1,57 @@
+.anchor-wrap {
+  position: relative;
+  padding-left: 4px;
+}
+
+.anchor {
+  position: relative;
+  background-color: $white;
+}
+
+// line
+.anchor-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 2px solid $border-color;
+}
+
+// dot
+.anchor-dot {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid $primary;
+  background-color: $white;
+  z-index: 1;
+  transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+// link
+.anchor-link {
+  padding: 8px 0 8px 16px;
+  line-height: 1;
+  font-size: 12px;
+
+  > a {
+    color: $anchor-link-color;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      color: $anchor-link-active-color;
+    }
+  }
+}
+
+// active
+.anchor-link.active {
+  > a {
+    color: $anchor-link-active-color;
+  }
+}

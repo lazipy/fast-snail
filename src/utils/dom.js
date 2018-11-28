@@ -101,3 +101,23 @@ export const on = (el, event, handler) => {
 export const getStyle = (el, attr) => {
   return window.getComputedStyle ? window.getComputedStyle(el)[attr] : el.currentStyle[attr];
 }
+
+// 获取元素相对于某元素的rect
+export const getRect = (el, target) => {
+  let rect = {
+    top: el.offsetTop,
+    left: el.offsetLeft,
+    bottom: el.offsetTop + el.offsetHeight,
+    right: el.offsetLeft + el.offsetWidth
+  };
+
+  while (el.offsetParent !== target) {
+    el = el.offsetParent;
+    rect.top += el.offsetTop;
+    rect.left += el.offsetLeft;
+    rect.bottom += el.offsetTop;
+    rect.right += el.offsetLeft;
+  }
+
+  return rect;
+}

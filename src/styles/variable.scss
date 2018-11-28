@@ -275,3 +275,7 @@ $timeline-colors: map-merge((
   "teal": $teal,
   "cyan": $cyan
 ), $timeline-colors);
+
+// anchor
+$anchor-link-color: $gray-600 !default;
+$anchor-link-active-color: $primary !default;

@@ -1,6 +1,8 @@
 // Components
 import Animate from './packages/animate/main';
 import Alert from './packages/alert/main';
+import Anchor from './packages/anchor/main';
+import AnchorLink from './packages/anchor/link';
 import Avator from './packages/avator/main';
 import Affix from './packages/affix/main';
 import Backtop from './packages/backtop/main';
@@ -49,6 +51,8 @@ import VScroller from './directives/scroller';
 const components = [
   Animate,
   Alert,
+  Anchor,
+  AnchorLink,
   Avator,
   Affix,
   Backtop,
@@ -104,6 +108,8 @@ export default {
   install,
   Animate,
   Alert,
+  Anchor,
+  AnchorLink,
   Avator,
   Backtop,
   Badge,
