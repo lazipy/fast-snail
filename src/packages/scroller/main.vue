@@ -58,6 +58,9 @@
     mounted () {
       this.init();
     },
+    updated () {
+      this.init();
+    },
     methods: {
       // 初始化滚动数据
       init () {
