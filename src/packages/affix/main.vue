@@ -7,44 +7,80 @@
 </template>
 
 <script>
-import { on, off } from '../../utils/dom.js'
+import { on, off, getRect } from '../../utils/dom.js'
 export default {
   name: 'SAffix',
-  data() {
-    return {
-      style: {}
-    }
-  },
   props: {
     offsetTop: {
-      type: Number
+      type: Number,
+      default: 0
     },
     offsetBottom: {
       type: Number
+    },
+    container: {
+      type: [HTMLElement, Window, String],
+      default: () => window
     }
+  },
+  data () {
+    return {
+      scrollContainer: null,
+      scrollElement: null,
+      width: 0,
+      height: 0,
+      style: {}
+    };
   },
   computed: {
-    fixType() {
-      return this.offsetBottom || this.offsetBottom === 0 ? 'bottom' : 'top'
+    offsetType () {
+      return this.offsetBottom || this.offsetBottom === 0 ? 'bottom' : 'top';
+    },
+    containerIsWindow () {
+      return this.scrollContainer === window;
     }
   },
-  mounted() {
-    on(window, 'scroll', this.handleScroll)
-    on(window, 'resize', this.handleScroll)
+  mounted () {
+    this.init();
+    on(this.scrollContainer, 'scroll', this.handleScroll);
+    on(window, 'resize', this.handleScroll);
   },
-  destroyed() {
-    off(window, 'scroll', this.handleScroll)
+  destroyed () {
+    off(this.scrollContainer, 'scroll', this.handleScroll)
     off(window, 'resize', this.handleScroll)
   },
   methods: {
-    handleScroll() {
-      let rect = this.$el.getBoundingClientRect()
+    init () {
+      this.getContainer();
+      this.width = this.$el.offsetWidth;
+      this.height = this.$el.offsetHeight;
+    },
+    getContainer () {
+      if (typeof this.container === 'string') {
+        this.scrollContainer = document.querySelector(this.container);
+        this.scrollContainer.style.position = 'relative';
+      } else {
+        this.scrollContainer = this.container;
+      }
+      this.scrollElement = this.containerIsWindow ? document.body : this.scrollContainer;
+    },
+    handleScroll () {
+      const rect = getRect(this.$el, this.scrollElement);
+      const containerRectTop = this.containerIsWindow ? 0 : getRect(this.scrollContainer, document.body).top;
+      const containerRectLeft = this.containerIsWindow ? 0 : getRect(this.scrollContainer, document.body).left;
+      const containerOffsetBottom = this.containerIsWindow ? 0 : window.innerHeight - containerRectTop - this.scrollContainer.offsetHeight;
+      const scrollTop = this.containerIsWindow ? this.scrollContainer.pageYOffset : this.scrollContainer.scrollTop;
+      const offsetHeight = this.containerIsWindow ? this.scrollContainer.innerHeight : this.scrollContainer.offsetHeight;
 
-      if (this.fixType === 'top') {
-        if (rect.top <= (this.offsetTop || 0)) {
+      if (this.offsetType === 'top') {
+        if (scrollTop >= rect.top - this.offsetTop) {
           this.style = {
-            'position': 'fixed',
-            'top': (this.offsetTop || 0) + 'px'
+            position: 'fixed',
+            top: this.offsetTop + containerRectTop + 'px',
+            left: rect.left + containerRectLeft + 'px',
+            width: this.width + 'px',
+            height: this.height + 'px',
+            zIndex: 1030
           }
           this.$emit('change', true);
         } else {
@@ -53,11 +89,15 @@ export default {
         }
       }
 
-      if (this.fixType === 'bottom') {
-        if (rect.bottom + (this.offsetBottom || 0) <= window.innerHeight) {
+      if (this.offsetType === 'bottom') {
+        if (scrollTop + offsetHeight >= rect.bottom + this.offsetBottom) {
           this.style = {
-            'position': 'fixed',
-            'bottom': (this.offsetBottom || 0) + 'px'
+            position: 'fixed',
+            bottom: containerOffsetBottom + this.offsetBottom + 'px',
+            left: rect.left + containerRectLeft + 'px',
+            width: this.width + 'px',
+            height: this.height + 'px',
+            zIndex: 1030
           }
           this.$emit('change', true);
         } else {
