@@ -11,14 +11,16 @@
   overflow: hidden;
   margin-right: 16px;
   flex: 1;
+  transition: all .3s;
 
   &::after {
     position: absolute;
     content: ' ';
     display: inline-block;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: transparent;
+    transition: all .3s;
   }
 
   &:last-child {
@@ -44,10 +46,12 @@
   border-radius: 50%;
   vertical-align: top;
   margin-right: 8px;
+  transition: all .3s;
 
   > span {
     position: relative;
     top: -1px;
+    transition: all .3s;
   }
 }
 
@@ -81,8 +85,9 @@
       content: ' ';
       display: inline-block;
       width: 9999px;
-      height: 1px;
+      height: 2px;
       background-color: transparent;
+      transition: all .3s;
     }
   }
 }
@@ -90,6 +95,7 @@
 // title
 .step-title {
   display: inline-block;
+  transition: all .3s;
 }
 .step-description {
   font-size: 12px;
@@ -158,7 +164,7 @@
   .step-title::after {
     left: -24px;
     top: 40px;
-    width: 1px;
+    width: 2px;
     height: 9999px;
   }
 
@@ -269,7 +275,7 @@
         top: 50%;
         transform: translateY(-50%);
         width: 50%;
-        height: 2px;
+        height: 4px;
         background-color: $white;
       }
 
