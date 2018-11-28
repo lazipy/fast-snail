@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :style="style" ref="wrap">
+    <div :style="style">
       <slot></slot>
     </div>
   </div>
@@ -38,28 +38,31 @@ export default {
   },
   methods: {
     handleScroll() {
-      let el = this.$refs.place
       let rect = this.$el.getBoundingClientRect()
 
       if (this.fixType === 'top') {
-        if (rect.top < (this.offsetTop || 0)) {
+        if (rect.top <= (this.offsetTop || 0)) {
           this.style = {
             'position': 'fixed',
             'top': (this.offsetTop || 0) + 'px'
           }
+          this.$emit('change', true);
         } else {
           this.style = {}
+          this.$emit('change', false);
         }
       }
 
       if (this.fixType === 'bottom') {
-        if (rect.top + this.$refs.wrap.offsetHeight + (this.offsetBottom || 0) > window.innerHeight) {
+        if (rect.bottom + (this.offsetBottom || 0) <= window.innerHeight) {
           this.style = {
             'position': 'fixed',
             'bottom': (this.offsetBottom || 0) + 'px'
           }
+          this.$emit('change', true);
         } else {
           this.style = {}
+          this.$emit('change', false);
         }
       }
 
