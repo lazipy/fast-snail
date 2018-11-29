@@ -1,11 +1,9 @@
 <template>
-  <div class="menu">
-    <slot></slot>
-  </div>
+  <div class="submenu"></div>
 </template>
 
 <script>
   export default {
-    name: 'SMenu'
+    name: 'SSubmenu'
   };
 </script>

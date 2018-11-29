@@ -28,6 +28,9 @@ import Icon from './packages/icon/main';
 import List from './packages/list/main';
 import ListItem from './packages/list/item';
 import Loading from './packages/loading/main';
+import Menu from './packages/menu/main';
+import Submenu from './packages/menu/submenu';
+import MenuItem from './packages/menu/menuItem';
 import Row from './packages/row/main';
 import Scroller from './packages/scroller/main';
 import Spinner from './packages/spinner/main';
@@ -78,6 +81,9 @@ const components = [
   List,
   ListItem,
   Loading,
+  Menu,
+  Submenu,
+  MenuItem,
   Icon,
   Steps,
   Step,
@@ -134,6 +140,9 @@ export default {
   List,
   ListItem,
   Loading,
+  Menu,
+  Submenu,
+  MenuItem,
   Icon,
   Steps,
   Step,
