@@ -32,6 +32,10 @@
       showBar: {
         type: Boolean,
         default: true
+      },
+      offset: {
+        type: Number,
+        default: 0
       }
     },
     data () {
@@ -111,12 +115,30 @@
           this.translateY = y;
         }
       },
-      handleScroll (e) {
-        const deltaY = -e.wheelDeltaY / 3 || e.deltaY;
-        this.scrollY(deltaY);
+      scrollTo (x, y) {
+        if (x < 0) {
+          this.translateX = 0;
+        } else if (x > this.maxTranslateX) {
+          this.translateX = this.maxTranslateX;
+        } else {
+          this.translateX = x;
+        }
 
+        if (y < 0) {
+          this.translateY = 0;
+        } else if (y > this.maxTranslateY) {
+          this.translateY = this.maxTranslateY;
+        } else {
+          this.translateY = y;
+        }
+      },
+      handleScroll (e) {
         const deltaX = -e.wheelDeltaX / 3 || e.deltaX;
-        this.scrollX(deltaX);
+        const deltaY = -e.wheelDeltaY / 3 || e.deltaY;
+        this.scrollTo(this.translateX + deltaX, this.translateY + deltaY);
+        if (this.maxTranslateY - this.translateY <= this.offset) {
+          this.$emit('will-bottom');
+        }
       },
 
       handleXMousedown (e) {

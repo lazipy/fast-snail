@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="wrap mt-20 border">
-      <s-scroller ref="scroller">
+      <s-scroller ref="scroller" @will-bottom="insertItem">
         <p v-for="i in data">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
       </s-scroller>
     </div>
@@ -80,6 +80,9 @@ export default {
   methods: {
     click () {
       this.data += 20
+    },
+    insertItem () {
+      this.data += 20;
     }
   }
 }
