@@ -45,8 +45,15 @@
         return this.scrollContainer === window;
       }
     },
+    watch: {
+      'route' () {
+        this.init();
+        this.handleScroll();
+      }
+    },
     mounted () {
       this.init();
+      this.handleScroll();
       on(this.scrollContainer, 'scroll', this.handleScroll);
       on(window, 'resize', this.handleScroll);
     },

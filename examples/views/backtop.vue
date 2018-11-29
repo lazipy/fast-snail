@@ -1,6 +1,7 @@
 <template>
-  <div class="container h3000">
-    <s-backtop></s-backtop>
+  <div class="container" id="container">
+    <div class="h3000"></div>
+    <s-backtop container="#container"></s-backtop>
   </div>
 </template>
 
@@ -11,6 +12,12 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    width: 400px;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #aaaaaa;
+  }
   .h3000 {
     height: 3000px;
   }
