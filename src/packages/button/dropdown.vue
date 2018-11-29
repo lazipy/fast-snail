@@ -110,6 +110,7 @@
     },
     methods: {
       updateOrigin (data) {
+        if (!this.$refs.popper) return;
         if (data.placement.match('bottom')) {
           this.$refs.popper.style.transformOrigin = 'center top';
         } else {
