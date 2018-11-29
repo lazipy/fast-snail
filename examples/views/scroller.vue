@@ -76,23 +76,26 @@ export default {
     return {
       data: 20,
       list: [],
-      all: []
+      all: [],
+      index: 1,
+      size: 10
     }
   },
   created () {
     for (let i = 1; i <= 100; i++) {
       this.all.push(i);
     }
-    this.list = this.all.slice(0, 10)
+    this.list = this.all.slice(0, this.index * this.size)
   },
   methods: {
     click () {
       this.data += 20
     },
-    insertItem (i) {
-      // const arr = this.all.slice(10 * i, 10 + 10 * i);
-      this.list = this.all.slice(0, 10 * (i + 1));
-      console.log(this.list)
+    insertItem () {
+      if (this.index * this.size >= this.all.length) return;
+      this.index++;
+      this.list = this.all.slice(0, this.index * this.size);
+      console.log(this.list);
     }
   }
 }
