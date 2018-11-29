@@ -29,6 +29,7 @@ import List from './packages/list/main';
 import ListItem from './packages/list/item';
 import Loading from './packages/loading/main';
 import Menu from './packages/menu/main';
+import MenuGroup from './packages/menu/group';
 import Submenu from './packages/menu/submenu';
 import MenuItem from './packages/menu/menuItem';
 import Row from './packages/row/main';
@@ -82,6 +83,7 @@ const components = [
   ListItem,
   Loading,
   Menu,
+  MenuGroup,
   Submenu,
   MenuItem,
   Icon,
@@ -141,6 +143,7 @@ export default {
   ListItem,
   Loading,
   Menu,
+  MenuGroup,
   Submenu,
   MenuItem,
   Icon,

@@ -23,10 +23,11 @@ const insertScroll = (el, childs) => {
 
 export default {
   inserted (el) {
-    childs = el.children;
+    childs = [...el.children];
     insertScroll(el, childs);
   },
   componentUpdated (el) {
+    console.log(el);
     childs = [...el.children];
     childs.shift();
     insertScroll(el, childs);

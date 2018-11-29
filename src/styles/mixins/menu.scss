@@ -1,0 +1,18 @@
+@mixin one-item() {
+  position: relative;
+  padding: 0 24px;
+  height: 40px;
+  line-height: 40px;
+  color: $gray-700;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+
+  i:not(.menu-arrow) {
+    position: relative;
+    top: -1px;
+    margin-right: 10px;
+  }
+}
