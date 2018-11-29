@@ -2,7 +2,7 @@
   <div class="container">
     <div class="wrap mt-20 border">
       <s-scroller ref="scroller" @will-bottom="insertItem">
-        <p v-for="i in data">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
+        <p v-for="i in list">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, possimus vel earum officia fugit esse corrupti, sapiente vitae mollitia molestias tenetur laudantium modi, odio voluptate distinctio voluptatum quos dicta. Sapiente.</p>
       </s-scroller>
     </div>
     <s-button @click="click">change data</s-button>
@@ -74,15 +74,25 @@
 export default {
   data () {
     return {
-      data: 20
+      data: 20,
+      list: [],
+      all: []
     }
+  },
+  created () {
+    for (let i = 1; i <= 100; i++) {
+      this.all.push(i);
+    }
+    this.list = this.all.slice(0, 10)
   },
   methods: {
     click () {
       this.data += 20
     },
-    insertItem () {
-      this.data += 20;
+    insertItem (i) {
+      // const arr = this.all.slice(10 * i, 10 + 10 * i);
+      this.list = this.all.slice(0, 10 * (i + 1));
+      console.log(this.list)
     }
   }
 }
