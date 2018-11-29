@@ -56,7 +56,9 @@
         visibleX: false,
         toolWidth: 0,
         ratioX: 1,
-        pageX: 0
+        pageX: 0,
+
+        willBottom: 1
       };
     },
     mounted () {
@@ -137,7 +139,7 @@
         const deltaY = -e.wheelDeltaY / 3 || e.deltaY;
         this.scrollTo(this.translateX + deltaX, this.translateY + deltaY);
         if (this.maxTranslateY - this.translateY <= this.offset) {
-          this.$emit('will-bottom');
+          this.$emit('will-bottom', this.willBottom++);
         }
       },
 
