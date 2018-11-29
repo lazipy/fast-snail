@@ -40,7 +40,7 @@
       offsetBottom: Number,
       bounds: {
         type: Number,
-        default: 5
+        default: 10
       },
       container: {
         type: [HTMLElement, Window, String],
@@ -72,7 +72,7 @@
         const moveY = (
           this.current.$el.offsetTop +
           this.current.$el.offsetHeight / 2 -
-          5
+          8
         );
         return {
           transform: `translateY(${moveY}px)`
