@@ -45,6 +45,10 @@ export default {
     arrow: {
       type: Boolean,
       default: true
+    },
+    invisible: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

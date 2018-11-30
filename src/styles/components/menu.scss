@@ -1,6 +1,5 @@
 .menu {
-  width: 240px;
-  height: 100%;
+  width: 100%;
   padding: 10px 0;
   font-size: 14px;
   border-right: 1px solid $border-color;
@@ -130,26 +129,34 @@
 
 // collapse
 .menu-collapse {
-  width: 60px;
+  width: 72px;
 
   > .menu-item {
+    text-align: center;
+    padding: 0;
     .menu-item-title {
       display: none;
     }
     i {
       display: inline-block;
+      width: 72px;
       font-size: 16px;
-      transform: translateX(-2px);
+      margin: 0;
     }
   }
 
    > .submenu {
     > .submenu-title {
-      padding: 0 24px;
+      text-align: center;
+      padding: 0;
+      > span > span {
+        display: none;
+      }
       i {
         display: inline-block;
+        width: 72px;
         font-size: 16px;
-        transform: translateX(-2px);
+        margin: 0;
       }
 
       .menu-arrow {
@@ -261,8 +268,8 @@
 
 // dark
 .menu-dark {
-  background-color: $gray-800;
-  border-bottom: none;
+  background-color: rgb(37, 44, 53);
+  border: none;
 
   .submenu {
     > .submenu-title {
@@ -287,7 +294,7 @@
     }
 
     .submenu-popper {
-      background-color: $gray-800;
+      background-color: rgb(37, 44, 53);
     }
   }
   .submenu.active > .submenu-title {

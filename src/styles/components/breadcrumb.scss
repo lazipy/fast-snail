@@ -1,7 +1,5 @@
 .breadcrumb {
-  display: block;
-  padding: $breadcrumb-padding-x $breadcrumb-padding-y;
-  line-height: 1;
+  display: inline-block;
   border-radius: $breadcrumb-border-radius;
 
   // Item

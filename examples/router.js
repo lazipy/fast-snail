@@ -33,6 +33,7 @@ export default new Router({
     { path: '/timeline', component: () => import('./views/timeline.vue') },
     { path: '/tooltip', component: () => import('./views/tooltip.vue') },
     { path: '/icon', component: () => import('./views/icon.vue') },
-    { path: '/grid', component: () => import('./views/grid.vue') }
+    { path: '/grid', component: () => import('./views/grid.vue') },
+    { path: '/layout', component: () => import('./views/layout.vue') }
   ],
 });

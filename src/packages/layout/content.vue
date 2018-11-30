@@ -1,11 +1,11 @@
 <template>
-  <main class="content">
+  <main class="main">
     <slot></slot>
   </main>
 </template>
 
 <script>
   export default {
-    name: 'SContent'
+    name: 'SMain'
   };
 </script>

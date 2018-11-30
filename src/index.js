@@ -44,6 +44,11 @@ import Tag from './packages/tag/main';
 import Popover from './packages/popover/main';
 import Timeline from './packages/timeline/main';
 import TimelineItem from './packages/timeline/item';
+import Layout from './packages/layout/layout';
+import Aside from './packages/layout/aside';
+import Header from './packages/layout/header';
+import Content from './packages/layout/content';
+import Footer from './packages/layout/footer';
 
 // Directives
 import Transfer from './directives/transfer';
@@ -97,7 +102,12 @@ const components = [
   Scroller,
   Spinner,
   Timeline,
-  TimelineItem
+  TimelineItem,
+  Layout,
+  Aside,
+  Header,
+  Content,
+  Footer
 ];
 
 const install = (Vue) => {
@@ -157,5 +167,10 @@ export default {
   Scroller,
   Spinner,
   Timeline,
-  TimelineItem
+  TimelineItem,
+  Layout,
+  Aside,
+  Header,
+  Content,
+  Footer
 };

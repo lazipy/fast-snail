@@ -5,3 +5,10 @@
   overflow: hidden;
 }
 
+.bscroll-indicator {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+  cursor: pointer;
+  width: 5px !important;
+  margin-left: 1px;
+}

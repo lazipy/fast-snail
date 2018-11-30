@@ -16,7 +16,7 @@
         ref="popper"
         v-transfer
         v-if="isMounted"
-        v-show="visible"
+        v-show="visible && !invisible"
         @click.stop="() => { return false; }"
         @mouseenter="handleTooltipEnter"
         @mouseleave="handleTooptipLeave"
