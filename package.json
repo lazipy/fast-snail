@@ -81,7 +81,6 @@
   "dependencies": {
     "better-scroll": "^1.13.2",
     "debounce-throttle": "^1.0.4",
-    "iscroll": "^5.2.0",
     "popper.js": "^1.14.4",
     "v-click-outside-x": "^3.2.2",
     "vue": "^2.5.17",
