@@ -16,9 +16,6 @@ const insertScroll = (el, childs) => {
   }
   el.innerHTML = '';
   el.appendChild(El);
-  component.vm.$nextTick(() => {
-    component.vm.init();
-  });
 }
 
 export default {
@@ -27,7 +24,6 @@ export default {
     insertScroll(el, childs);
   },
   componentUpdated (el) {
-    console.log(el);
     childs = [...el.children];
     childs.shift();
     insertScroll(el, childs);

@@ -1,35 +1,26 @@
 <template>
-  <div class="scroller" ref="scroller" @wheel.prevent="handleScroll">
-    <div class="scroller-inner" ref="inner" :style="{ transform: `translate(${-translateX}px, ${-translateY}px)` }">
+  <div class="scroller" ref="scroller">
+    <div class="scroller-content" ref="content" :style="{ width: contentWidth }">
       <slot></slot>
-    </div>
-
-    <div class="scroller-bar scroller-bar-y" v-if="showBar && visibleY">
-      <div
-        class="scroller-tool scroller-tool-y"
-        :style="{height: toolHeight + 'px', transform: 'translateY('+ translateY * ratioY +'px)'}"
-        @mousedown.prevent="handleYMousedown">
-      </div>
-    </div>
-
-    <div class="scroller-bar scroller-bar-x" v-if="showBar && visibleX">
-      <div
-        class="scroller-tool scroller-tool-x"
-        :style="{width: toolWidth + 'px', transform: 'translateX('+ translateX * ratioX +'px)'}"
-        @mousedown.prevent="handleXMousedown">
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { on, off } from '../../utils/dom';
-  import { OneOf } from '../../utils';
+  import BScroll from 'better-scroll';
 
   export default {
     name: 'SScroller',
     props: {
-      showBar: {
+      scrollbar: {
+        type: Boolean,
+        default: false
+      },
+      scrollX: {
+        type: Boolean,
+        default: true
+      },
+      scrollY: {
         type: Boolean,
         default: true
       },
@@ -40,135 +31,66 @@
     },
     data () {
       return {
-        offsetHeight: 0,
-        scrollHeight: 0,
-        translateY: 0,
-        maxTranslateY: 0,
-        visibleY: false,
-        toolHeight: 0,
-        ratioY: 1,
-        pageY: 0,
-
-        offsetWidth: 0,
-        scrollWidth: 0,
-        translateX: 0,
-        maxTranslateX: 0,
-        visibleX: false,
-        toolWidth: 0,
-        ratioX: 1,
-        pageX: 0
-      };
+        scroller: null,
+        contentWidth: '100%'
+      }
     },
     mounted () {
       this.init();
     },
-    updated () {
-      this.init();
+    destroyed () {
+      this.destroy();
+      this.scroller = null;
     },
     methods: {
-      // 初始化滚动数据
       init () {
-        this.offsetHeight = this.$refs.scroller.offsetHeight;
-        this.scrollHeight = this.$refs.inner.offsetHeight;
-        this.maxTranslateY = this.scrollHeight - this.offsetHeight;
-        if (this.maxTranslateY > 0) {
-          this.visibleY = true;
-          this.toolHeight = (this.offsetHeight / this.scrollHeight) * this.offsetHeight;
-          this.ratioY = (this.offsetHeight - this.toolHeight) / (this.scrollHeight - this.offsetHeight);
-        } else {
-          this.visibleY = false;
+        if (!this.$refs.scroller) return;
+
+        if (this.scrollX && this.$refs.content.scrollWidth > this.$refs.content.offsetWidth) {
+          this.contentWidth = this.$refs.content.scrollWidth + 'px';
         }
 
-        this.offsetWidth = this.$refs.scroller.offsetWidth;
-        this.scrollWidth = this.$refs.inner.offsetWidth;
-        this.maxTranslateX = this.scrollWidth - this.offsetWidth;
-        if (this.maxTranslateX > 0) {
-          this.visibleX = true;
-          this.toolWidth = (this.offsetWidth / this.scrollWidth) * this.offsetWidth;
-          this.ratioX = (this.offsetWidth - this.toolWidth) / (this.scrollWidth - this.offsetWidth);
-        } else {
-          this.visibleX = false;
-        }
-      },
-      update () {
-        this.init();
-        this.translateY = this.pageY = 0;
-        this.translateX = this.pageX = 0;
-      },
-      scrollX (deltaX) {
-        const x = this.translateX + deltaX;
-        if (x < 0) {
-          this.translateX = 0;
-        } else if (x > this.maxTranslateX) {
-          this.translateX = this.maxTranslateX;
-        } else {
-          this.translateX = x;
-        }
-      },
-      scrollY (deltaY) {
-        const y = this.translateY + deltaY;
-        if (y < 0) {
-          this.translateY = 0;
-        } else if (y > this.maxTranslateY) {
-          this.translateY = this.maxTranslateY;
-        } else {
-          this.translateY = y;
-        }
-      },
-      scrollTo (x, y) {
-        if (x < 0) {
-          this.translateX = 0;
-        } else if (x > this.maxTranslateX) {
-          this.translateX = this.maxTranslateX;
-        } else {
-          this.translateX = x;
-        }
+        let options = {
+          bounce: false,
+          probeType: 3,
+          scrollX: this.scrollX,
+          scrollY: this.scrollY,
+          scrollbar: this.scrollbar || { fade: false, interactive: true },
+          mouseWheel: {
+            speed: 20,
+            easeTime: 100
+          }
+        };
 
-        if (y < 0) {
-          this.translateY = 0;
-        } else if (y > this.maxTranslateY) {
-          this.translateY = this.maxTranslateY;
-        } else {
-          this.translateY = y;
-        }
+        this.$nextTick(() => {
+          this.scroller = new BScroll(this.$refs.scroller, options);
+          this.scroller.on('scroll', this.scroll);
+          this.scroller.on('scrollEnd', this.scrollEnd);
+        });
       },
-      handleScroll (e) {
-        const deltaX = -e.wheelDeltaX / 3 || e.deltaX;
-        const deltaY = -e.wheelDeltaY / 3 || e.deltaY;
-        this.scrollTo(this.translateX + deltaX, this.translateY + deltaY);
-        if (this.maxTranslateY - this.translateY <= this.offset) {
-          this.$emit('will-bottom');
-        }
+      scroll (x, y) {
+        this.$emit('scroll', x, y);
       },
-
-      handleXMousedown (e) {
-        this.pageX = e.pageX;
-        on(document, 'mousemove', this.handleXMousemove);
-        on(document, 'mouseup', this.handleXMouseup);
+      scrollEnd (x, y) {
+        this.$emit('scroll-end', x, y);
       },
-      handleXMousemove (e) {
-        const deltaX = (e.pageX - this.pageX) / this.ratioX;
-        this.scrollX(deltaX);
-        this.pageX = e.pageX;
+      disable() {
+        this.scroller && this.scroller.disable();
       },
-      handleXMouseup () {
-        off(document, 'mousemove', this.handleXMousemove);
-        off(document, 'mouseup', this.handleXMouseup);
+      enable() {
+        this.scroller && this.scroller.enable();
       },
-
-      handleYMousedown (e) {
-        this.pageY = e.pageY;
-        on(document, 'mousemove', this.handleYMousemove);
-        on(document, 'mouseup', this.handleYMouseup);
+      refresh() {
+        this.scroller && this.scroller.refresh();
       },
-      handleYMousemove (e) {
-        const deltaY = (e.pageY - this.pageY) / this.ratioY;
-        this.scrollY(deltaY);
-        this.pageY = e.pageY;
+      scrollTo() {
+        this.scroller && this.scroller.scrollTo.apply(this.scroll, arguments);
       },
-      handleYMouseup () {
-        off(document, 'mousemove', this.handleYMousemove);
-        off(document, 'mouseup', this.handleYMouseup);
+      scrollToElement() {
+        this.scroller && this.scroller.scrollToElement.apply(this.scroller, arguments);
+      },
+      destroy() {
+        this.scroller.destroy();
       }
     }
   };

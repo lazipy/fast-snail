@@ -2,7 +2,7 @@
   <div class="container">
     <p>基础用法</p>
     <div class="demo">
-      <s-menu @change="change" :default-open="['baobeifenxi']" current="qvyuguanli">
+      <s-menu @change="change" v-scroller :default-open="['baobeifenxi']" current="qvyuguanli">
         <s-menu-group>分组一</s-menu-group>
         <s-submenu name="baobeiguanli">
           <span slot="title">
