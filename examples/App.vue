@@ -28,7 +28,7 @@
       <router-link to="/timeline">timeline</router-link>
       <router-link to="/tooltip">tooltip</router-link>
       <router-link to="/icon">icon</router-link>
-      <router-link to="/layout">layout</router-link>
+      <router-link to="/grid">grid</router-link>
     </div>
     <div>
       <router-view></router-view>
