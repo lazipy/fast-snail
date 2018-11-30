@@ -26,7 +26,7 @@
       },
       offset: {
         type: Number,
-        default: 100
+        default: 10
       }
     },
     data () {
