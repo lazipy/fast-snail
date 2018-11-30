@@ -77,22 +77,22 @@
       scrollEnd (index) {
         this.$emit('scroll-end', index);
       },
-      disable() {
+      disable () {
         this.scroller && this.scroller.disable();
       },
-      enable() {
+      enable () {
         this.scroller && this.scroller.enable();
       },
-      refresh() {
+      refresh () {
         this.scroller && this.scroller.refresh();
       },
-      scrollTo() {
+      scrollTo () {
         this.scroller && this.scroller.scrollTo.apply(this.scroll, arguments);
       },
-      scrollToElement() {
+      scrollToElement () {
         this.scroller && this.scroller.scrollToElement.apply(this.scroller, arguments);
       },
-      destroy() {
+      destroy () {
         this.scroller.destroy();
       }
     }
