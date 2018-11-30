@@ -1,6 +1,6 @@
 <template>
   <div class="submenu" :class="classes">
-    <template v-if="this.mode === 'collapse'">
+    <template v-if="this.currentMode === 'collapse'">
       <div class="submenu-title" @click="handleSubmenuClick">
         <slot name="title"></slot>
         <i class="icon-angle-down menu-arrow" :class="{ active: visible }"></i>
@@ -21,7 +21,8 @@
         @mouseenter="handleReferenceEnter"
         @mouseleave="handleReferenceLeave">
         <slot name="title"></slot>
-        <i class="icon-angle-right menu-arrow" :class="{ active: visible }"></i>
+        <i class="icon-angle-down menu-arrow" v-if="menu.mode === 'horizontal' && this.$parent.$options._componentTag === 's-menu'" :class="{ active: visible }"></i>
+        <i class="icon-angle-right menu-arrow" v-else :class="{ active: visible }"></i>
       </div>
 
       <transition name="fade">
@@ -99,8 +100,7 @@
         items: [],
         subs: [],
         timer: null,
-        popper: null,
-        placement: 'right-start'
+        popper: null
       };
     },
     computed: {
@@ -111,9 +111,16 @@
         }
         return menu;
       },
+      currentMode () {
+        if (this.menu.currentCollaspe || this.menu.mode === 'horizontal') {
+          return 'float';
+        } else {
+          return this.mode;
+        }
+      },
       config () {
         return {
-          placement: this.placement,
+          placement: this.menu.mode === 'horizontal' && this.$parent.$options._componentTag === 's-menu' ? 'bottom-center' : 'right-start',
           modifiers: {
             computeStyle: {
               gpuAcceleration: false
@@ -138,6 +145,18 @@
           if (val) {
             this.menu.$emit('open', this.name);
             this.menu.open(this.name);
+            if (this.currentMode === 'float') {
+              if (!this.popper) {
+                this.createPopper();
+              } else {
+                this.updatePopper();
+              }
+            } else {
+              if (this.popper) {
+                this.popper.destroy();
+                this.popper = null;
+              }
+            }
           } else {
             this.menu.$emit('close', this.name);
             this.menu.close(this.name);
@@ -147,20 +166,21 @@
               }
             }
           }
-          this.updatePopper();
         }
       },
       isActive () {
-        let flag = false;
-        this.items.forEach(item => {
-          if (item.isActive) flag = true;
-        });
-        return flag;
+        this.init();
+        for (let item of this.items) {
+          if (item.isActive) {
+            return true;
+          }
+        }
+        return false;
       },
       classes () {
         return [
           this.isActive ? 'active' : '',
-          `submenu-${this.mode}`
+          `submenu-${this.currentMode}`
         ];
       }
     },
@@ -171,7 +191,6 @@
     },
     mounted () {
       this.init();
-      this.createPopper();
       on(window, 'resize', this.throttleUpdate);
       on(window, 'scroll', this.throttleUpdate);
     },
@@ -215,7 +234,6 @@
         }
       },
       handleOutClick () {
-        if (this.trigger !== 'click') return;
         this.debounceHide();
       },
         // Trigger hover

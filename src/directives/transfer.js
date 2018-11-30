@@ -17,7 +17,9 @@ export default {
       el.style.zIndex = ++index;
     }
   },
-  unbind (el) {
-    document.body.removeChild(el);
+  unbind (el, { value = true }) {
+    if (value && document.body.contains(el)) {
+      document.body.removeChild(el);
+    }
   }
 };

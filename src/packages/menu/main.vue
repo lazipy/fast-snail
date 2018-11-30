@@ -1,11 +1,12 @@
 <template>
-  <div class="menu" :style="currentStyle">
+  <div class="menu" :class="classes" :style="currentStyle">
     <slot></slot>
   </div>
 </template>
 
 <script>
   import { array_remove } from '../../utils/data';
+  import { OneOf } from '../../utils';
 
   export default {
     name: 'SMenu',
@@ -17,9 +18,19 @@
         type: Array,
         default: () => []
       },
-      width: {
-        type: Number,
-        default: 240
+      mode: {
+        type: String,
+        default: 'vertical',
+        validator: OneOf(['vertical', 'horizontal'])
+      },
+      theme: {
+        type: String,
+        default: 'light',
+        validator: OneOf(['light', 'dark'])
+      },
+      collapse: {
+        type: Boolean,
+        default: false
       },
       router: {
         type: Boolean,
@@ -40,10 +51,32 @@
       };
     },
     computed: {
+      currentCollaspe () {
+        return this.mode === 'horizontal' ? false : this.collapse;
+      },
+      classes () {
+        return [
+          this.currentCollaspe ? 'menu-collapse' : '',
+          `menu-${this.mode}`,
+          `menu-${this.theme}`
+        ];
+      },
       currentStyle () {
         return {
-          width: this.width + 'px'
+          // width: this.width + 'px'
         };
+      }
+    },
+    watch: {
+      collapse (val) {
+        if (val) {
+          for (let sub of this.subs) {
+            if (sub.visible) {
+              sub.visible = false;
+              this.close(sub.name);
+            }
+          }
+        }
       }
     },
     mounted () {
@@ -51,6 +84,7 @@
     },
     methods: {
       init () {
+        this.subs = this.$children.filter(child => child.$options._componentTag === 's-submenu');
       },
       open (name) {
         this.opens.push(name);

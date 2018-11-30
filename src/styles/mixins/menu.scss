@@ -1,13 +1,22 @@
 @mixin one-item() {
   position: relative;
   padding: 0 24px;
-  height: 40px;
-  line-height: 40px;
+  height: 44px;
+  line-height: 44px;
   color: $gray-700;
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     color: $primary;
+
+    i {
+      color: $primary;
+    }
+  }
+
+  i {
+    color: $gray-600;
   }
 
   i:not(.menu-arrow) {

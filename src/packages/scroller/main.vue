@@ -1,6 +1,6 @@
 <template>
   <div class="scroller" ref="scroller" @wheel.prevent="handleScroll">
-    <div class="scroller-inner" :style="{ transform: `translate(${-translateX}px, ${-translateY}px)` }">
+    <div class="scroller-inner" ref="inner" :style="{ transform: `translate(${-translateX}px, ${-translateY}px)` }">
       <slot></slot>
     </div>
 
@@ -69,7 +69,7 @@
       // 初始化滚动数据
       init () {
         this.offsetHeight = this.$refs.scroller.offsetHeight;
-        this.scrollHeight = this.$refs.scroller.scrollHeight;
+        this.scrollHeight = this.$refs.inner.offsetHeight;
         this.maxTranslateY = this.scrollHeight - this.offsetHeight;
         if (this.maxTranslateY > 0) {
           this.visibleY = true;
@@ -80,7 +80,7 @@
         }
 
         this.offsetWidth = this.$refs.scroller.offsetWidth;
-        this.scrollWidth = this.$refs.scroller.scrollWidth;
+        this.scrollWidth = this.$refs.inner.offsetWidth;
         this.maxTranslateX = this.scrollWidth - this.offsetWidth;
         if (this.maxTranslateX > 0) {
           this.visibleX = true;
