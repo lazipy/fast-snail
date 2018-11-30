@@ -11,7 +11,7 @@
 .menu-item {
   @include one-item();
   margin: 2px 0;
-  transition: all .3s;
+  transition: all .2s;
 
   &:before {
     position: absolute;
@@ -56,6 +56,7 @@
   .submenu-title {
     @include one-item();
     padding-right: 42px;
+    transition: all .2s;
     .menu-arrow {
       position: absolute;
       top: 50%;

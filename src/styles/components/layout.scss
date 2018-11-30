@@ -2,11 +2,19 @@
 .layout {
   display: flex;
   flex: 1;
-  min-height: 100%;
+  height: 100%;
   background-color: $gray-100;
+  overflow: hidden;
+
+  > .layout {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+  }
 
   &-column {
     flex-direction: column;
+    transition: all .2s;
   }
 }
 
@@ -22,6 +30,13 @@
   &-collapse {
     width: 60px;
   }
+
+  &-fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
 }
 
 //
@@ -30,6 +45,7 @@
   padding: 0 20px;
   background-color: $white;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+  transition: left .2s;
 
   &-arrow {
     position: relative;
@@ -45,6 +61,11 @@
     &:hover {
       color: $primary;
     }
+  }
+
+  &-fixed {
+    position: fixed;
+    right: 0;
   }
 }
 

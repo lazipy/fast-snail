@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const merge = require('webpack-merge');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 const commonConfig = require('./webpack.config.common');
 
 module.exports = merge(commonConfig, {
@@ -39,6 +41,13 @@ module.exports = merge(commonConfig, {
       additionalFormatters: [],
       additionalTransformers: [],
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../lib'),
+        to: 'static',
+        ignore: ['.*']
+      }
+    ])
   ],
   mode: 'development'
 });

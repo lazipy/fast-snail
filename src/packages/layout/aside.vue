@@ -38,18 +38,25 @@
         default: 220
       }
     },
+    data () {
+      return {
+        header: null
+      };
+    },
     computed: {
       classes () {
         return [
           this.customClass,
           `aside-${this.theme}`,
-          this.collapse ? 'aside-collapse' : ''
+          this.collapse ? 'aside-collapse' : '',
+          this.fixed ? 'aside-fixed' : ''
         ];
       },
       currentStyle () {
         if (this.collapse) {
           return {
-            width: '72px'
+            width: '72px',
+            top: this.header && this.header.fixed ? this.header.height + 'px' : 0,
           };
         } else {
           return {
@@ -57,6 +64,14 @@
           };
         }
       }
+    },
+    mounted () {
+      this.$parent.$parent.$children.forEach(child => {
+        if (child.$options._componentTag === 's-header') {
+          this.header = child;
+          return;
+        }
+      });
     }
   };
 </script>

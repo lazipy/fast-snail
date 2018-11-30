@@ -1,9 +1,44 @@
-<template>
-  <div class="container">
-    <p>常见用法</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/static/snail.css">
+  <style>
+    .demo {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: auto;
+    }
+    .logo-box {
+      position: relative;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .logo {
+      height: 40px;
+      line-height: 40px;
+      background-color: rgba(255,255,255,.2);
+      border-radius: 4px;
+    }
+    .layout {
+      overflow: hidden;
+    }
+    .layout-column {
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
     <div class="demo">
       <s-layout>
-        <s-aside theme="dark" :collapse="collapse">
+        <s-aside fixed theme="dark" :collapse="collapse">
           <div class="logo-box">
             <div class="logo"></div>
           </div>
@@ -39,7 +74,7 @@
             </s-menu-item>
           </s-menu>
         </s-aside>
-        <s-layout direction="column">
+        <s-layout direction="column" >
           <s-header :collapse-arrow="collapse" @collapse="changeCollapse">
             <s-breadcrumb>
               <s-breadcrumb-item to="/">Home</s-breadcrumb-item>
@@ -48,7 +83,7 @@
             </s-breadcrumb>
           </s-header>
           <s-main>
-            <p>Main Content</p>
+            <p v-for="i in 40">Main Content</p>
           </s-main>
           <s-footer>
             Footer
@@ -56,66 +91,44 @@
         </s-layout>
       </s-layout>
     </div>
-    <p>Aside固定滚动</p>
-    <iframe class="iframe" src="/static/layout-basic.html" frameborder="0"></iframe>
   </div>
-</template>
-
-<script>
-export default {
-  data () {
-    return {
-      collapse: false,
-      theme: 'light'
-    }
-  },
-  methods: {
-    change (name) {
-      console.log('change' + name);
-    },
-    open (name) {
-      console.log('open' + name)
-    },
-    close (name) {
-      console.log('close' + name)
-    },
-    click () {
-      this.collapse = !this.collapse;
-    },
-    clickTheme () {
-      if (this.theme === 'light') {
-        this.theme = 'dark'
-      } else {
-        this.theme = 'light'
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="/static/snail.min.js"></script>
+  <script>
+    Vue.use(snail.default);
+    var app = new Vue({
+      el: '#app',
+      data () {
+        return {
+          collapse: false,
+          theme: 'light'
+        }
+      },
+      methods: {
+        change (name) {
+          console.log('change' + name);
+        },
+        open (name) {
+          console.log('open' + name)
+        },
+        close (name) {
+          console.log('close' + name)
+        },
+        click () {
+          this.collapse = !this.collapse;
+        },
+        clickTheme () {
+          if (this.theme === 'light') {
+            this.theme = 'dark'
+          } else {
+            this.theme = 'light'
+          }
+        },
+        changeCollapse () {
+          this.collapse = !this.collapse;
+        }
       }
-    },
-    changeCollapse () {
-      this.collapse = !this.collapse;
-    }
-  }
-}
-</script>
-
-<style scoped>
-  .demo {
-    position: relative;
-    width: 100%;
-    border: 1px solid #aaaaaa;
-  }
-  .logo-box {
-    position: relative;
-    padding: 10px;
-    overflow: hidden;
-  }
-  .logo {
-    height: 40px;
-    line-height: 40px;
-    background-color: rgba(255,255,255,.2);
-    border-radius: 4px;
-  }
-  .iframe {
-    position: relative;
-    width: 100%;
-    height: 500px;
-  }
-</style>
+    })
+  </script>
+</body>
+</html>
