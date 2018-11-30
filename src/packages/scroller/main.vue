@@ -26,7 +26,7 @@
       },
       offset: {
         type: Number,
-        default: 0
+        default: 100
       }
     },
     data () {
@@ -68,11 +68,14 @@
           this.scroller.on('scrollEnd', this.scrollEnd);
         });
       },
-      scroll (x, y) {
-        this.$emit('scroll', x, y);
+      scroll (index) {
+        this.$emit('scroll', index);
+        if (index.y - this.offset <= this.scroller.maxScrollY) {
+          this.$emit('will-end', index.y);
+        }
       },
-      scrollEnd (x, y) {
-        this.$emit('scroll-end', x, y);
+      scrollEnd (index) {
+        this.$emit('scroll-end', index);
       },
       disable() {
         this.scroller && this.scroller.disable();
