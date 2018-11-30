@@ -23,6 +23,11 @@ export default {
     childs = [...el.children];
     insertScroll(el, childs);
   },
+  componentUpdated (el) {
+    childs = [...el.children];
+    childs.shift();
+    insertScroll(el, childs);
+  },
   unbind (el) {
     childs = [...el.children[0].children[0].children];
     el.innerHTML = '';
