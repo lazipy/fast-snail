@@ -53,6 +53,7 @@
         let options = {
           bounce: false,
           probeType: 3,
+          preventDefault: false,
           scrollX: this.scrollX,
           scrollY: this.scrollY,
           scrollbar: this.scrollbar || { fade: false, interactive: true },

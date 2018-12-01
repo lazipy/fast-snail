@@ -30,6 +30,16 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
+$zindex-dropdown:          2000 !default;
+$zindex-sticky:            1020 !default;
+$zindex-fixed:              1030 !default;
+$zindex-modal-backdrop:    3040 !default;
+$zindex-modal:             3050 !default;
+$zindex-popover:           1070 !default;
+$zindex-tooltip:           1060 !default;
+$zindex-masker:            3000  !default;
+$zindex-drawer:            4050  !default;
+
 $theme-colors: () !default;
 $theme-colors: map-merge((
   "primary":    $primary,
@@ -106,14 +116,6 @@ $headings-font-family:        inherit !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              $gray-900 !default;
-
-$zindex-dropdown:          2000 !default;
-$zindex-sticky:            1020 !default;
-$zindex-fixed:             1030 !default;
-$zindex-modal-backdrop:    3040 !default;
-$zindex-modal:             3050 !default;
-$zindex-popover:           1070 !default;
-$zindex-tooltip:           1060 !default;
 
 // Close
 $close-width: 40px;
@@ -279,3 +281,10 @@ $timeline-colors: map-merge((
 // anchor
 $anchor-link-color: $gray-600 !default;
 $anchor-link-active-color: $primary !default;
+
+// masker
+$masker-color : rgba(0 , 0, 0, .3) !default;
+
+// drawer
+$drawer-color: $white !default;
+$drawer-box-shadow: -2px 0 12px 0 rgba(0,0,0,.1);

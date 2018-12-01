@@ -1,0 +1,45 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  overflow: hidden;
+  z-index: $zindex-drawer;
+  transition: width 0s;
+  transition-delay: .2s;
+
+  &-show {
+    width: 100%;
+    transition-delay: 0s;
+  }
+}
+.drawer-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: $drawer-color;
+  box-shadow: $drawer-box-shadow;
+  z-index: $zindex-drawer;
+}
+.drawer-right {
+  right: 0;
+  left: none;
+}
+.drawer-left {
+  left: 0;
+  right: none;
+}
+
+// title
+.drawer-title {
+  padding: 16px 24px;
+  font-size: 16px;
+  margin: 0;
+  border-bottom: 1px solid $border-color;
+}
+
+// body
+.drawer-body {
+  padding: 16px 24px;
+}

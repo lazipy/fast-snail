@@ -30,6 +30,8 @@
       <router-link to="/icon">icon</router-link>
       <router-link to="/grid">grid</router-link>
       <router-link to="/layout">layout</router-link>
+      <router-link to="/masker">masker</router-link>
+      <router-link to="/drawer">drawer</router-link>
     </div>
     <div>
       <router-view></router-view>

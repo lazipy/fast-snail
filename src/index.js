@@ -49,6 +49,8 @@ import Aside from './packages/layout/aside';
 import Header from './packages/layout/header';
 import Content from './packages/layout/content';
 import Footer from './packages/layout/footer';
+import Masker from './packages/masker/main';
+import Drawer from './packages/drawer/main';
 
 // Directives
 import Transfer from './directives/transfer';
@@ -107,7 +109,9 @@ const components = [
   Aside,
   Header,
   Content,
-  Footer
+  Footer,
+  Masker,
+  Drawer
 ];
 
 const install = (Vue) => {
@@ -172,5 +176,7 @@ export default {
   Aside,
   Header,
   Content,
-  Footer
+  Footer,
+  Masker,
+  Drawer
 };
