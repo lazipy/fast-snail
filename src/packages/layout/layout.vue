@@ -21,8 +21,7 @@
     },
     data () {
       return {
-        aside: null,
-        header: null
+        aside: null
       };
     },
     computed: {
@@ -34,8 +33,7 @@
       },
       currentStyle () {
         return {
-          left: this.aside ? (!this.aside.collapse ? this.aside.width + 'px' : '72px') : 0,
-          top: this.header && this.header.fixed ? this.header.height + 'px' : 0
+          marginLeft: this.aside && this.aside.fixed ? (!this.aside.collapse ? this.aside.width + 'px' : '72px') : 0
         };
       }
     },
@@ -43,12 +41,6 @@
       this.$parent.$children.forEach(child => {
         if (child.$options._componentTag === 's-aside') {
           this.aside = child;
-          return;
-        }
-      });
-      this.$children.forEach(child => {
-        if (child.$options._componentTag === 's-header') {
-          this.header = child;
           return;
         }
       });
