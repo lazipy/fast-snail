@@ -24,19 +24,14 @@
       background-color: rgba(255,255,255,.2);
       border-radius: 4px;
     }
-    .layout {
-      overflow: hidden;
-    }
-    .layout-column {
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
+    [v-cloak] {
+      display: none;
     }
   </style>
 </head>
 <body>
   <div id="app">
-    <div class="demo">
+    <div class="demo" v-cloak>
       <s-layout>
         <s-aside fixed theme="dark" :collapse="collapse">
           <div class="logo-box">

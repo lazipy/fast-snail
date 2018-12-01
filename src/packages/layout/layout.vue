@@ -34,8 +34,8 @@
       },
       currentStyle () {
         return {
-          marginLeft: this.aside && this.aside.fixed ? (!this.aside.collapse ? this.aside.width + 'px' : '72px') : 0,
-          marginTop: this.header && this.header.fixed ? this.header.height + 'px' : 0
+          left: this.aside ? (!this.aside.collapse ? this.aside.width + 'px' : '72px') : 0,
+          top: this.header && this.header.fixed ? this.header.height + 'px' : 0
         };
       }
     },
