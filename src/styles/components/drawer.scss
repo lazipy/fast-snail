@@ -12,6 +12,13 @@
     width: 100%;
     transition-delay: 0s;
   }
+
+  .close {
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 .drawer-content {
   position: absolute;
