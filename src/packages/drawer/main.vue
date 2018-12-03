@@ -1,15 +1,28 @@
 <template>
   <div class="drawer" :class="wrapClass" v-transfer="transfer">
     <transition :name="`fade-${placement}`">
-      <div class="drawer-content" v-scroller v-if="currentVisble" :class="classes" :style="currentStyle">
-        <button class="close" @click="close">&times;</button>
-        <h5 class="drawer-title" v-if="this.$slots.title">
-          <slot name="title"></slot>
-        </h5>
-        <div class="drawer-body" v-if="this.$slots.default">
-          <slot></slot>
-        </div>
-      </div>
+
+      <draggable-resizable
+        class="drawer-content"
+        :active="true"
+        :class="classes"
+        v-if="currentVisble"
+        :handles="['ml', 'mr']"
+        :w="currentWidth"
+        @resizing="resize"
+        :resizable="resizable"
+        :draggable="false">
+        <s-scroller ref="scroll">
+          <button class="close" @click="close">&times;</button>
+          <h5 class="drawer-title" v-if="this.$slots.title">
+            <slot name="title"></slot>
+          </h5>
+          <div class="drawer-body" v-if="this.$slots.default">
+            <slot></slot>
+          </div>
+        </s-scroller>
+      </draggable-resizable>
+
     </transition>
     <s-masker
       v-if="mask"
@@ -23,11 +36,13 @@
 
 <script>
   import { OneOf } from '../../utils';
+  import DraggableResizable from 'vue-draggable-resizable';
   import SMasker from '../masker/main';
+  import SScroller from '../scroller/main';
 
   export default {
     name: 'SDrawer',
-    components: { SMasker },
+    components: { DraggableResizable, SMasker, SScroller },
     props: {
       visible: {
         type: Boolean,
@@ -44,6 +59,10 @@
       },
       customClass: {
         type: String
+      },
+      resizable: {
+        type: Boolean,
+        default: false
       },
       transfer: {
         type: Boolean,
@@ -67,8 +86,21 @@
     },
     data () {
       return {
+        currentWidth: this.width
       };
     },
+    // watch: {
+    //   visible: {
+    //     handler (val) {
+    //       if (val) {
+    //         this.$nextTick(() => {
+    //           this.$refs.scroll.refresh();
+    //         });
+    //       }
+    //     },
+    //     immediate: true
+    //   }
+    // },
     computed: {
       currentVisble: {
         get () {
@@ -92,11 +124,15 @@
       },
       currentStyle () {
         return {
-          width: this.width + 'px'
+          width: this.currentWidth + 'px'
         };
       }
     },
     methods: {
+      resize (left, top, w, height) {
+        this.currentWidth = w;
+        this.$refs.scroll.refresh();
+      },
       close () {
         this.currentVisble = false;
         this.$emit('close');

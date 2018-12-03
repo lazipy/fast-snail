@@ -3,10 +3,9 @@
   top: 0;
   bottom: 0;
   width: 0;
-  overflow: hidden;
   z-index: $zindex-drawer;
   transition: width 0s;
-  transition-delay: .2s;
+  transition-delay: .3s;
 
   &-show {
     width: 100%;
@@ -20,22 +19,81 @@
     }
   }
 }
+// content
 .drawer-content {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  overflow: visible;
   background-color: $drawer-color;
   box-shadow: $drawer-box-shadow;
-  z-index: $zindex-drawer;
+  z-index: $zindex-drawer !important;
+
+  .handle {
+    top: 0;
+    margin: 0;
+    width: 10px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: ew-resize;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: rgba($primary, .8);
+      content: ' ';
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      width: 2px;
+      height: 18px;
+      color: $primary;
+      background-color: rgba($primary, .8);
+      content: ' ';
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .handle-ml {
+    left: -10px;
+
+    &::before {
+      left: 8px;
+    }
+    &::after {
+      left: 0;
+    }
+  }
+  .handle-mr {
+    right: -10px;
+
+    &::before {
+      right: 8px;
+    }
+    &::after {
+      right: 0;
+    }
+  }
 }
 .drawer-right {
-  right: 0;
-  left: none;
+  right: 0 !important;
+  left: auto !important;
 }
 .drawer-left {
-  left: 0;
-  right: none;
+  left: 0 !important;
+  right: none !important;
 }
 
 // title

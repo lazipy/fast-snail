@@ -2,10 +2,10 @@
   <div class="container">
     <s-button @click="click">Open</s-button>
 
-    <s-drawer transfer :visible.sync="visible" placement="right">
+    <s-drawer transfer :resizable="true" :visible.sync="visible" placement="right">
       <span slot="title">Drawer Title</span>
-      <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.</p>
+      <div  style="padding-bottom: 60px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut modi quam sit sint distinctio esse tenetur numquam consequuntur unde itaque harum doloribus tempore vero rerum deserunt fugiat, dignissimos quia nulla.</p>
       </div>
       <span class="drawer-footer">
         <s-button type="primary">Update</s-button>
