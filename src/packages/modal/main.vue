@@ -5,20 +5,22 @@
         class="modal-wrap"
         :active="true"
         v-if="currentVisble"
-        :y="top"
+        :x="currentLeft"
+        :y="currentTop"
         :w="width"
         :resizable="false"
+        @dragging="handleDrag"
         :draggable="draggable">
         <button class="close" v-if="closeable" @click="close">&times;</button>
-        <div class="modal-header" v-if="$slots.title || this.title">
+        <div class="modal-title" :class="{ 'modal-dragable': draggable }" v-if="$slots.title || this.title">
           <slot name="title">
-            <div class="modal-title">{{ title }}</div>
+            {{ title }}
           </slot>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" @touchdown.stop="() => false" @mousedown.stop="() => false">
           <slot name="body"></slot>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" @touchdown.stop="() => false" @mousedown.stop="() => false">
           <slot name="footer">
             <s-button type="light" @click="handleCancel">{{cancelText}}</s-button>
             <s-button type="primary" @click="handleConfirm">{{confirmText}}</s-button>
@@ -53,6 +55,10 @@
       title: {
         type: String
       },
+      left: {
+        type: Number,
+        default: 0
+      },
       top: {
         type: Number,
         default: 80
@@ -66,7 +72,7 @@
       },
       draggable: {
         type: Boolean,
-        default: false
+        default: true
       },
       cancelText: {
         type: String,
@@ -111,6 +117,22 @@
           this.currentVisble ? 'modal-show' : '',
           this.customClass
         ];
+      },
+      currentLeft: {
+        get () {
+          return this.left;
+        },
+        set (val) {
+          this.$emit('dragging', val);
+        }
+      },
+      currentTop: {
+        get () {
+          return this.top;
+        },
+        set (val) {
+          this.$emit('dragging', val);
+        }
       }
     },
     methods: {
@@ -127,6 +149,10 @@
       },
       closed () {
         this.$emit('closed')
+      },
+      handleDrag (x, y) {
+        this.currentLeft = x;
+        this.currentTop = y;
       }
     }
   };

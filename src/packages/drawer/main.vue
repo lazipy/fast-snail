@@ -117,7 +117,7 @@
       }
     },
     methods: {
-      resize (left, top, w, height) {
+      resize (left, top, w, h) {
         this.currentWidth = w;
         this.$refs.scroll.refresh();
       },
