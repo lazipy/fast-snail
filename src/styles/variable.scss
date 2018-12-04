@@ -288,3 +288,9 @@ $masker-color : rgba(0 , 0, 0, .3) !default;
 // drawer
 $drawer-color: $white !default;
 $drawer-box-shadow: -2px 0 12px 0 rgba(0,0,0,.1);
+$drawer-padding: 16px 24px !default;
+
+// modal
+$modal-color: $white !default;
+$modal-box-shadow: -2px 0 12px 0 rgba(0,0,0,.1);
+$modal-padding: 14px 20px !default;

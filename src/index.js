@@ -51,6 +51,7 @@ import Content from './packages/layout/content';
 import Footer from './packages/layout/footer';
 import Masker from './packages/masker/main';
 import Drawer from './packages/drawer/main';
+import Modal from './packages/modal/main';
 
 // Directives
 import Transfer from './directives/transfer';
@@ -111,7 +112,8 @@ const components = [
   Content,
   Footer,
   Masker,
-  Drawer
+  Drawer,
+  Modal
 ];
 
 const install = (Vue) => {
@@ -178,5 +180,6 @@ export default {
   Content,
   Footer,
   Masker,
-  Drawer
+  Drawer,
+  Modal
 };

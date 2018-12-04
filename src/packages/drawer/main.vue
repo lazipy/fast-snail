@@ -13,7 +13,7 @@
         :resizable="resizable"
         :draggable="false">
         <s-scroller ref="scroll">
-          <button class="close" @click="close">&times;</button>
+          <button class="close" v-if="closeable" @click="close">&times;</button>
           <h5 class="drawer-title" v-if="this.$slots.title">
             <slot name="title"></slot>
           </h5>
@@ -89,18 +89,6 @@
         currentWidth: this.width
       };
     },
-    // watch: {
-    //   visible: {
-    //     handler (val) {
-    //       if (val) {
-    //         this.$nextTick(() => {
-    //           this.$refs.scroll.refresh();
-    //         });
-    //       }
-    //     },
-    //     immediate: true
-    //   }
-    // },
     computed: {
       currentVisble: {
         get () {

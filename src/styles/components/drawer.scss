@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
+  left: 0;
   width: 0;
   z-index: $zindex-drawer;
   transition: width 0s;
@@ -98,7 +99,7 @@
 
 // title
 .drawer-title {
-  padding: 16px 24px;
+  padding: $drawer-padding;
   font-size: 16px;
   margin: 0;
   border-bottom: 1px solid $border-color;
@@ -106,5 +107,5 @@
 
 // body
 .drawer-body {
-  padding: 16px 24px;
+  padding: $drawer-padding;
 }
