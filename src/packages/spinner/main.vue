@@ -10,7 +10,10 @@
         type: Number,
         default: 0
       },
-      size: Number,
+      size: {
+        type: Number,
+        default: 12
+      },
       color: String
     },
     data () {
@@ -22,7 +25,11 @@
       currentStyle () {
         return {
           fontSize: this.size + 'px',
-          color: this.color
+          color: this.color,
+          width:this.size+10 + 'px',
+          height:this.size+10 + 'px',
+          lineHeight:this.size+10+ 'px',
+          textAlign:'center'
         };
       }
     },
