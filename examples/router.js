@@ -37,6 +37,7 @@ export default new Router({
     { path: '/layout', component: () => import('./views/layout.vue') },
     { path: '/masker', component: () => import('./views/masker.vue') },
     { path: '/drawer', component: () => import('./views/drawer.vue') },
-    { path: '/modal', component: () => import('./views/modal.vue') }
+    { path: '/modal', component: () => import('./views/modal.vue') },
+    { path: '/message', component: () => import('./views/message.vue') }
   ],
 });

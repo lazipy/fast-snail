@@ -33,6 +33,7 @@
       <router-link to="/masker">masker</router-link>
       <router-link to="/drawer">drawer</router-link>
       <router-link to="/modal">modal</router-link>
+      <router-link to="/message">message</router-link>
     </div>
     <div>
       <router-view></router-view>

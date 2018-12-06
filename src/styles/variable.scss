@@ -37,8 +37,9 @@ $zindex-modal-backdrop:    3040 !default;
 $zindex-modal:             3050 !default;
 $zindex-popover:           1070 !default;
 $zindex-tooltip:           1060 !default;
-$zindex-masker:            3000  !default;
-$zindex-drawer:            4050  !default;
+$zindex-masker:            3000 !default;
+$zindex-drawer:            4050 !default;
+$zindex-message:           5060 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -294,3 +295,15 @@ $drawer-padding: 16px 24px !default;
 $modal-color: $white !default;
 $modal-box-shadow: -2px 0 12px 0 rgba(0,0,0,.1);
 $modal-padding: 14px 20px !default;
+
+// message
+$message-colors: () !default;
+$message-colors: map-merge((
+  "info": $primary,
+  "success": $success,
+  "waring": $warning,
+  "error": $danger
+), $message-colors);
+$message-padding: 10px 16px !default;
+$message-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
+$message-border-radius: 4px !default;

@@ -1,0 +1,30 @@
+.message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: 30px auto 0;
+  max-width: 268px;
+  padding: $message-padding;
+  background-color: #fff;
+  border-radius: $message-border-radius;
+  box-shadow: $message-box-shadow;
+  z-index: $zindex-message;
+
+  &-content {
+    flex: 1;
+    margin-left: 6px;
+    @include text-truncate();
+  }
+
+  .close:hover {
+    color: $primary;
+  }
+}
+
+@each $color, $value in $message-colors {
+  .icon-#{$color} {
+    color: $value;
+  }
+}

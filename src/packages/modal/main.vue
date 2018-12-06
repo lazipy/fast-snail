@@ -23,7 +23,7 @@
         <div class="modal-footer" @touchdown.stop="() => false" @mousedown.stop="() => false">
           <slot name="footer">
             <s-button type="light" @click="handleCancel">{{cancelText}}</s-button>
-            <s-button type="primary" @click="handleConfirm">{{confirmText}}</s-button>
+            <s-button :type="confirmType" @click="handleConfirm">{{confirmText}}</s-button>
           </slot>
         </div>
       </draggable-resizable>
@@ -43,10 +43,12 @@
   import { OneOf } from '../../utils';
   import DraggableResizable from 'vue-draggable-resizable';
   import SMasker from '../masker/main';
+  import Transfer from '../../directives/transfer';
 
   export default {
     name: 'SModal',
     components: { DraggableResizable, SMasker },
+    directives: { Transfer },
     props: {
       visible: {
         type: Boolean,
@@ -81,6 +83,10 @@
       confirmText: {
         type: String,
         default: 'Confirm'
+      },
+      confirmType: {
+        type: String,
+        default: 'primary'
       },
       transfer: {
         type: Boolean,

@@ -39,10 +39,12 @@
   import DraggableResizable from 'vue-draggable-resizable';
   import SMasker from '../masker/main';
   import SScroller from '../scroller/main';
+  import Transfer from '../../directives/transfer';
 
   export default {
     name: 'SDrawer',
     components: { DraggableResizable, SMasker, SScroller },
+    directives: { Transfer },
     props: {
       visible: {
         type: Boolean,

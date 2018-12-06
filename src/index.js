@@ -52,6 +52,8 @@ import Footer from './packages/layout/footer';
 import Masker from './packages/masker/main';
 import Drawer from './packages/drawer/main';
 import Modal from './packages/modal/main';
+// import Message from './packages/message/main';
+import Message from './packages/message'
 
 // Directives
 import Transfer from './directives/transfer';
@@ -126,6 +128,8 @@ const install = (Vue) => {
   Vue.directive('out-click', OutClick);
   Vue.directive('loading', VLoading);
   Vue.directive('scroller', VScroller);
+
+  Vue.prototype.$message = Message;
 };
 
 export default {
